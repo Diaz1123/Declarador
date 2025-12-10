@@ -1,0 +1,161 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<nav aria-label="Progreso" class="mb-12 px-2">
+    <div class="relative flex justify-between">
+        <div class="absolute top-1/2 left-0 w-full h-1 bg-slate-100 -z-10 -mt-0.5 rounded-full"></div>
+        <div class="absolute top-1/2 left-0 h-1 bg-primary-600 -z-10 -mt-0.5 rounded-full" style="width: 100%"></div>
+        {% for label in steps_labels %}
+        <div class="flex flex-col items-center gap-3 bg-gray-100 px-2 md:px-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold border-2
+                {% if forloop.counter0 == step %}bg-primary-600 text-white border-primary-600
+                {% else %}bg-white text-primary-600 border-primary-600{% endif %}">✓</div>
+            <span class="text-xs font-bold uppercase hidden sm:block {% if forloop.counter0 == step %}text-slate-900{% else %}text-slate-400{% endif %}">{{ label }}</span>
+        </div>
+        {% endfor %}
+    </div>
+</nav>
+
+<div class="flex-1 space-y-8">
+    <div class="text-center py-6">
+        <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </div>
+        <h2 class="text-3xl font-bold text-slate-900">{% trans "¡Declaración Lista!" %}</h2>
+        <p class="text-lg text-slate-500 mt-3 max-w-lg mx-auto">{% trans "Tu documento ha sido generado con trazabilidad completa y código de validación único." %}</p>
+    </div>
+
+    <!-- Save Declaration Button (Optional) - MOVED HERE -->
+    {% if not is_saved %}
+    <div id="saveDeclarationSection" class="max-w-3xl mx-auto bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-200 rounded-xl p-6" data-change-mind-text="{% trans '¿Cambiaste de opinión? Haz clic aquí para guardar la declaración' %}">
+        <div class="flex items-start gap-4">
+            <div class="bg-emerald-500 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="flex-1">
+                <h3 class="text-lg font-bold text-slate-900 mb-2">{% trans "¿Deseas guardar esta declaración?" %}</h3>
+                <p class="text-sm text-slate-600 mb-4">{% trans "Puedes guardar esta declaración en nuestra base de datos para verificación futura. Esto es opcional y permitirá que otros puedan validar tu declaración usando el hash o ID." %}</p>
+                <div class="flex gap-3">
+                    <button onclick="saveDeclaration()" id="saveBtn" class="flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl transition-all shadow-md text-sm font-semibold">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M5 13l4 4L19 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <span id="saveBtnText">{% trans "Sí, guardar declaración" %}</span>
+                    </button>
+                    <button onclick="skipSave()" class="px-6 py-3 bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 rounded-xl transition-all text-sm font-medium">
+                        {% trans "No, solo descargar" %}
+                    </button>
+                </div>
+                <div id="saveMessage" class="hidden mt-3 p-3 bg-white border border-emerald-200 rounded-lg">
+                    <p class="text-sm font-medium text-emerald-700"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="max-w-3xl mx-auto bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-200 rounded-xl p-6">
+        <div class="flex items-center gap-3">
+            <div class="bg-emerald-500 text-white rounded-full w-10 h-10 flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M5 13l4 4L19 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <p class="text-sm font-semibold text-emerald-700">{% trans "Declaración guardada exitosamente en la base de datos" %}</p>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="grid md:grid-cols-2 gap-4">
+        <!-- Hash Badge -->
+        <div class="bg-slate-800 rounded-xl p-5 text-slate-200 shadow-lg border border-slate-700 relative overflow-hidden group">
+            <div class="relative z-10">
+                <h4 class="text-xs font-bold text-emerald-400 uppercase mb-1">{% trans "Certificado de Integridad" %}</h4>
+                <div class="text-sm text-slate-400 font-mono">ID: {{ declaration.declaration_id }}</div>
+                <div class="text-xl font-bold tracking-widest text-white font-mono mt-1">{{ hash }}</div>
+            </div>
+        </div>
+
+        <!-- License Badge -->
+        {% if declaration.license != 'None' %}
+        <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm flex items-center gap-4">
+            <div class="text-slate-800 font-bold text-2xl border-2 border-slate-800 rounded-full w-12 h-12 flex items-center justify-center">CC</div>
+            <div>
+                <h4 class="text-xs font-bold text-slate-500 uppercase">{% trans "Licencia del Producto" %}</h4>
+                <p class="text-lg font-semibold text-slate-900">{{ declaration.license }}</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg border overflow-hidden">
+        <!-- Tabs -->
+        <div class="flex border-b bg-slate-50/50">
+            <button onclick="showTab('text')" id="tabText" class="tab-btn flex-1 py-4 text-sm font-semibold flex items-center justify-center gap-2 transition-all text-primary-700 bg-white border-b-2 border-primary-500">
+                {% trans "Texto Legible" %}
+            </button>
+            <button onclick="showTab('json')" id="tabJson" class="tab-btn flex-1 py-4 text-sm font-semibold flex items-center justify-center gap-2 transition-all text-slate-500 hover:text-slate-700">
+                {% trans "JSON Estructurado" %}
+            </button>
+        </div>
+
+        <!-- Content -->
+        <div class="relative group">
+            <pre id="contentText" class="p-8 overflow-x-auto text-sm font-mono leading-relaxed min-h-[400px] max-h-[600px] bg-white text-slate-800 whitespace-pre-wrap">{{ text_output }}</pre>
+            <pre id="contentJson" class="hidden p-8 overflow-x-auto text-sm font-mono leading-relaxed min-h-[400px] max-h-[600px] bg-slate-900 text-emerald-400">{{ json_output }}</pre>
+
+            <div class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                <button onclick="copyContent()" id="copyBtn" class="flex items-center gap-2 px-4 py-2 bg-white/95 shadow-lg border rounded-lg text-sm font-medium hover:bg-white transition-all text-slate-700 hover:text-primary-700">
+                    <span id="copyIcon">📋</span>
+                    <span id="copyText">{% trans "Copiar" %}</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Download Buttons -->
+    <div class="flex flex-wrap gap-4 justify-center">
+        <a href="{% url 'download_text' %}" class="flex items-center gap-2 px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white rounded-xl transition-all shadow-md text-sm font-medium">
+            <svg class="w-[18px] h-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            {% trans "Descargar TXT" %}
+        </a>
+        <a href="{% url 'download_json' %}" class="flex items-center gap-2 px-6 py-3 bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 rounded-xl transition-all shadow-sm text-sm font-medium">
+            <svg class="w-[18px] h-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            {% trans "Descargar JSON" %}
+        </a>
+    </div>
+
+    <div class="text-center">
+        <a href="{% url 'home' %}?reset=1" class="inline-flex items-center gap-2 px-5 py-2.5 text-slate-500 hover:text-primary-600 bg-transparent hover:bg-primary-50 rounded-full transition-all text-sm font-medium">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            {% trans "Crear nueva declaración" %}
+        </a>
+    </div>
+
+    <!-- Integration Hint -->
+    <div class="max-w-3xl mx-auto mt-8 p-4 bg-blue-50/50 border border-blue-100 rounded-xl text-sm text-blue-900/80 flex items-start gap-3">
+        <svg class="w-5 h-5 mt-0.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 16v-4M12 8h.01" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+        <div>
+            <strong>{% trans "Recomendación Académica:" %}</strong>
+            <p class="mt-1 opacity-90 leading-relaxed">{% trans "Adjunte el archivo .json como metadato digital y copie el texto de la declaración en el apartado de \"Metodología\" o \"Anexos\" de su trabajo. El Hash de validación permite a los revisores certificar que la información no ha sido manipulada." %}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/step4.js' %}"></script>
+<script>
+// Asegurar que el CSRF token esté disponible globalmente
+window.CSRF_TOKEN = '{{ csrf_token }}';
+</script>
+{% endblock %}

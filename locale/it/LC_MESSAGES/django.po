@@ -1,0 +1,718 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Declarador.io 1.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-02 12:00+0000\n"
+"PO-Revision-Date: 2025-12-02 12:00+0000\n"
+"Last-Translator: Declarador Team\n"
+"Language-Team: Italian\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# Header
+msgid "Transparencia Académica"
+msgstr "Trasparenza Accademica"
+
+msgid "Verificar"
+msgstr "Verificare"
+
+msgid "Ayuda"
+msgstr "Aiuto"
+
+msgid "Nueva"
+msgstr "Nuova"
+
+# Footer
+msgid "Transparencia Académica en IA"
+msgstr "Trasparenza Accademica nell'IA"
+
+msgid "Privacidad"
+msgstr "Privacy"
+
+msgid "Buscar"
+msgstr "Cercare"
+
+# Help Modal
+msgid "Glosario para No Expertos"
+msgstr "Glossario per Non Esperti"
+
+msgid "Tip Ético"
+msgstr "Consiglio Etico"
+
+msgid "La transparencia no juzga el uso de la IA, solo lo hace visible. Un uso honesto y declarado siempre es mejor académicamente que un uso oculto."
+msgstr "La trasparenza non giudica l'uso dell'IA, lo rende solo visibile. Un uso onesto e dichiarato è sempre migliore accademicamente di un uso nascosto."
+
+msgid "Cerrar Glosario"
+msgstr "Chiudi Glossario"
+
+# Steps
+msgid "Diagnóstico"
+msgstr "Diagnostico"
+
+msgid "Clasificación"
+msgstr "Classificazione"
+
+msgid "Detalles"
+msgstr "Dettagli"
+
+msgid "Resultado"
+msgstr "Risultato"
+
+# Step 2 - Usage Types
+msgid "Generación de Borrador"
+msgstr "Generazione di Bozza"
+
+msgid "La IA escribió una primera versión completa o secciones sustanciales que sirvieron de base."
+msgstr "L'IA ha scritto una prima versione completa o sezioni sostanziali che hanno servito da base."
+
+msgid "Co-creación Sustantiva"
+msgstr "Co-creazione Sostanziale"
+
+msgid "Colaboración iterativa donde la IA y el humano construyen argumentos o narrativas conjuntamente."
+msgstr "Collaborazione iterativa dove IA e umano costruiscono argomenti o narrative congiuntamente."
+
+msgid "Asistencia de Estilo y Redacción"
+msgstr "Assistenza di Stile e Redazione"
+
+msgid "Mejora de la forma sin alterar el fondo o las ideas principales."
+msgstr "Miglioramento della forma senza alterare il contenuto o le idee principali."
+
+msgid "Parafraseo para mejorar fluidez"
+msgstr "Parafrasi per migliorare la fluidità"
+
+msgid "Corrección gramatical y ortográfica"
+msgstr "Correzione grammaticale e ortografica"
+
+msgid "Adaptación de texto a formato académico estándar"
+msgstr "Adattamento del testo al formato accademico standard"
+
+msgid "Ideación y Estructura"
+msgstr "Ideazione e Struttura"
+
+msgid "Apoyo en la fase previa a la escritura (brainstorming, esquemas)."
+msgstr "Supporto nella fase di pre-scrittura (brainstorming, schemi)."
+
+msgid "Análisis de Datos"
+msgstr "Analisi dei Dati"
+
+msgid "Uso de capacidades computacionales para sintetizar o transformar información."
+msgstr "Uso di capacità computazionali per sintetizzare o trasformare informazioni."
+
+msgid "Generación de Código"
+msgstr "Generazione di Codice"
+
+msgid "Creación de scripts, algoritmos o modelos matemáticos."
+msgstr "Creazione di script, algoritmi o modelli matematici."
+
+msgid "Traducción Técnica"
+msgstr "Traduzione Tecnica"
+
+msgid "Traducción de textos académicos o técnicos entre idiomas."
+msgstr "Traduzione di testi accademici o tecnici tra lingue."
+
+msgid "Simulación de Revisión (Feedback)"
+msgstr "Simulazione di Revisione (Feedback)"
+
+msgid "La IA actúa como \"abogado del diablo\" o revisor par simulado."
+msgstr "L'IA agisce come \"avvocato del diavolo\" o revisore paritario simulato."
+
+msgid "Otro uso no listado"
+msgstr "Altro uso non elencato"
+
+msgid "Cualquier otro uso que no encaje en las categorías anteriores."
+msgstr "Qualsiasi altro uso che non rientri nelle categorie precedenti."
+
+# Additional translations
+msgid "Anterior"
+msgstr "Precedente"
+
+msgid "Siguiente"
+msgstr "Successivo"
+
+msgid "Generar Declaración"
+msgstr "Genera Dichiarazione"
+
+msgid "Descargar TXT"
+msgstr "Scarica TXT"
+
+msgid "Descargar JSON"
+msgstr "Scarica JSON"
+
+msgid "Copiar"
+msgstr "Copiare"
+
+msgid "Copiado"
+msgstr "Copiato"
+
+# Step 1 - Help Checklist Questions
+msgid "¿Generó texto nuevo (párrafos, capítulos) que usaste como base?"
+msgstr "Ha generato nuovo testo (paragrafi, capitoli) che hai usato come base?"
+
+msgid "¿Te ayudó a escribir código, scripts o fórmulas matemáticas?"
+msgstr "Ti ha aiutato a scrivere codice, script o formule matematiche?"
+
+msgid "¿Resumió artículos, extrajo datos o analizó documentos PDF?"
+msgstr "Ha riassunto articoli, estratto dati o analizzato documenti PDF?"
+
+msgid "¿Tradujo textos técnicos o abstracts a otro idioma?"
+msgstr "Ha tradotto testi tecnici o abstract in un'altra lingua?"
+
+msgid "¿Sugirió estructuras, preguntas de investigación o ideas?"
+msgstr "Ha suggerito strutture, domande di ricerca o idee?"
+
+msgid "¿Solo mejoró la redacción, el vocabulario o la ortografía?"
+msgstr "Ha solo migliorato la scrittura, il vocabolario o l'ortografia?"
+
+msgid "¿Evaluó tu trabajo buscando errores o debilidades?"
+msgstr "Ha valutato il tuo lavoro cercando errori o debolezze?"
+
+# Content Use Modes
+msgid "Incorporado tal cual (Verbatim)"
+msgstr "Incorporato così com'è (Testuale)"
+
+msgid "Editado parcialmente (ajustes menores)"
+msgstr "Modificato parzialmente (adattamenti minori)"
+
+msgid "Reescrito sustancialmente"
+msgstr "Riscritto sostanzialmente"
+
+msgid "Usado solo como inspiración/referencia"
+msgstr "Usato solo come ispirazione/riferimento"
+
+msgid "Sintetizado con otras fuentes"
+msgstr "Sintetizzato con altre fonti"
+
+msgid "Otro"
+msgstr "Altro"
+
+# Human Review Levels
+msgid "Nivel 0: Sin Revisión"
+msgstr "Livello 0: Nessuna Revisione"
+
+msgid "El contenido generado se utilizó directamente sin verificación humana (RIESGO ALTO)."
+msgstr "Il contenuto generato è stato utilizzato direttamente senza verifica umana (RISCHIO ALTO)."
+
+msgid "Nivel 1: Revisión Superficial"
+msgstr "Livello 1: Revisione Superficiale"
+
+msgid "Lectura rápida para verificar coherencia general, sin entrar en detalles de exactitud."
+msgstr "Lettura rapida per verificare la coerenza generale, senza entrare nei dettagli di precisione."
+
+msgid "Nivel 2: Revisión Gramatical"
+msgstr "Livello 2: Revisione Grammaticale"
+
+msgid "Corrección de errores tipográficos, sintaxis y tono, asumiendo la veracidad del contenido."
+msgstr "Correzione di errori tipografici, sintassi e tono, assumendo la veridicità del contenuto."
+
+msgid "Nivel 3: Verificación Selectiva"
+msgstr "Livello 3: Verifica Selettiva"
+
+msgid "Comprobación aleatoria (spot-checking) de datos clave o afirmaciones dudosas."
+msgstr "Controllo casuale (spot-checking) di dati chiave o affermazioni dubbie."
+
+msgid "Nivel 4: Contrastación Documental"
+msgstr "Livello 4: Verifica Documentale"
+
+msgid "Verificación de citas, referencias y datos contra fuentes primarias fiables."
+msgstr "Verifica di citazioni, riferimenti e dati contro fonti primarie affidabili."
+
+msgid "Nivel 5: Validación Experta"
+msgstr "Livello 5: Validazione Esperta"
+
+msgid "Revisión profunda por un experto en la materia para asegurar integridad lógica y metodológica."
+msgstr "Revisione approfondita da parte di un esperto della materia per garantire l'integrità logica e metodologica."
+
+msgid "Nivel 6: Revisión Crítica y Ética"
+msgstr "Livello 6: Revisione Critica ed Etica"
+
+msgid "Análisis exhaustivo de sesgos, originalidad, ética y precisión técnica (Estándar \"Gold\")."
+msgstr "Analisi esaustiva di bias, originalità, etica e precisione tecnica (Standard \"Oro\")."
+
+# Step 1 Heading and Instructions
+msgid "Diagnóstico de Uso Académico"
+msgstr "Diagnostico di Uso Accademico"
+
+msgid "Selecciona todas las acciones que realizaste con la IA durante tu investigación o redacción."
+msgstr "Seleziona tutte le azioni che hai eseguito con l'IA durante la tua ricerca o scrittura."
+
+# Step 2 Heading and Instructions
+msgid "Categorización del Uso"
+msgstr "Categorizzazione dell'Uso"
+
+msgid "Confirma o añade categorías. Si tu trabajo es académico, sé preciso con la naturaleza de la contribución de la IA."
+msgstr "Conferma o aggiungi categorie. Se il tuo lavoro è accademico, sii preciso sulla natura del contributo dell'IA."
+
+msgid "Ejemplos:"
+msgstr "Esempi:"
+
+msgid "Describa detalladamente el uso:"
+msgstr "Descrivi l'uso in dettaglio:"
+
+msgid "Ej: La IA generó variantes de diseño experimental..."
+msgstr "Es.: L'IA ha generato varianti di design sperimentale..."
+
+# Step 3 - Transparency Details
+msgid "Detalles de Transparencia"
+msgstr "Dettagli di Trasparenza"
+
+msgid "Especifica la metodología, la ética de verificación y la licencia final."
+msgstr "Specifica la metodologia, l'etica di verifica e la licenza finale."
+
+msgid "Herramienta"
+msgstr "Strumento"
+
+msgid "Nombre (ej. ChatGPT)"
+msgstr "Nome (es. ChatGPT)"
+
+msgid "Versión (ej. GPT-4o)"
+msgstr "Versione (es. GPT-4o)"
+
+msgid "Proveedor (ej. OpenAI, Google, Anthropic)"
+msgstr "Fornitore (es. OpenAI, Google, Anthropic)"
+
+msgid "Propósito Académico"
+msgstr "Scopo Accademico"
+
+msgid "Describe la tarea específica (mínimo 20 caracteres, recomendado 100)..."
+msgstr "Descrivi il compito specifico (minimo 20 caratteri, raccomandati 100)..."
+
+msgid "Prompts (Instrucciones)"
+msgstr "Prompt (Istruzioni)"
+
+msgid "Copia aquí la instrucción principal..."
+msgstr "Copia qui l'istruzione principale..."
+
+msgid "Añadir otro prompt"
+msgstr "Aggiungi altro prompt"
+
+msgid "Integración del Contenido"
+msgstr "Integrazione del Contenuto"
+
+msgid "Contexto adicional (mínimo 10 caracteres)..."
+msgstr "Contesto aggiuntivo (minimo 10 caratteri)..."
+
+msgid "Nivel de Revisión Humana"
+msgstr "Livello di Revisione Umana"
+
+msgid "Nombre del Revisor"
+msgstr "Nome del Revisore"
+
+msgid "Rol/Cargo"
+msgstr "Ruolo/Posizione"
+
+msgid "Licencia"
+msgstr "Licenza"
+
+msgid "Generar Declaración"
+msgstr "Genera Dichiarazione"
+
+# Step 4 - Output
+msgid "¡Declaración Lista!"
+msgstr "Dichiarazione Pronta!"
+
+msgid "Tu documento ha sido generado con trazabilidad completa y código de validación único."
+msgstr "Il tuo documento è stato generato con tracciabilità completa e codice di validazione unico."
+
+msgid "Certificado de Integridad"
+msgstr "Certificato di Integrità"
+
+msgid "Licencia del Producto"
+msgstr "Licenza del Prodotto"
+
+msgid "Texto Legible"
+msgstr "Testo Leggibile"
+
+msgid "JSON Estructurado"
+msgstr "JSON Strutturato"
+
+msgid "Crear nueva declaración"
+msgstr "Crea nuova dichiarazione"
+
+msgid "Recomendación Académica:"
+msgstr "Raccomandazione Accademica:"
+
+msgid "Adjunte el archivo .json como metadato digital y copie el texto de la declaración en el apartado de \"Metodología\" o \"Anexos\" de su trabajo. El Hash de validación permite a los revisores certificar que la información no ha sido manipulada."
+msgstr "Allega il file .json come metadati digitali e copia il testo della dichiarazione nella sezione \"Metodologia\" o \"Allegati\" del tuo lavoro. L'hash di convalida consente ai revisori di certificare che le informazioni non sono state manomesse."
+
+# Glossary Terms
+msgid "Prompt"
+msgstr "Prompt"
+
+msgid "La instrucción o texto de entrada que se le da a la IA para generar una respuesta."
+msgstr "L'istruzione o testo di input dato all'IA per generare una risposta."
+
+msgid "Alucinación"
+msgstr "Allucinazione"
+
+msgid "Fenómeno donde la IA genera información falsa o inventada con apariencia de ser real."
+msgstr "Fenomeno in cui l'IA genera informazioni false o inventate con l'apparenza di essere reali."
+
+msgid "Sesgo (Bias)"
+msgstr "Bias (Pregiudizio)"
+
+msgid "Prejuicios o inclinaciones injustas presentes en los datos de entrenamiento de la IA que se reflejan en sus respuestas."
+msgstr "Pregiudizi o inclinazioni ingiuste presenti nei dati di addestramento dell'IA che si riflettono nelle sue risposte."
+
+msgid "Verbatim"
+msgstr "Testuale"
+
+msgid "Copia textual, palabra por palabra, del contenido generado."
+msgstr "Copia testuale, parola per parola, del contenuto generato."
+
+msgid "LLM (Large Language Model)"
+msgstr "LLM (Modello di Linguaggio Grande)"
+
+msgid "Modelo de lenguaje grande (como GPT, Claude, Gemini) entrenado con vastas cantidades de texto."
+msgstr "Modello di linguaggio grande (come GPT, Claude, Gemini) addestrato con vaste quantità di testo."
+
+# Search Page
+msgid "Buscar Declaración"
+msgstr "Cerca Dichiarazione"
+
+msgid "Verificar Declaración"
+msgstr "Verifica Dichiarazione"
+
+msgid "Busca una declaración por su Hash de Validación o ID para verificar su autenticidad"
+msgstr "Cerca una dichiarazione tramite il suo Hash di Validazione o ID per verificarne l'autenticità"
+
+msgid "Hash de Validación o ID de Declaración"
+msgstr "Hash di Validazione o ID Dichiarazione"
+
+msgid "Ej: 1A2B3C4D5E6F7G8H o ABC12345"
+msgstr "Es.: 1A2B3C4D5E6F7G8H o ABC12345"
+
+msgid "El hash es un código de 16 caracteres que aparece en la declaración descargada."
+msgstr "L'hash è un codice di 16 caratteri che appare nella dichiarazione scaricata."
+
+# Search Page Help Section
+msgid "¿Dónde encuentro el Hash o ID?"
+msgstr "Dove trovo l'Hash o l'ID?"
+
+msgid "El <strong>Hash de Validación</strong> y el <strong>ID de Declaración</strong> aparecen en:"
+msgstr "L'<strong>Hash di Validazione</strong> e l'<strong>ID Dichiarazione</strong> appaiono in:"
+
+msgid "La parte superior de la declaración descargada (archivo .txt o .json)"
+msgstr "La parte superiore della dichiarazione scaricata (file .txt o .json)"
+
+msgid "El paso 4 del wizard después de generar la declaración"
+msgstr "Il passo 4 della procedura guidata dopo aver generato la dichiarazione"
+
+msgid "La sección de metadatos de la declaración"
+msgstr "La sezione metadati della dichiarazione"
+
+msgid "Ejemplo de Hash:"
+msgstr "Esempio di Hash:"
+
+msgid "Ejemplo de ID:"
+msgstr "Esempio di ID:"
+
+# Search Results
+msgid "Declaración Verificada"
+msgstr "Dichiarazione Verificata"
+
+msgid "Esta declaración fue encontrada en nuestra base de datos y es auténtica."
+msgstr "Questa dichiarazione è stata trovata nel nostro database ed è autentica."
+
+msgid "Información de la Declaración"
+msgstr "Informazioni della Dichiarazione"
+
+msgid "ID de Declaración"
+msgstr "ID Dichiarazione"
+
+msgid "Hash de Validación"
+msgstr "Hash di Validazione"
+
+msgid "Herramienta IA"
+msgstr "Strumento IA"
+
+msgid "Fecha de Creación"
+msgstr "Data di Creazione"
+
+msgid "Ver Declaración Completa"
+msgstr "Vedi Dichiarazione Completa"
+
+msgid "Declaración No Encontrada"
+msgstr "Dichiarazione Non Trovata"
+
+msgid "No se encontró ninguna declaración con el hash o ID:"
+msgstr "Nessuna dichiarazione è stata trovata con l'hash o l'ID:"
+
+msgid "Verifica que hayas copiado correctamente el hash o ID de la declaración."
+msgstr "Verifica di aver copiato correttamente l'hash o l'ID della dichiarazione."
+
+# Preview Panel
+msgid "preview_title"
+msgstr "Anteprima"
+
+msgid "preview_description"
+msgstr "Si aggiorna automaticamente mentre completi il modulo"
+
+msgid "preview_placeholder_step1"
+msgstr "Seleziona opzioni per vedere l'anteprima"
+
+msgid "preview_placeholder_step2"
+msgstr "Seleziona opzioni per vedere l'anteprima"
+
+msgid "preview_placeholder_step3"
+msgstr "Completa i campi per vedere l'anteprima"
+
+msgid "preview_updating"
+msgstr "Aggiornamento anteprima..."
+
+msgid "preview_error"
+msgstr "Errore nella generazione dell'anteprima"
+
+msgid "preview_unavailable"
+msgstr "Anteprima non disponibile"
+
+# Signers Module
+msgid "Inicio"
+msgstr "Inizio"
+
+msgid "Inicio - usoeticoia.org"
+msgstr "Inizio - usoeticoia.org"
+
+msgid "¿Quién puede firmar?"
+msgstr "Chi può firmare?"
+
+msgid "Invitamos a firmar a toda persona autora generadora de conocimiento científico, académico, divulgativo y educativo."
+msgstr "Invitiamo tutti gli autori e generatori di conoscenza scientifica, accademica, educativa e divulgativa a firmare."
+
+msgid "Firmantes"
+msgstr "Firmatari"
+
+msgid "Firmar"
+msgstr "Firmare"
+
+msgid "Firmar Compromiso"
+msgstr "Firmare Impegno"
+
+msgid "Firmar Compromiso Ético de IA"
+msgstr "Firmare Impegno Etico di IA"
+
+msgid "Firmantes del Compromiso Ético de IA"
+msgstr "Firmatari dell'Impegno Etico di IA"
+
+msgid "Firmantes del Compromiso Ético"
+msgstr "Firmatari dell'Impegno Etico"
+
+msgid "Comunidad Comprometida"
+msgstr "Comunità Impegnata"
+
+msgid "Profesionales, investigadores y académicos comprometidos con el uso transparente y responsable de la inteligencia artificial."
+msgstr "Professionisti, ricercatori e accademici impegnati nell'uso trasparente e responsabile dell'intelligenza artificiale."
+
+msgid "firmantes registrados"
+msgstr "firmatari registrati"
+
+msgid "firmantes"
+msgstr "firmatari"
+
+msgid "¿Quieres unirte a la comunidad?"
+msgstr "Vuoi unirti alla comunità?"
+
+msgid "Firma el compromiso y demuestra tu apoyo a prácticas éticas en el uso de inteligencia artificial."
+msgstr "Firma l'impegno e dimostra il tuo sostegno alle pratiche etiche nell'uso dell'intelligenza artificiale."
+
+msgid "Lista de Firmantes"
+msgstr "Elenco dei Firmatari"
+
+msgid "Ordenados por fecha de firma más reciente"
+msgstr "Ordinati per data di firma più recente"
+
+msgid "Verificado"
+msgstr "Verificato"
+
+msgid "Disciplina"
+msgstr "Disciplina"
+
+msgid "País"
+msgstr "Paese"
+
+msgid "Ver declaración"
+msgstr "Visualizza dichiarazione"
+
+msgid "Verificar"
+msgstr "Verificare"
+
+msgid "Aún no hay firmantes registrados"
+msgstr "Non ci sono ancora firmatari registrati"
+
+msgid "¡Sé el primero en firmar!"
+msgstr "Sii il primo a firmare!"
+
+msgid "Añadir mi firma"
+msgstr "Aggiungi la mia firma"
+
+msgid "Verificar Firmante"
+msgstr "Verifica Firmatario"
+
+msgid "Firma Verificada"
+msgstr "Firma Verificata"
+
+msgid "Esta persona ha firmado el compromiso ético de IA"
+msgstr "Questa persona ha firmato l'impegno etico di IA"
+
+msgid "Declaración personal"
+msgstr "Dichiarazione personale"
+
+msgid "Perfil"
+msgstr "Profilo"
+
+msgid "Ver perfil"
+msgstr "Visualizza profilo"
+
+msgid "Fecha de firma"
+msgstr "Data di firma"
+
+msgid "Verificación Criptográfica"
+msgstr "Verifica Crittografica"
+
+msgid "Esta firma ha sido validada mediante hash SHA-256 y está vinculada al perfil ORCID del firmante."
+msgstr "Questa firma è stata convalidata tramite hash SHA-256 ed è collegata al profilo ORCID del firmatario."
+
+msgid "Ver todos los firmantes"
+msgstr "Visualizza tutti i firmatari"
+
+msgid "Firmar compromiso"
+msgstr "Firmare impegno"
+
+msgid "Este badge puede ser compartido y verificado públicamente."
+msgstr "Questo badge può essere condiviso e verificato pubblicamente."
+
+msgid "URL de verificación:"
+msgstr "URL di verifica:"
+
+msgid "Cambiar idioma"
+msgstr "Cambia lingua"
+
+# Signer Registration Form - Step titles and navigation
+msgid "Tu identidad"
+msgstr "La tua identità"
+
+msgid "Datos verificables para tu firma digital."
+msgstr "Dati verificabili per la tua firma digitale."
+
+msgid "Contexto profesional"
+msgstr "Contesto professionale"
+
+msgid "¿Desde qué rol firmas este compromiso?"
+msgstr "Da quale ruolo firmi questo impegno?"
+
+msgid "Declaración"
+msgstr "Dichiarazione"
+
+msgid "Una frase breve sobre tu motivación (Opcional)."
+msgstr "Una breve frase sulla tua motivazione (Opzionale)."
+
+msgid "Revisar y Firmar"
+msgstr "Rivedere e Firmare"
+
+msgid "Confirma que los datos son correctos."
+msgstr "Conferma che i dati siano corretti."
+
+# Navigation buttons
+msgid "Anterior"
+msgstr "Precedente"
+
+msgid "Continuar"
+msgstr "Continua"
+
+msgid "Firmar Ahora"
+msgstr "Firma Ora"
+
+# Form field labels
+msgid "Institución / Organización"
+msgstr "Istituzione / Organizzazione"
+
+msgid "Disciplina / Rol"
+msgstr "Disciplina / Ruolo"
+
+msgid "Nombre completo"
+msgstr "Nome completo"
+
+msgid "Correo electrónico"
+msgstr "Email"
+
+msgid "País"
+msgstr "Paese"
+
+msgid "Enlace a perfil (Opcional)"
+msgstr "Link al profilo (Opzionale)"
+
+msgid "Mensaje personal"
+msgstr "Messaggio personale"
+
+msgid "Redactar con IA"
+msgstr "Redigere con IA"
+
+msgid "Selecciona..."
+msgstr "Seleziona..."
+
+# Disciplines
+msgid "Académico"
+msgstr "Accademico"
+
+msgid "Investigador"
+msgstr "Ricercatore"
+
+msgid "Técnico"
+msgstr "Tecnico"
+
+msgid "Gestor"
+msgstr "Gestore"
+
+msgid "Estudiante"
+msgstr "Studente"
+
+msgid "Otro"
+msgstr "Altro"
+
+# Placeholders and helper text
+msgid "Ej. Dra. María García"
+msgstr "Es. Dott.ssa Maria Garcia"
+
+msgid "nombre@institucion.edu"
+msgstr "nome@istituzione.edu"
+
+msgid "Privado. Solo para validación."
+msgstr "Privato. Solo per la convalida."
+
+msgid "Obtener ORCID →"
+msgstr "Ottieni ORCID →"
+
+msgid "Escribe el nombre de tu institución. ROR sugerirá opciones verificadas (opcional)."
+msgstr "Digita il nome della tua istituzione. ROR suggerirà opzioni verificate (opzionale)."
+
+msgid "Ej. Universidad Nacional, Google, NASA..."
+msgstr "Es. Università Nazionale, Google, NASA..."
+
+msgid "Escribe aquí tu compromiso..."
+msgstr "Scrivi qui il tuo impegno..."
+
+msgid "Nombre"
+msgstr "Nome"
+
+msgid "Afiliación"
+msgstr "Affiliazione"
+
+msgid "Acepto publicar esta firma bajo licencia abierta CC0. Entiendo que se generará un hash inmutable."
+msgstr "Accetto di pubblicare questa firma sotto licenza aperta CC0. Capisco che verrà generato un hash immutabile."
+
+# Registration page header
+msgid "Iniciativa Abierta"
+msgstr "Iniziativa Aperta"
+
+msgid "Uso Ético de la IA"
+msgstr "Uso Etico dell'IA"
+
+msgid "Únete a la comunidad de profesionales comprometidos con la transparencia y responsabilidad en inteligencia artificial."
+msgstr "Unisciti alla comunità di professionisti impegnati nella trasparenza e responsabilità nell'intelligenza artificiale."

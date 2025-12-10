@@ -1,0 +1,156 @@
+{% extends 'core/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Buscar Declaración" %} - Declarador.io{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto">
+    <!-- Page Header -->
+    <div class="text-center mb-8">
+        <h1 class="text-4xl font-bold text-slate-900 mb-3">{% trans "Verificar Declaración" %}</h1>
+        <p class="text-lg text-slate-600">
+            {% trans "Busca una declaración por su Hash de Validación o ID para verificar su autenticidad" %}
+        </p>
+    </div>
+
+    <!-- Search Form -->
+    <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+        <form method="POST" class="space-y-6">
+            {% csrf_token %}
+            
+            <div>
+                <label for="query" class="block text-sm font-semibold text-slate-700 mb-2">
+                    {% trans "Hash de Validación o ID de Declaración" %}
+                </label>
+                <input
+                    type="text"
+                    id="query"
+                    name="query"
+                    value="{{ query }}"
+                    placeholder="{% trans 'Ej: 1A2B3C4D5E6F7G8H o ABC12345' %}"
+                    class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 font-mono text-center text-lg uppercase"
+                    maxlength="20"
+                    minlength="8"
+                    pattern="[A-Z0-9]{8,20}"
+                    title="{% trans 'Solo letras mayúsculas y números, entre 8 y 20 caracteres' %}"
+                    required
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+                <p class="mt-2 text-sm text-slate-500">
+                    {% trans "Hash: 16 caracteres (Ej: 1A2B3C4D5E6F7G8H) | ID: 8 caracteres (Ej: ABC12345)" %}
+                </p>
+            </div>
+
+            <button
+                type="submit"
+                class="w-full bg-primary-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-primary-700 transition-colors shadow-md"
+            >
+                {% trans "Buscar Declaración" %}
+            </button>
+        </form>
+    </div>
+
+    <!-- Search Results -->
+    {% if query %}
+        {% if result %}
+            <!-- Declaration Found -->
+            <div class="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+                <div class="flex items-start gap-3">
+                    <svg class="w-6 h-6 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <div>
+                        <h3 class="text-lg font-semibold text-green-900 mb-1">{% trans "Declaración Verificada" %}</h3>
+                        <p class="text-green-700">
+                            {% trans "Esta declaración fue encontrada en nuestra base de datos y es auténtica." %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Declaration Info -->
+            <div class="bg-white rounded-lg shadow-md p-8 mb-6">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">{% trans "Información de la Declaración" %}</h2>
+
+                <dl class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-slate-50 p-4 rounded-lg">
+                        <dt class="text-sm font-semibold text-slate-600 mb-1">{% trans "ID de Declaración" %}</dt>
+                        <dd class="text-lg font-mono text-slate-900">{{ result.declaration_id }}</dd>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded-lg">
+                        <dt class="text-sm font-semibold text-slate-600 mb-1">{% trans "Hash de Validación" %}</dt>
+                        <dd class="text-lg font-mono text-slate-900">{{ result.validation_hash }}</dd>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded-lg">
+                        <dt class="text-sm font-semibold text-slate-600 mb-1">{% trans "Herramienta IA" %}</dt>
+                        <dd class="text-lg text-slate-900">{{ result.ai_tool_name }}</dd>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded-lg">
+                        <dt class="text-sm font-semibold text-slate-600 mb-1">{% trans "Fecha de Creación" %}</dt>
+                        <dd class="text-lg text-slate-900">{{ result.created_at|date:"d/m/Y H:i" }}</dd>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded-lg md:col-span-2">
+                        <dt class="text-sm font-semibold text-slate-600 mb-1">{% trans "Licencia" %}</dt>
+                        <dd class="text-lg text-slate-900">{{ result.license }}</dd>
+                    </div>
+                </dl>
+
+                <div class="mt-6 pt-6 border-t border-slate-200">
+                    <a
+                        href="{% url 'view_declaration' result.declaration_id %}"
+                        class="inline-flex items-center gap-2 bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
+                    >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                        </svg>
+                        {% trans "Ver Declaración Completa" %}
+                    </a>
+                </div>
+            </div>
+
+        {% elif not_found %}
+            <!-- Declaration Not Found -->
+            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                <div class="flex items-start gap-3">
+                    <svg class="w-6 h-6 text-red-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <div>
+                        <h3 class="text-lg font-semibold text-red-900 mb-1">{% trans "Declaración No Encontrada" %}</h3>
+                        <p class="text-red-700 mb-3">
+                            {% trans "No se encontró ninguna declaración con el hash o ID:" %} <code class="bg-red-100 px-2 py-1 rounded font-mono">{{ query }}</code>
+                        </p>
+                        <p class="text-sm text-red-600">
+                            {% trans "Verifica que hayas copiado correctamente el hash o ID de la declaración." %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endif %}
+
+    <!-- Help Section -->
+    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mt-8">
+        <h3 class="text-lg font-semibold text-blue-900 mb-3">{% trans "¿Dónde encuentro el Hash o ID?" %}</h3>
+        <div class="text-blue-800 space-y-2">
+            <p>{% trans "El <strong>Hash de Validación</strong> y el <strong>ID de Declaración</strong> aparecen en:" %}</p>
+            <ul class="list-disc list-inside space-y-1 ml-4">
+                <li>{% trans "La parte superior de la declaración descargada (archivo .txt o .json)" %}</li>
+                <li>{% trans "El paso 4 del wizard después de generar la declaración" %}</li>
+                <li>{% trans "La sección de metadatos de la declaración" %}</li>
+            </ul>
+            <p class="mt-4">
+                <strong>{% trans "Ejemplo de Hash:" %}</strong> <code class="bg-blue-100 px-2 py-1 rounded font-mono">1A2B3C4D5E6F7G8H</code><br>
+                <strong>{% trans "Ejemplo de ID:" %}</strong> <code class="bg-blue-100 px-2 py-1 rounded font-mono">ABC12345</code>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

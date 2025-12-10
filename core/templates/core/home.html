@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi App Django con Tailwind</title>
+    <link rel="stylesheet" href="{% static 'css/output.css' %}">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-6">
+            <h1 class="text-4xl font-bold text-blue-600 mb-4">¡Bienvenido!</h1>
+            <p class="text-gray-700 text-lg mb-4">
+                Esta es tu aplicación Django 5.2.8 con Tailwind CSS funcionando correctamente.
+            </p>
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4">
+                <p class="text-blue-700">
+                    Si ves este contenido con estilos, significa que Tailwind CSS está configurado correctamente.
+                </p>
+            </div>
+            <button class="mt-6 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Botón de ejemplo
+            </button>
+        </div>
+    </div>
+</body>
+</html>

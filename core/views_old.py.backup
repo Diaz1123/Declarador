@@ -1,0 +1,718 @@
+from django.shortcuts import render, redirect, get_object_or_404
+from django.http import HttpResponse, JsonResponse
+from django.views.decorators.http import require_http_methods
+from django.views.decorators.csrf import ensure_csrf_cookie
+from django.utils.translation import get_language
+from datetime import datetime
+import json
+
+from .models import Declaration, Signer
+from .constants import (
+    USAGE_TYPES, CONTENT_USE_MODES, HUMAN_REVIEW_LEVELS,
+    HELP_CHECKLIST, CC_LICENSES, PRESETS, GLOSSARY_TERMS,
+    STEPS_LABELS, MONTHS_ES, AI_TOOLS_CATALOG, FIELD_LIMITS
+)
+from .utils import (
+    generate_declaration_text,
+    generate_declaration_json,
+    compute_hash
+)
+from .translations import (
+    get_translated_usage_types,
+    get_translated_steps_labels,
+    get_translated_checklist,
+    get_translated_content_modes,
+    get_translated_review_levels,
+    get_translated_glossary
+)
+
+
+def get_session_data(request):
+    """Get or initialize session data for the wizard"""
+    if 'declaration_data' not in request.session or request.session['declaration_data'] is None:
+        request.session['declaration_data'] = {
+            'current_step': 0,
+            'selected_checklist_ids': [],
+            'usage_types': [],
+            'custom_usage_type': '',
+            'ai_tool': {
+                'name': '',
+                'version': '',
+                'provider': '',
+                'date_month': datetime.now().month,
+                'date_year': datetime.now().year
+            },
+            'specific_purpose': '',
+            'prompts': [{'id': '1', 'description': ''}],
+            'content_use_modes': [],
+            'custom_content_use_mode': '',
+            'content_use_context': '',
+            'human_review': {
+                'level': 0,
+                'reviewer_role': '',
+                'reviewer_name': ''
+            },
+            'license': 'None'
+        }
+    return request.session['declaration_data']
+
+
+def save_session_data(request, data):
+    """Save data to session"""
+    request.session['declaration_data'] = data
+    request.session.modified = True
+
+
+def home(request):
+    """Landing page - redirects to step 1"""
+    # Reset session data on new visit
+    if 'reset' in request.GET:
+        if 'declaration_data' in request.session:
+            del request.session['declaration_data']
+        if 'generated_declaration' in request.session:
+            del request.session['generated_declaration']
+        if 'declaration_saved' in request.session:
+            del request.session['declaration_saved']
+    return redirect('step1')
+
+
+def step1_identification(request):
+    """Step 1: Diagnostic checklist"""
+    data = get_session_data(request)
+    current_lang = get_language()
+
+    if request.method == 'POST':
+        # Get selected checklist items
+        selected_ids = request.POST.getlist('checklist')
+        data['selected_checklist_ids'] = selected_ids
+
+        # Determine dominant usage type
+        if selected_ids:
+            # Get items sorted by priority
+            selected_items = [item for item in HELP_CHECKLIST if item['id'] in selected_ids]
+            selected_items.sort(key=lambda x: x['priority'], reverse=True)
+            if selected_items:
+                data['usage_types'] = [selected_items[0]['suggests']]
+
+        data['current_step'] = 1
+        save_session_data(request, data)
+        return redirect('step2')
+
+    context = {
+        'step': 0,
+        'steps_labels': get_translated_steps_labels(current_lang),
+        'checklist': get_translated_checklist(current_lang),
+        'selected_ids': data.get('selected_checklist_ids', []),
+        'glossary': get_translated_glossary(current_lang),
+        'presets': PRESETS,
+    }
+    return render(request, 'core/step1_identification.html', context)
+
+
+def step2_usage_type(request):
+    """Step 2: Usage type classification"""
+    data = get_session_data(request)
+    current_lang = get_language()
+
+    if request.method == 'POST':
+        # Check if user wants to go back
+        if 'back' in request.POST:
+            return redirect('step1')
+
+        # Get selected usage types
+        usage_types = request.POST.getlist('usage_types')
+        data['usage_types'] = usage_types
+        data['custom_usage_type'] = request.POST.get('custom_usage_type', '')
+
+        data['current_step'] = 2
+        save_session_data(request, data)
+        return redirect('step3')
+
+    context = {
+        'step': 1,
+        'steps_labels': get_translated_steps_labels(current_lang),
+        'usage_types_list': get_translated_usage_types(current_lang),
+        'selected_types': data.get('usage_types', []),
+        'custom_usage_type': data.get('custom_usage_type', ''),
+        'glossary': get_translated_glossary(current_lang),
+        'presets': PRESETS,
+    }
+    return render(request, 'core/step2_usage_type.html', context)
+
+
+def step3_details(request):
+    """Step 3: Detailed information"""
+    data = get_session_data(request)
+    current_lang = get_language()
+
+    if request.method == 'POST':
+        # Check if user wants to go back
+        if 'back' in request.POST:
+            return redirect('step2')
+
+        # AI Tool info
+        data['ai_tool'] = {
+            'name': request.POST.get('ai_tool_name', ''),
+            'version': request.POST.get('ai_tool_version', ''),
+            'provider': request.POST.get('ai_tool_provider', ''),
+            'date_month': int(request.POST.get('ai_tool_date_month', datetime.now().month)),
+            'date_year': int(request.POST.get('ai_tool_date_year', datetime.now().year))
+        }
+
+        # Purpose
+        data['specific_purpose'] = request.POST.get('specific_purpose', '')
+
+        # Prompts - parse from form
+        prompts = []
+        prompt_counter = 0
+        while f'prompt_{prompt_counter}' in request.POST:
+            desc = request.POST.get(f'prompt_{prompt_counter}', '').strip()
+            if desc:
+                prompts.append({'id': str(prompt_counter), 'description': desc})
+            prompt_counter += 1
+        if not prompts:
+            prompts = [{'id': '0', 'description': ''}]
+        data['prompts'] = prompts
+
+        # Content integration
+        data['content_use_modes'] = request.POST.getlist('content_use_modes')
+        data['custom_content_use_mode'] = request.POST.get('custom_content_use_mode', '')
+        data['content_use_context'] = request.POST.get('content_use_context', '')
+
+        # Human review
+        data['human_review'] = {
+            'level': int(request.POST.get('human_review_level', 0)),
+            'reviewer_name': request.POST.get('reviewer_name', ''),
+            'reviewer_role': request.POST.get('reviewer_role', '')
+        }
+
+        # License
+        data['license'] = request.POST.get('license', 'None')
+
+        data['current_step'] = 3
+        save_session_data(request, data)
+        return redirect('step4')
+
+    context = {
+        'step': 2,
+        'steps_labels': get_translated_steps_labels(current_lang),
+        'data': data,
+        'content_use_modes': get_translated_content_modes(current_lang),
+        'review_levels': get_translated_review_levels(current_lang),
+        'licenses': CC_LICENSES,
+        'months': MONTHS_ES,
+        'years': range(2023, 2027),
+        'glossary': get_translated_glossary(current_lang),
+        'presets': PRESETS,
+        'ai_tools_catalog': AI_TOOLS_CATALOG,
+        'field_limits': FIELD_LIMITS,
+    }
+    return render(request, 'core/step3_details.html', context)
+
+
+@ensure_csrf_cookie
+def step4_output(request):
+    """Step 4: Display and download declaration"""
+    data = get_session_data(request)
+    current_lang = get_language()
+
+    # Create Declaration object (but don't save yet)
+    declaration = Declaration(
+        selected_checklist_ids=data.get('selected_checklist_ids', []),
+        usage_types=data.get('usage_types', []),
+        custom_usage_type=data.get('custom_usage_type', ''),
+        ai_tool_name=data['ai_tool']['name'],
+        ai_tool_version=data['ai_tool']['version'],
+        ai_tool_provider=data['ai_tool']['provider'],
+        ai_tool_date_month=data['ai_tool']['date_month'],
+        ai_tool_date_year=data['ai_tool']['date_year'],
+        specific_purpose=data.get('specific_purpose', ''),
+        prompts=data.get('prompts', []),
+        content_use_modes=data.get('content_use_modes', []),
+        custom_content_use_mode=data.get('custom_content_use_mode', ''),
+        content_use_context=data.get('content_use_context', ''),
+        human_review_level=data['human_review']['level'],
+        reviewer_name=data['human_review']['reviewer_name'],
+        reviewer_role=data['human_review']['reviewer_role'],
+        license=data.get('license', 'None')
+    )
+
+    # Generate ID for display
+    import random
+    import string
+    declaration.declaration_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+
+    # Generate text and hash
+    text_output = generate_declaration_text(declaration, None, current_lang)
+    hash_value = compute_hash(text_output)
+    declaration.validation_hash = hash_value
+
+    # Generate final outputs
+    text_output = generate_declaration_text(declaration, hash_value, current_lang)
+    json_output = generate_declaration_json(declaration, hash_value, current_lang)
+
+    # Guardar en sesión para guardado posterior opcional
+    request.session['generated_declaration'] = {
+        'declaration_id': declaration.declaration_id,
+        'validation_hash': hash_value,
+        'text_output': text_output,
+        'json_output': json_output,
+    }
+    request.session.modified = True
+
+    # Verificar si ya se guardó anteriormente
+    is_saved = request.session.get('declaration_saved', False)
+
+    context = {
+        'step': 3,
+        'steps_labels': get_translated_steps_labels(current_lang),
+        'declaration': declaration,
+        'text_output': text_output,
+        'json_output': json_output,
+        'hash': hash_value,
+        'glossary': get_translated_glossary(current_lang),
+        'presets': PRESETS,
+        'is_saved': is_saved,  # Indicar si está guardada o no
+    }
+    return render(request, 'core/step4_output.html', context)
+
+
+@require_http_methods(["GET"])
+def download_text(request):
+    """Download declaration as text file"""
+    data = get_session_data(request)
+    current_lang = get_language()
+
+    # Create Declaration object
+    declaration = Declaration(
+        selected_checklist_ids=data.get('selected_checklist_ids', []),
+        usage_types=data.get('usage_types', []),
+        custom_usage_type=data.get('custom_usage_type', ''),
+        ai_tool_name=data['ai_tool']['name'],
+        ai_tool_version=data['ai_tool']['version'],
+        ai_tool_provider=data['ai_tool']['provider'],
+        ai_tool_date_month=data['ai_tool']['date_month'],
+        ai_tool_date_year=data['ai_tool']['date_year'],
+        specific_purpose=data.get('specific_purpose', ''),
+        prompts=data.get('prompts', []),
+        content_use_modes=data.get('content_use_modes', []),
+        custom_content_use_mode=data.get('custom_content_use_mode', ''),
+        content_use_context=data.get('content_use_context', ''),
+        human_review_level=data['human_review']['level'],
+        reviewer_name=data['human_review']['reviewer_name'],
+        reviewer_role=data['human_review']['reviewer_role'],
+        license=data.get('license', 'None')
+    )
+
+    import random
+    import string
+    declaration.declaration_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+
+    text_output = generate_declaration_text(declaration, None, current_lang)
+    hash_value = compute_hash(text_output)
+    text_output = generate_declaration_text(declaration, hash_value, current_lang)
+
+    response = HttpResponse(text_output, content_type='text/plain; charset=utf-8')
+    response['Content-Disposition'] = 'attachment; filename="declaracion-ia-v4.txt"'
+    return response
+
+
+@require_http_methods(["GET"])
+def download_json(request):
+    """Download declaration as JSON file"""
+    data = get_session_data(request)
+    current_lang = get_language()
+
+    # Create Declaration object
+    declaration = Declaration(
+        selected_checklist_ids=data.get('selected_checklist_ids', []),
+        usage_types=data.get('usage_types', []),
+        custom_usage_type=data.get('custom_usage_type', ''),
+        ai_tool_name=data['ai_tool']['name'],
+        ai_tool_version=data['ai_tool']['version'],
+        ai_tool_provider=data['ai_tool']['provider'],
+        ai_tool_date_month=data['ai_tool']['date_month'],
+        ai_tool_date_year=data['ai_tool']['date_year'],
+        specific_purpose=data.get('specific_purpose', ''),
+        prompts=data.get('prompts', []),
+        content_use_modes=data.get('content_use_modes', []),
+        custom_content_use_mode=data.get('custom_content_use_mode', ''),
+        content_use_context=data.get('content_use_context', ''),
+        human_review_level=data['human_review']['level'],
+        reviewer_name=data['human_review']['reviewer_name'],
+        reviewer_role=data['human_review']['reviewer_role'],
+        license=data.get('license', 'None')
+    )
+
+    import random
+    import string
+    declaration.declaration_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+    declaration.created_at = datetime.now()
+
+    text_output = generate_declaration_text(declaration, None, current_lang)
+    hash_value = compute_hash(text_output)
+    json_output = generate_declaration_json(declaration, hash_value, current_lang)
+
+    response = HttpResponse(json_output, content_type='application/json; charset=utf-8')
+    response['Content-Disposition'] = 'attachment; filename="declaracion-ia-v4.json"'
+    return response
+
+
+@require_http_methods(["POST"])
+def load_preset(request):
+    """Load a preset template"""
+    preset_id = request.POST.get('preset_id')
+
+    for preset in PRESETS:
+        if preset['id'] == preset_id:
+            data = get_session_data(request)
+            preset_data = preset['data']
+
+            # Update session data with preset
+            data['usage_types'] = preset_data.get('usage_types', [])
+            data['specific_purpose'] = preset_data.get('specific_purpose', '')
+            data['content_use_modes'] = preset_data.get('content_use_modes', [])
+            data['human_review']['level'] = preset_data.get('human_review_level', 0)
+            data['human_review']['reviewer_role'] = preset_data.get('reviewer_role', '')
+
+            save_session_data(request, data)
+
+            # Jump to step 3 (details)
+            return redirect('step3')
+
+    return redirect('step1')
+
+
+@require_http_methods(["GET", "POST"])
+def search_declaration(request):
+    """Página de búsqueda de declaraciones por hash o ID"""
+    current_lang = get_language()
+    
+    context = {
+        'glossary': get_translated_glossary(current_lang),
+        'result': None,
+        'not_found': False,
+        'query': ''
+    }
+    
+    if request.method == 'POST':
+        query = request.POST.get('query', '').strip()
+        context['query'] = query
+        
+        if query:
+            # Buscar por hash o ID
+            try:
+                # Intentar buscar por hash
+                declaration = Declaration.objects.filter(validation_hash__iexact=query).first()
+                
+                # Si no se encuentra, intentar por ID
+                if not declaration:
+                    declaration = Declaration.objects.filter(declaration_id__iexact=query).first()
+                
+                if declaration:
+                    context['result'] = declaration
+                    context['text_output'] = generate_declaration_text(declaration, declaration.validation_hash, current_lang)
+                    context['json_output'] = generate_declaration_json(declaration, declaration.validation_hash, current_lang)
+                else:
+                    context['not_found'] = True
+            except Exception as e:
+                context['not_found'] = True
+    
+    return render(request, 'core/search.html', context)
+
+
+@require_http_methods(["GET"])
+def view_declaration(request, declaration_id):
+    """Ver una declaración específica por su ID"""
+    current_lang = get_language()
+    
+    try:
+        declaration = Declaration.objects.get(declaration_id=declaration_id)
+
+        text_output = generate_declaration_text(declaration, declaration.validation_hash, current_lang)
+        json_output = generate_declaration_json(declaration, declaration.validation_hash, current_lang)
+
+        context = {
+            'declaration': declaration,
+            'text_output': text_output,
+            'json_output': json_output,
+            'hash': declaration.validation_hash,
+            'glossary': get_translated_glossary(current_lang),
+        }
+        return render(request, 'core/view_declaration.html', context)
+    except Declaration.DoesNotExist:
+        return render(request, 'core/not_found.html', {'query': declaration_id})
+
+
+def privacy_policy(request):
+    """Política de privacidad"""
+    current_lang = get_language()
+    
+    context = {
+        'glossary': get_translated_glossary(current_lang),
+    }
+    return render(request, 'core/privacy.html', context)
+
+
+@require_http_methods(["POST"])
+def save_declaration(request):
+    """Guardar la declaración generada en la base de datos (opcional)"""
+    try:
+        data = get_session_data(request)
+        current_lang = get_language()
+
+        # Verificar si ya hay una declaración generada
+        if 'generated_declaration' not in request.session:
+            return JsonResponse({
+                'success': False,
+                'error': 'No hay una declaración generada para guardar'
+            }, status=400)
+
+        # Crear y guardar la declaración
+        declaration = Declaration(
+            selected_checklist_ids=data.get('selected_checklist_ids', []),
+            usage_types=data.get('usage_types', []),
+            custom_usage_type=data.get('custom_usage_type', ''),
+            ai_tool_name=data['ai_tool']['name'],
+            ai_tool_version=data['ai_tool']['version'],
+            ai_tool_provider=data['ai_tool']['provider'],
+            ai_tool_date_month=data['ai_tool']['date_month'],
+            ai_tool_date_year=data['ai_tool']['date_year'],
+            specific_purpose=data.get('specific_purpose', ''),
+            prompts=data.get('prompts', []),
+            content_use_modes=data.get('content_use_modes', []),
+            custom_content_use_mode=data.get('custom_content_use_mode', ''),
+            content_use_context=data.get('content_use_context', ''),
+            human_review_level=data['human_review']['level'],
+            reviewer_name=data['human_review']['reviewer_name'],
+            reviewer_role=data['human_review']['reviewer_role'],
+            license=data.get('license', 'None')
+        )
+
+        # Usar los datos generados previamente
+        generated = request.session['generated_declaration']
+        declaration.declaration_id = generated['declaration_id']
+        declaration.validation_hash = generated['validation_hash']
+
+        # Guardar en la base de datos
+        declaration.save()
+
+        # Marcar como guardado en sesión
+        request.session['declaration_saved'] = True
+        request.session.modified = True
+
+        return JsonResponse({
+            'success': True,
+            'message': 'Declaración guardada exitosamente',
+            'declaration_id': declaration.declaration_id
+        })
+
+    except Exception as e:
+        import traceback
+        return JsonResponse({
+            'success': False,
+            'error': str(e),
+            'traceback': traceback.format_exc()
+        }, status=500)
+
+
+@require_http_methods(["POST"])
+def preview_declaration(request):
+    """API endpoint para generar vista previa en tiempo real"""
+    import json as json_lib
+
+    try:
+        # Obtener datos del cuerpo de la petición
+        form_data = json_lib.loads(request.body)
+        current_lang = get_language()
+
+        # Obtener datos de la sesión como base (para datos de pasos anteriores)
+        session_data = get_session_data(request)
+
+        # Combinar datos: usar los del formulario si están disponibles, sino usar los de la sesión
+        # Si el formulario no envía un campo, significa que no está en el paso actual, así que usamos la sesión
+        merged_data = {
+            'selected_checklist_ids': form_data.get('selected_checklist_ids') if 'selected_checklist_ids' in form_data else session_data.get('selected_checklist_ids', []),
+            'usage_types': form_data.get('usage_types') if 'usage_types' in form_data else session_data.get('usage_types', []),
+            'custom_usage_type': form_data.get('custom_usage_type') if 'custom_usage_type' in form_data else session_data.get('custom_usage_type', ''),
+            'ai_tool': {
+                'name': form_data.get('ai_tool', {}).get('name') if 'ai_tool' in form_data and 'name' in form_data.get('ai_tool', {}) else session_data.get('ai_tool', {}).get('name', ''),
+                'version': form_data.get('ai_tool', {}).get('version') if 'ai_tool' in form_data and 'version' in form_data.get('ai_tool', {}) else session_data.get('ai_tool', {}).get('version', ''),
+                'provider': form_data.get('ai_tool', {}).get('provider') if 'ai_tool' in form_data and 'provider' in form_data.get('ai_tool', {}) else session_data.get('ai_tool', {}).get('provider', ''),
+                'date_month': form_data.get('ai_tool', {}).get('date_month') if 'ai_tool' in form_data and 'date_month' in form_data.get('ai_tool', {}) else session_data.get('ai_tool', {}).get('date_month', datetime.now().month),
+                'date_year': form_data.get('ai_tool', {}).get('date_year') if 'ai_tool' in form_data and 'date_year' in form_data.get('ai_tool', {}) else session_data.get('ai_tool', {}).get('date_year', datetime.now().year),
+            },
+            'specific_purpose': form_data.get('specific_purpose') if 'specific_purpose' in form_data else session_data.get('specific_purpose', ''),
+            'prompts': form_data.get('prompts') if 'prompts' in form_data else session_data.get('prompts', []),
+            'content_use_modes': form_data.get('content_use_modes') if 'content_use_modes' in form_data else session_data.get('content_use_modes', []),
+            'custom_content_use_mode': form_data.get('custom_content_use_mode') if 'custom_content_use_mode' in form_data else session_data.get('custom_content_use_mode', ''),
+            'content_use_context': form_data.get('content_use_context') if 'content_use_context' in form_data else session_data.get('content_use_context', ''),
+            'human_review': {
+                'level': form_data.get('human_review', {}).get('level') if 'human_review' in form_data and 'level' in form_data.get('human_review', {}) else session_data.get('human_review', {}).get('level', 0),
+                'reviewer_name': form_data.get('human_review', {}).get('reviewer_name') if 'human_review' in form_data and 'reviewer_name' in form_data.get('human_review', {}) else session_data.get('human_review', {}).get('reviewer_name', ''),
+                'reviewer_role': form_data.get('human_review', {}).get('reviewer_role') if 'human_review' in form_data and 'reviewer_role' in form_data.get('human_review', {}) else session_data.get('human_review', {}).get('reviewer_role', ''),
+            },
+            'license': form_data.get('license') if 'license' in form_data else session_data.get('license', 'None')
+        }
+
+        # Crear objeto Declaration temporal para generar la vista previa
+        declaration = Declaration(
+            selected_checklist_ids=merged_data['selected_checklist_ids'],
+            usage_types=merged_data['usage_types'],
+            custom_usage_type=merged_data['custom_usage_type'],
+            ai_tool_name=merged_data['ai_tool']['name'],
+            ai_tool_version=merged_data['ai_tool']['version'],
+            ai_tool_provider=merged_data['ai_tool']['provider'],
+            ai_tool_date_month=merged_data['ai_tool']['date_month'],
+            ai_tool_date_year=merged_data['ai_tool']['date_year'],
+            specific_purpose=merged_data['specific_purpose'],
+            prompts=merged_data['prompts'],
+            content_use_modes=merged_data['content_use_modes'],
+            custom_content_use_mode=merged_data['custom_content_use_mode'],
+            content_use_context=merged_data['content_use_context'],
+            human_review_level=merged_data['human_review']['level'],
+            reviewer_name=merged_data['human_review']['reviewer_name'],
+            reviewer_role=merged_data['human_review']['reviewer_role'],
+            license=merged_data['license']
+        )
+
+        # Generar vista previa sin hash (ya que aún no está finalizada)
+        preview_text = generate_declaration_text(declaration, None, current_lang)
+
+        return JsonResponse({
+            'success': True,
+            'preview': preview_text
+        })
+    except Exception as e:
+        import traceback
+        return JsonResponse({
+            'success': False,
+            'error': str(e),
+            'traceback': traceback.format_exc()
+        }, status=400)
+
+
+# ==================== VISTAS PARA MÓDULO DE FIRMANTES ====================
+
+@ensure_csrf_cookie
+def signer_register(request):
+    """Vista principal para registrarse como firmante del compromiso ético de IA"""
+    current_lang = get_language()
+
+    context = {
+        'glossary': get_translated_glossary(current_lang),
+    }
+    return render(request, 'core/signer_register.html', context)
+
+
+@require_http_methods(["POST"])
+def signer_create(request):
+    """API endpoint para crear un nuevo firmante"""
+    import json as json_lib
+
+    try:
+        # Obtener datos del cuerpo de la petición
+        data = json_lib.loads(request.body)
+
+        # Validaciones básicas
+        required_fields = ['fullName', 'email', 'orcid', 'affiliation', 'discipline']
+        for field in required_fields:
+            if not data.get(field):
+                return JsonResponse({
+                    'success': False,
+                    'error': f'El campo {field} es requerido'
+                }, status=400)
+
+        # Verificar si el email ya existe
+        if Signer.objects.filter(email=data['email']).exists():
+            return JsonResponse({
+                'success': False,
+                'error': 'Este correo electrónico ya está registrado'
+            }, status=400)
+
+        # Verificar si el ORCID ya existe
+        if Signer.objects.filter(orcid=data['orcid']).exists():
+            return JsonResponse({
+                'success': False,
+                'error': 'Este ORCID ya está registrado'
+            }, status=400)
+
+        # Crear nuevo firmante
+        signer = Signer(
+            full_name=data['fullName'],
+            email=data['email'],
+            orcid=data['orcid'],
+            affiliation=data['affiliation'],
+            affiliation_ror_id=data.get('affiliationRorId', ''),
+            discipline=data['discipline'],
+            country=data.get('country', ''),
+            profile_url=data.get('profileUrl', ''),
+            declaration=data.get('declaration', ''),
+            orcid_verified=data.get('orcidVerified', False),
+            orcid_registered_name=data.get('orcidRegisteredName', ''),
+            agreed_to_terms=data.get('agreedToTerms', True),
+            public_listing=data.get('publicListing', True)
+        )
+
+        signer.save()
+
+        # Preparar respuesta con datos generados
+        response_data = {
+            'success': True,
+            'signer': {
+                'id': signer.signer_id,
+                'fullName': signer.full_name,
+                'orcid': signer.orcid,
+                'affiliation': signer.affiliation,
+                'hashShort': signer.hash_short,
+                'validationHash': signer.validation_hash,
+                'verificationUrl': signer.get_verification_url(request),
+                'orcidVerified': signer.orcid_verified,
+                'orcidRegisteredName': signer.orcid_registered_name,
+                'timestamp': signer.created_at.isoformat()
+            }
+        }
+
+        return JsonResponse(response_data)
+
+    except Exception as e:
+        import traceback
+        return JsonResponse({
+            'success': False,
+            'error': str(e),
+            'traceback': traceback.format_exc()
+        }, status=500)
+
+
+@require_http_methods(["GET"])
+def signer_verify(request, hash_short):
+    """Vista pública para verificar un firmante por su hash corto"""
+    current_lang = get_language()
+
+    try:
+        signer = get_object_or_404(Signer, hash_short=hash_short)
+
+        context = {
+            'signer': signer,
+            'glossary': get_translated_glossary(current_lang),
+        }
+        return render(request, 'core/signer_verify.html', context)
+
+    except Exception:
+        return render(request, 'core/not_found.html', {'query': hash_short})
+
+
+@require_http_methods(["GET"])
+def signers_list(request):
+    """Lista pública de firmantes (solo los que aceptaron listado público)"""
+    current_lang = get_language()
+
+    # Obtener solo firmantes que aceptaron listado público
+    signers = Signer.objects.filter(public_listing=True).order_by('-created_at')
+
+    context = {
+        'signers': signers,
+        'total_signers': signers.count(),
+        'glossary': get_translated_glossary(current_lang),
+    }
+    return render(request, 'core/signers_list.html', context)

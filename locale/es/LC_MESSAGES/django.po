@@ -1,0 +1,818 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Declarador.io 1.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-02 12:00+0000\n"
+"PO-Revision-Date: 2025-12-02 12:00+0000\n"
+"Last-Translator: Declarador Team\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# Preview Panel
+msgid "preview_title"
+msgstr "Vista Previa"
+
+msgid "preview_description"
+msgstr "Se actualiza automáticamente mientras completas el formulario"
+
+msgid "preview_placeholder_step1"
+msgstr "Marca opciones para ver la vista previa"
+
+msgid "preview_placeholder_step2"
+msgstr "Marca opciones para ver la vista previa"
+
+msgid "preview_placeholder_step3"
+msgstr "Completa los campos para ver la vista previa"
+
+msgid "preview_updating"
+msgstr "Actualizando vista previa..."
+
+msgid "preview_error"
+msgstr "Error al generar vista previa"
+
+msgid "preview_unavailable"
+msgstr "Vista previa no disponible"
+
+# Privacy Policy
+msgid "Aviso de Privacidad Integral"
+msgstr "Aviso de Privacidad Integral"
+
+msgid "Declarador.io - Plataforma de Transparencia Académica en el Uso de IA"
+msgstr "Declarador.io - Plataforma de Transparencia Académica en el Uso de IA"
+
+msgid "Última actualización: Diciembre 2025"
+msgstr "Última actualización: Diciembre 2025"
+
+msgid "Versión: 2.0"
+msgstr "Versión: 2.0"
+
+msgid "1. Identificación y Compromiso Fundacional"
+msgstr "1. Identificación y Compromiso Fundacional"
+
+msgid "1.1 Responsable del Tratamiento de Datos"
+msgstr "1.1 Responsable del Tratamiento de Datos"
+
+msgid "Nombre del proyecto:"
+msgstr "Nombre del proyecto:"
+
+msgid "Naturaleza:"
+msgstr "Naturaleza:"
+
+msgid "Herramienta educativa sin fines de lucro"
+msgstr "Herramienta educativa sin fines de lucro"
+
+msgid "1.2 Compromiso con la Transparencia y Soberanía Digital"
+msgstr "1.2 Compromiso con la Transparencia y Soberanía Digital"
+
+msgid "Declarador.io nace del compromiso con la Ciencia Abierta como derecho fundamental, la Soberanía Digital Latinoamericana y la Transparencia Radical en el uso académico de Inteligencia Artificial Generativa."
+msgstr "Declarador.io nace del compromiso con la Ciencia Abierta como derecho fundamental, la Soberanía Digital Latinoamericana y la Transparencia Radical en el uso académico de Inteligencia Artificial Generativa."
+
+msgid "Principio de Estándar Más Alto:"
+msgstr "Principio de Estándar Más Alto:"
+
+msgid "Aplicamos voluntariamente el nivel de protección de datos más robusto a TODOS nuestros usuarios, independientemente de su ubicación geográfica. Esto significa que garantizamos derechos que incluyen:"
+msgstr "Aplicamos voluntariamente el nivel de protección de datos más robusto a TODOS nuestros usuarios, independientemente de su ubicación geográfica. Esto significa que garantizamos derechos que incluyen:"
+
+msgid "Derecho al olvido (cancelación de datos)"
+msgstr "Derecho al olvido (cancelación de datos)"
+
+msgid "Portabilidad de datos en formatos estructurados"
+msgstr "Portabilidad de datos en formatos estructurados"
+
+msgid "Revisión humana de decisiones automatizadas"
+msgstr "Revisión humana de decisiones automatizadas"
+
+msgid "Limitación del tratamiento de datos"
+msgstr "Limitación del tratamiento de datos"
+
+msgid "Transparencia total en el uso de IA"
+msgstr "Transparencia total en el uso de IA"
+
+msgid "2. Marco Legal y Cumplimiento Normativo"
+msgstr "2. Marco Legal y Cumplimiento Normativo"
+
+msgid "2.1 Legislación Primaria Aplicable"
+msgstr "2.1 Legislación Primaria Aplicable"
+
+msgid "Declarador.io cumple con las siguientes normativas de protección de datos personales:"
+msgstr "Declarador.io cumple con las siguientes normativas de protección de datos personales:"
+
+msgid "México (Jurisdicción Principal)"
+msgstr "México (Jurisdicción Principal)"
+
+msgid "Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP)"
+msgstr "Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP)"
+
+msgid "Lineamientos del INAI"
+msgstr "Lineamientos del INAI"
+
+msgid "Unión Europea"
+msgstr "Unión Europea"
+
+msgid "Reglamento General de Protección de Datos (GDPR) - Reglamento (UE) 2016/679"
+msgstr "Reglamento General de Protección de Datos (GDPR) - Reglamento (UE) 2016/679"
+
+msgid "Brasil"
+msgstr "Brasil"
+
+msgid "Lei Geral de Proteção de Dados (LGPD) - Ley 13.709/2018"
+msgstr "Lei Geral de Proteção de Dados (LGPD) - Ley 13.709/2018"
+
+msgid "Argentina"
+msgstr "Argentina"
+
+msgid "Ley de Protección de Datos Personales (LPDP) - Ley 25.326"
+msgstr "Ley de Protección de Datos Personales (LPDP) - Ley 25.326"
+
+msgid "Chile"
+msgstr "Chile"
+
+msgid "Ley sobre Protección de la Vida Privada - Ley 19.628"
+msgstr "Ley sobre Protección de la Vida Privada - Ley 19.628"
+
+msgid "Estados Unidos"
+msgstr "Estados Unidos"
+
+msgid "COPPA para menores y FERPA para contextos educativos"
+msgstr "COPPA para menores y FERPA para contextos educativos"
+
+msgid "2.2 Principios Rectores del Tratamiento"
+msgstr "2.2 Principios Rectores del Tratamiento"
+
+msgid "Licitud"
+msgstr "Licitud"
+
+msgid "Solo recopilamos datos con base legal clara"
+msgstr "Solo recopilamos datos con base legal clara"
+
+msgid "Consentimiento"
+msgstr "Consentimiento"
+
+msgid "Informado, específico y revocable"
+msgstr "Informado, específico y revocable"
+
+msgid "Finalidad"
+msgstr "Finalidad"
+
+msgid "Uso limitado a los propósitos declarados"
+msgstr "Uso limitado a los propósitos declarados"
+
+msgid "Proporcionalidad"
+msgstr "Proporcionalidad"
+
+msgid "Solo recopilamos lo estrictamente necesario"
+msgstr "Solo recopilamos lo estrictamente necesario"
+
+msgid "3. Datos Personales Recopilados"
+msgstr "3. Datos Personales Recopilados"
+
+msgid "3.1 Principio de Minimización de Datos"
+msgstr "3.1 Principio de Minimización de Datos"
+
+msgid "Aplicamos estrictamente el principio de minimización: solo recopilamos los datos absolutamente necesarios para prestar el servicio."
+msgstr "Aplicamos estrictamente el principio de minimización: solo recopilamos los datos absolutamente necesarios para prestar el servicio."
+
+msgid "NUNCA compramos datos personales de terceros comerciales."
+msgstr "NUNCA compramos datos personales de terceros comerciales."
+
+msgid "3.2 Categorías de Datos y Finalidades"
+msgstr "3.2 Categorías de Datos y Finalidades"
+
+msgid "Datos de Declaración (Esenciales)"
+msgstr "Datos de Declaración (Esenciales)"
+
+msgid "Respuestas del checklist de diagnóstico"
+msgstr "Respuestas del checklist de diagnóstico"
+
+msgid "Tipos de uso de IA seleccionados"
+msgstr "Tipos de uso de IA seleccionados"
+
+msgid "Información de herramienta AI (nombre, versión, proveedor, fecha)"
+msgstr "Información de herramienta AI (nombre, versión, proveedor, fecha)"
+
+msgid "Descripción del propósito académico"
+msgstr "Descripción del propósito académico"
+
+msgid "Prompts/instrucciones utilizadas"
+msgstr "Prompts/instrucciones utilizadas"
+
+msgid "Modo de integración del contenido"
+msgstr "Modo de integración del contenido"
+
+msgid "Nivel de revisión humana"
+msgstr "Nivel de revisión humana"
+
+msgid "Licencia del trabajo final"
+msgstr "Licencia del trabajo final"
+
+msgid "Finalidad:"
+msgstr "Finalidad:"
+
+msgid "Generar declaraciones TXT/JSON de transparencia académica"
+msgstr "Generar declaraciones TXT/JSON de transparencia académica"
+
+msgid "Datos del Revisor (Opcionales)"
+msgstr "Datos del Revisor (Opcionales)"
+
+msgid "Nombre del revisor"
+msgstr "Nombre del revisor"
+
+msgid "Rol del revisor"
+msgstr "Rol del revisor"
+
+msgid "Documentar supervisión humana del uso de IA"
+msgstr "Documentar supervisión humana del uso de IA"
+
+msgid "Datos de Sesión (Temporales)"
+msgstr "Datos de Sesión (Temporales)"
+
+msgid "Cookies de sesión de Django"
+msgstr "Cookies de sesión de Django"
+
+msgid "Estado del wizard entre pasos"
+msgstr "Estado del wizard entre pasos"
+
+msgid "Conservación:"
+msgstr "Conservación:"
+
+msgid "Se eliminan al cerrar el navegador"
+msgstr "Se eliminan al cerrar el navegador"
+
+msgid "Datos Técnicos (Automatizados)"
+msgstr "Datos Técnicos (Automatizados)"
+
+msgid "Dirección IP (anonimizada después de 30 días)"
+msgstr "Dirección IP (anonimizada después de 30 días)"
+
+msgid "Tipo de navegador y sistema operativo"
+msgstr "Tipo de navegador y sistema operativo"
+
+msgid "Fecha y hora de acceso"
+msgstr "Fecha y hora de acceso"
+
+msgid "Páginas visitadas"
+msgstr "Páginas visitadas"
+
+msgid "Seguridad y prevención de fraude, optimización de experiencia"
+msgstr "Seguridad y prevención de fraude, optimización de experiencia"
+
+msgid "4. Uso de los Datos"
+msgstr "4. Uso de los Datos"
+
+msgid "4.1 Finalidades Primarias"
+msgstr "4.1 Finalidades Primarias"
+
+msgid "Generar declaraciones de transparencia:"
+msgstr "Generar declaraciones de transparencia:"
+
+msgid "Crear archivos TXT y JSON personalizados según las respuestas del usuario"
+msgstr "Crear archivos TXT y JSON personalizados según las respuestas del usuario"
+
+msgid "Verificación académica:"
+msgstr "Verificación académica:"
+
+msgid "Si el usuario completa el Paso 4, almacenar la declaración para búsquedas futuras y validación de integridad mediante hash SHA-256"
+msgstr "Si el usuario completa el Paso 4, almacenar la declaración para búsquedas futuras y validación de integridad mediante hash SHA-256"
+
+msgid "Seguridad del servicio:"
+msgstr "Seguridad del servicio:"
+
+msgid "Prevenir fraude, detectar anomalías y proteger la integridad de la plataforma"
+msgstr "Prevenir fraude, detectar anomalías y proteger la integridad de la plataforma"
+
+msgid "IMPORTANTE: Puedes usar Declarador.io SIN guardar datos en nuestros servidores"
+msgstr "IMPORTANTE: Puedes usar Declarador.io SIN guardar datos en nuestros servidores"
+
+msgid "Tienes dos opciones al llegar al Paso 4: Solo descargar archivos (tus datos NO se guardan) o Completar Paso 4 (se guardan para verificación futura)."
+msgstr "Tienes dos opciones al llegar al Paso 4: Solo descargar archivos (tus datos NO se guardan) o Completar Paso 4 (se guardan para verificación futura)."
+
+msgid "5. Uso Responsable de Inteligencia Artificial (IA)"
+msgstr "5. Uso Responsable de Inteligencia Artificial (IA)"
+
+msgid "5.1 Principios del Uso de IA en Declarador.io"
+msgstr "5.1 Principios del Uso de IA en Declarador.io"
+
+msgid "Nuestra política de IA se fundamenta en 7 principios éticos adaptados para el contexto académico latinoamericano:"
+msgstr "Nuestra política de IA se fundamenta en 7 principios éticos adaptados para el contexto académico latinoamericano:"
+
+msgid "Transparencia"
+msgstr "Transparencia"
+
+msgid "Etiquetado visible de contenido generado con asistencia de IA y divulgación de modelos utilizados"
+msgstr "Etiquetado visible de contenido generado con asistencia de IA y divulgación de modelos utilizados"
+
+msgid "Supervisión Humana"
+msgstr "Supervisión Humana"
+
+msgid "La IA sugiere; los humanos deciden. Ninguna decisión que afecte derechos académicos es automática"
+msgstr "La IA sugiere; los humanos deciden. Ninguna decisión que afecte derechos académicos es automática"
+
+msgid "Privacidad y No-Entrenamiento"
+msgstr "Privacidad y No-Entrenamiento"
+
+msgid "NO usamos tus declaraciones ni consultas para entrenar modelos comerciales"
+msgstr "NO usamos tus declaraciones ni consultas para entrenar modelos comerciales"
+
+msgid "Equidad y No Discriminación"
+msgstr "Equidad y No Discriminación"
+
+msgid "Monitoreo activo de sesgos algorítmicos con enfoque en diversidad latinoamericana"
+msgstr "Monitoreo activo de sesgos algorítmicos con enfoque en diversidad latinoamericana"
+
+msgid "Integridad Académica"
+msgstr "Integridad Académica"
+
+msgid "Las declaraciones promueven honestidad sobre el uso de IA y disuaden del plagio tecnológico"
+msgstr "Las declaraciones promueven honestidad sobre el uso de IA y disuaden del plagio tecnológico"
+
+msgid "Soberanía de Datos Académicos"
+msgstr "Soberanía de Datos Académicos"
+
+msgid "Priorización de infraestructura regional y control sobre datos académicos sensibles"
+msgstr "Priorización de infraestructura regional y control sobre datos académicos sensibles"
+
+msgid "Acceso Abierto y Gratuito"
+msgstr "Acceso Abierto y Gratuito"
+
+msgid "Herramienta completamente gratuita sin barreras financieras"
+msgstr "Herramienta completamente gratuita sin barreras financieras"
+
+msgid "5.2 Garantías Específicas"
+msgstr "5.2 Garantías Específicas"
+
+msgid "Lo que SÍ hacemos:"
+msgstr "Lo que SÍ hacemos:"
+
+msgid "Procesar declaraciones localmente"
+msgstr "Procesar declaraciones localmente"
+
+msgid "Usar algoritmos deterministas para validación"
+msgstr "Usar algoritmos deterministas para validación"
+
+msgid "Mantener registros auditables"
+msgstr "Mantener registros auditables"
+
+msgid "Lo que NUNCA hacemos:"
+msgstr "Lo que NUNCA hacemos:"
+
+msgid "Enviar manuscritos a APIs externas sin tu conocimiento"
+msgstr "Enviar manuscritos a APIs externas sin tu conocimiento"
+
+msgid "Usar declaraciones para entrenar modelos comerciales"
+msgstr "Usar declaraciones para entrenar modelos comerciales"
+
+msgid "Otorgar a terceros derechos sobre tu contenido"
+msgstr "Otorgar a terceros derechos sobre tu contenido"
+
+msgid "6. Transferencias Internacionales de Datos"
+msgstr "6. Transferencias Internacionales de Datos"
+
+msgid "NO VENDEMOS, ALQUILAMOS NI COMERCIALIZAMOS TUS DATOS PERSONALES BAJO NINGUNA CIRCUNSTANCIA."
+msgstr "NO VENDEMOS, ALQUILAMOS NI COMERCIALIZAMOS TUS DATOS PERSONALES BAJO NINGUNA CIRCUNSTANCIA."
+
+msgid "Cuando es inevitable transferir datos fuera de Latinoamérica, aplicamos Cláusulas Contractuales Modelo (CCM) que garantizan el mismo nivel de protección que en el país de origen."
+msgstr "Cuando es inevitable transferir datos fuera de Latinoamérica, aplicamos Cláusulas Contractuales Modelo (CCM) que garantizan el mismo nivel de protección que en el país de origen."
+
+msgid "7. Derechos de los Titulares de Datos (Derechos ARCO+)"
+msgstr "7. Derechos de los Titulares de Datos (Derechos ARCO+)"
+
+msgid "Garantizamos los derechos ARCO ampliados conforme a los estándares más altos internacionales:"
+msgstr "Garantizamos los derechos ARCO ampliados conforme a los estándares más altos internacionales:"
+
+msgid "Acceso:"
+msgstr "Acceso:"
+
+msgid "Obtener copia de tus datos guardados"
+msgstr "Obtener copia de tus datos guardados"
+
+msgid "Rectificación:"
+msgstr "Rectificación:"
+
+msgid "Corregir datos inexactos o incompletos"
+msgstr "Corregir datos inexactos o incompletos"
+
+msgid "Cancelación:"
+msgstr "Cancelación:"
+
+msgid "Eliminar permanentemente tu declaración (derecho al olvido)"
+msgstr "Eliminar permanentemente tu declaración (derecho al olvido)"
+
+msgid "Oposición:"
+msgstr "Oposición:"
+
+msgid "Detener el tratamiento para fines secundarios"
+msgstr "Detener el tratamiento para fines secundarios"
+
+msgid "Portabilidad:"
+msgstr "Portabilidad:"
+
+msgid "Recibir tus datos en formato JSON estructurado"
+msgstr "Recibir tus datos en formato JSON estructurado"
+
+msgid "Limitación:"
+msgstr "Limitación:"
+
+msgid "Congelar el procesamiento mientras verificamos exactitud"
+msgstr "Congelar el procesamiento mientras verificamos exactitud"
+
+msgid "Para ejercer estos derechos:"
+msgstr "Para ejercer estos derechos:"
+
+msgid "Contáctanos en privacy@declarador.io con tu ID de declaración o hash SHA-256. Responderemos en un plazo máximo de 20 días hábiles."
+msgstr "Contáctanos en privacy@declarador.io con tu ID de declaración o hash SHA-256. Responderemos en un plazo máximo de 20 días hábiles."
+
+msgid "8. Seguridad de los Datos"
+msgstr "8. Seguridad de los Datos"
+
+msgid "Implementamos medidas técnicas y organizativas para proteger tus datos mediante una estrategia de seguridad multicapa:"
+msgstr "Implementamos medidas técnicas y organizativas para proteger tus datos mediante una estrategia de seguridad multicapa:"
+
+msgid "TLS 1.3 / HTTPS obligatorio para todo el tráfico"
+msgstr "TLS 1.3 / HTTPS obligatorio para todo el tráfico"
+
+msgid "Encriptación AES-256 en reposo"
+msgstr "Encriptación AES-256 en reposo"
+
+msgid "Hashing SHA-256 para validación de integridad"
+msgstr "Hashing SHA-256 para validación de integridad"
+
+msgid "Autenticación Multifactor (MFA) para administradores"
+msgstr "Autenticación Multifactor (MFA) para administradores"
+
+msgid "Web Application Firewall (WAF)"
+msgstr "Web Application Firewall (WAF)"
+
+msgid "Backups diarios encriptados"
+msgstr "Backups diarios encriptados"
+
+msgid "Monitoreo SIEM 24/7"
+msgstr "Monitoreo SIEM 24/7"
+
+msgid "9. Retención y Eliminación de Datos"
+msgstr "9. Retención y Eliminación de Datos"
+
+msgid "Tipo de Dato"
+msgstr "Tipo de Dato"
+
+msgid "Periodo de Conservación"
+msgstr "Periodo de Conservación"
+
+msgid "Declaraciones guardadas"
+msgstr "Declaraciones guardadas"
+
+msgid "Indefinida (verificación histórica)"
+msgstr "Indefinida (verificación histórica)"
+
+msgid "Datos de sesión"
+msgstr "Datos de sesión"
+
+msgid "Hasta cierre del navegador"
+msgstr "Hasta cierre del navegador"
+
+msgid "Logs de acceso (IP identificable)"
+msgstr "Logs de acceso (IP identificable)"
+
+msgid "30 días"
+msgstr "30 días"
+
+msgid "Logs de seguridad (IP anonimizada)"
+msgstr "Logs de seguridad (IP anonimizada)"
+
+msgid "90 días"
+msgstr "90 días"
+
+msgid "10. Uso de Cookies"
+msgstr "10. Uso de Cookies"
+
+msgid "Cookie"
+msgstr "Cookie"
+
+msgid "Propósito"
+msgstr "Propósito"
+
+msgid "Duración"
+msgstr "Duración"
+
+msgid "Mantener datos del wizard entre pasos"
+msgstr "Mantener datos del wizard entre pasos"
+
+msgid "Sesión (cierre de navegador)"
+msgstr "Sesión (cierre de navegador)"
+
+msgid "Seguridad contra ataques CSRF"
+msgstr "Seguridad contra ataques CSRF"
+
+msgid "1 año"
+msgstr "1 año"
+
+msgid "NO utilizamos cookies de terceros para publicidad o tracking."
+msgstr "NO utilizamos cookies de terceros para publicidad o tracking."
+
+msgid "11. Menores de Edad"
+msgstr "11. Menores de Edad"
+
+msgid "No recopilamos intencionalmente datos de menores de 13 años conforme a COPPA. Para menores entre 13 y 17 años, recomendamos usar este servicio con supervisión de un tutor, docente o padre de familia."
+msgstr "No recopilamos intencionalmente datos de menores de 13 años conforme a COPPA. Para menores entre 13 y 17 años, recomendamos usar este servicio con supervisión de un tutor, docente o padre de familia."
+
+msgid "12. Cambios en esta Política"
+msgstr "12. Cambios en esta Política"
+
+msgid "Podemos actualizar esta política ocasionalmente. Para cambios sustanciales, notificaremos mediante aviso destacado en el sitio web por 30 días. El uso continuado después de los cambios implica aceptación de la nueva política."
+msgstr "Podemos actualizar esta política ocasionalmente. Para cambios sustanciales, notificaremos mediante aviso destacado en el sitio web por 30 días. El uso continuado después de los cambios implica aceptación de la nueva política."
+
+msgid "13. Contacto"
+msgstr "13. Contacto"
+
+msgid "Si tienes preguntas sobre esta política de privacidad o el tratamiento de tus datos:"
+msgstr "Si tienes preguntas sobre esta política de privacidad o el tratamiento de tus datos:"
+
+msgid "Email:"
+msgstr "Email:"
+
+msgid "Responsable de Protección de Datos (DPO):"
+msgstr "Responsable de Protección de Datos (DPO):"
+
+msgid "Declaración de Compromiso Ético"
+msgstr "Declaración de Compromiso Ético"
+
+msgid "Al usar Declarador.io, participas en un movimiento de transparencia académica que trasciende fronteras. Tu privacidad no es un precio a pagar por la tecnología; es un derecho fundamental que defendemos incondicionalmente."
+msgstr "Al usar Declarador.io, participas en un movimiento de transparencia académica que trasciende fronteras. Tu privacidad no es un precio a pagar por la tecnología; es un derecho fundamental que defendemos incondicionalmente."
+
+msgid "\"La privacidad es un derecho, no un privilegio. La transparencia es un compromiso, no una opción.\""
+msgstr "\"La privacidad es un derecho, no un privilegio. La transparencia es un compromiso, no una opción.\""
+
+msgid "Volver al Inicio"
+msgstr "Volver al Inicio"
+
+
+# Step 4 - Save Declaration
+msgid "¿Deseas guardar esta declaración?"
+msgstr "¿Deseas guardar esta declaración?"
+
+msgid "Puedes guardar esta declaración en nuestra base de datos para verificación futura. Esto es opcional y permitirá que otros puedan validar tu declaración usando el hash o ID."
+msgstr "Puedes guardar esta declaración en nuestra base de datos para verificación futura. Esto es opcional y permitirá que otros puedan validar tu declaración usando el hash o ID."
+
+msgid "Sí, guardar declaración"
+msgstr "Sí, guardar declaración"
+
+msgid "No, solo descargar"
+msgstr "No, solo descargar"
+
+msgid "Declaración guardada exitosamente en la base de datos"
+msgstr "Declaración guardada exitosamente en la base de datos"
+
+msgid "¿Cambiaste de opinión? Haz clic aquí para guardar la declaración"
+msgstr "¿Cambiaste de opinión? Haz clic aquí para guardar la declaración"
+
+msgid "Solo letras mayúsculas y números, entre 8 y 20 caracteres"
+msgstr "Solo letras mayúsculas y números, entre 8 y 20 caracteres"
+
+msgid "Hash: 16 caracteres (Ej: 1A2B3C4D5E6F7G8H) | ID: 8 caracteres (Ej: ABC12345)"
+msgstr "Hash: 16 caracteres (Ej: 1A2B3C4D5E6F7G8H) | ID: 8 caracteres (Ej: ABC12345)"
+
+# Signers Module
+msgid "Inicio"
+msgstr "Inicio"
+
+msgid "Inicio - usoeticoia.org"
+msgstr "Inicio - usoeticoia.org"
+
+msgid "¿Quién puede firmar?"
+msgstr "¿Quién puede firmar?"
+
+msgid "Invitamos a firmar a toda persona autora generadora de conocimiento científico, académico, divulgativo y educativo."
+msgstr "Invitamos a firmar a toda persona autora generadora de conocimiento científico, académico, divulgativo y educativo."
+
+msgid "Firmantes"
+msgstr "Firmantes"
+
+msgid "Firmar"
+msgstr "Firmar"
+
+msgid "Firmar Compromiso"
+msgstr "Firmar Compromiso"
+
+msgid "Firmar Compromiso Ético de IA"
+msgstr "Firmar Compromiso Ético de IA"
+
+msgid "Firmantes del Compromiso Ético de IA"
+msgstr "Firmantes del Compromiso Ético de IA"
+
+msgid "Firmantes del Compromiso Ético"
+msgstr "Firmantes del Compromiso Ético"
+
+msgid "Comunidad Comprometida"
+msgstr "Comunidad Comprometida"
+
+msgid "Profesionales, investigadores y académicos comprometidos con el uso transparente y responsable de la inteligencia artificial."
+msgstr "Profesionales, investigadores y académicos comprometidos con el uso transparente y responsable de la inteligencia artificial."
+
+msgid "firmantes registrados"
+msgstr "firmantes registrados"
+
+msgid "firmantes"
+msgstr "firmantes"
+
+msgid "¿Quieres unirte a la comunidad?"
+msgstr "¿Quieres unirte a la comunidad?"
+
+msgid "Firma el compromiso y demuestra tu apoyo a prácticas éticas en el uso de inteligencia artificial."
+msgstr "Firma el compromiso y demuestra tu apoyo a prácticas éticas en el uso de inteligencia artificial."
+
+msgid "Lista de Firmantes"
+msgstr "Lista de Firmantes"
+
+msgid "Ordenados por fecha de firma más reciente"
+msgstr "Ordenados por fecha de firma más reciente"
+
+msgid "Verificado"
+msgstr "Verificado"
+
+msgid "Disciplina"
+msgstr "Disciplina"
+
+msgid "País"
+msgstr "País"
+
+msgid "Ver declaración"
+msgstr "Ver declaración"
+
+msgid "Aún no hay firmantes registrados"
+msgstr "Aún no hay firmantes registrados"
+
+msgid "¡Sé el primero en firmar!"
+msgstr "¡Sé el primero en firmar!"
+
+msgid "Añadir mi firma"
+msgstr "Añadir mi firma"
+
+msgid "Verificar Firmante"
+msgstr "Verificar Firmante"
+
+msgid "Firma Verificada"
+msgstr "Firma Verificada"
+
+msgid "Esta persona ha firmado el compromiso ético de IA"
+msgstr "Esta persona ha firmado el compromiso ético de IA"
+
+msgid "Declaración personal"
+msgstr "Declaración personal"
+
+msgid "Perfil"
+msgstr "Perfil"
+
+msgid "Ver perfil"
+msgstr "Ver perfil"
+
+msgid "Fecha de firma"
+msgstr "Fecha de firma"
+
+msgid "Verificación Criptográfica"
+msgstr "Verificación Criptográfica"
+
+msgid "Esta firma ha sido validada mediante hash SHA-256 y está vinculada al perfil ORCID del firmante."
+msgstr "Esta firma ha sido validada mediante hash SHA-256 y está vinculada al perfil ORCID del firmante."
+
+msgid "Ver todos los firmantes"
+msgstr "Ver todos los firmantes"
+
+msgid "Firmar compromiso"
+msgstr "Firmar compromiso"
+
+msgid "Este badge puede ser compartido y verificado públicamente."
+msgstr "Este badge puede ser compartido y verificado públicamente."
+
+msgid "URL de verificación:"
+msgstr "URL de verificación:"
+
+msgid "Cambiar idioma"
+msgstr "Cambiar idioma"
+
+# Signer Registration Form - Step titles and navigation
+msgid "Tu identidad"
+msgstr "Tu identidad"
+
+msgid "Datos verificables para tu firma digital."
+msgstr "Datos verificables para tu firma digital."
+
+msgid "Contexto profesional"
+msgstr "Contexto profesional"
+
+msgid "¿Desde qué rol firmas este compromiso?"
+msgstr "¿Desde qué rol firmas este compromiso?"
+
+msgid "Declaración"
+msgstr "Declaración"
+
+msgid "Una frase breve sobre tu motivación (Opcional)."
+msgstr "Una frase breve sobre tu motivación (Opcional)."
+
+msgid "Revisar y Firmar"
+msgstr "Revisar y Firmar"
+
+msgid "Confirma que los datos son correctos."
+msgstr "Confirma que los datos son correctos."
+
+# Navigation buttons
+msgid "Anterior"
+msgstr "Anterior"
+
+msgid "Continuar"
+msgstr "Continuar"
+
+msgid "Firmar Ahora"
+msgstr "Firmar Ahora"
+
+# Form field labels
+msgid "Institución / Organización"
+msgstr "Institución / Organización"
+
+msgid "Disciplina / Rol"
+msgstr "Disciplina / Rol"
+
+msgid "Nombre completo"
+msgstr "Nombre completo"
+
+msgid "Correo electrónico"
+msgstr "Correo electrónico"
+
+msgid "Enlace a perfil (Opcional)"
+msgstr "Enlace a perfil (Opcional)"
+
+msgid "Mensaje personal"
+msgstr "Mensaje personal"
+
+msgid "Redactar con IA"
+msgstr "Redactar con IA"
+
+msgid "Selecciona..."
+msgstr "Selecciona..."
+
+# Disciplines
+msgid "Académico"
+msgstr "Académico"
+
+msgid "Investigador"
+msgstr "Investigador"
+
+msgid "Técnico"
+msgstr "Técnico"
+
+msgid "Gestor"
+msgstr "Gestor"
+
+msgid "Estudiante"
+msgstr "Estudiante"
+
+msgid "Otro"
+msgstr "Otro"
+
+# Placeholders and helper text
+msgid "Ej. Dra. María García"
+msgstr "Ej. Dra. María García"
+
+msgid "nombre@institucion.edu"
+msgstr "nombre@institucion.edu"
+
+msgid "Privado. Solo para validación."
+msgstr "Privado. Solo para validación."
+
+msgid "Obtener ORCID →"
+msgstr "Obtener ORCID →"
+
+msgid "Escribe el nombre de tu institución. ROR sugerirá opciones verificadas (opcional)."
+msgstr "Escribe el nombre de tu institución. ROR sugerirá opciones verificadas (opcional)."
+
+msgid "Ej. Universidad Nacional, Google, NASA..."
+msgstr "Ej. Universidad Nacional, Google, NASA..."
+
+msgid "Escribe aquí tu compromiso..."
+msgstr "Escribe aquí tu compromiso..."
+
+msgid "Nombre"
+msgstr "Nombre"
+
+msgid "Afiliación"
+msgstr "Afiliación"
+
+msgid "Acepto publicar esta firma bajo licencia abierta CC0. Entiendo que se generará un hash inmutable."
+msgstr "Acepto publicar esta firma bajo licencia abierta CC0. Entiendo que se generará un hash inmutable."
+
+# Registration page header
+msgid "Iniciativa Abierta"
+msgstr "Iniciativa Abierta"
+
+msgid "Uso Ético de la IA"
+msgstr "Uso Ético de la IA"
+
+msgid "Únete a la comunidad de profesionales comprometidos con la transparencia y responsabilidad en inteligencia artificial."
+msgstr "Únete a la comunidad de profesionales comprometidos con la transparencia y responsabilidad en inteligencia artificial."

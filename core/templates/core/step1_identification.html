@@ -1,0 +1,161 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<!-- Stepper -->
+<nav aria-label="Progreso" class="mb-12 px-2">
+    <div class="relative flex justify-between">
+        <div class="absolute top-1/2 left-0 w-full h-1 bg-slate-100 -z-10 -mt-0.5 rounded-full"></div>
+        <div class="absolute top-1/2 left-0 h-1 bg-primary-600 -z-10 -mt-0.5 rounded-full transition-all duration-700 ease-in-out" style="width: {% if step == 0 %}0{% elif step == 1 %}33.33{% elif step == 2 %}66.66{% else %}100{% endif %}%"></div>
+
+        {% for label in steps_labels %}
+        <div class="flex flex-col items-center gap-3 bg-gray-100 px-2 md:px-4 cursor-default">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 border-2
+                {% if forloop.counter0 == step %}bg-primary-600 text-white border-primary-600 scale-110 shadow-lg
+                {% elif forloop.counter0 < step %}bg-white text-primary-600 border-primary-600
+                {% else %}bg-white text-slate-300 border-slate-200{% endif %}">
+                {% if forloop.counter0 < step %}✓{% else %}{{ forloop.counter }}{% endif %}
+            </div>
+            <span class="text-xs font-bold uppercase tracking-widest hidden sm:block transition-colors {% if forloop.counter0 == step %}text-slate-900{% else %}text-slate-400{% endif %}">
+                {{ label }}
+            </span>
+        </div>
+        {% endfor %}
+    </div>
+</nav>
+
+<!-- Main Content Grid -->
+<div class="flex flex-col gap-6 mb-24 md:mb-0" id="main-grid">
+    <!-- Form -->
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 md:p-12 relative">
+        <!-- Botón fijo para mostrar/ocultar vista previa -->
+        <div class="w-full flex justify-center md:justify-end mb-4">
+            <button onclick="togglePreviewPanel()" id="preview-toggle-btn"
+                class="relative flex items-center gap-1.5 px-3 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors text-xs font-medium shadow-lg">
+                <svg id="preview-toggle-icon" class="w-4 h-4 transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                </svg>
+                <span>{% trans "preview_title" %}</span>
+            </button>
+        </div>
+        <form method="post" id="stepForm">
+            {% csrf_token %}
+
+            <div class="space-y-6">
+                <div class="text-center md:text-left">
+                    <h2 class="text-2xl font-bold text-slate-900">{% trans "Diagnóstico de Uso Académico" %}</h2>
+                    <p class="text-slate-500 mt-2">
+                        {% trans "Selecciona todas las acciones que realizaste con la IA durante tu investigación o redacción." %}
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    {% for item in checklist %}
+                    <label class="checklist-item flex items-center gap-4 p-4 rounded-xl cursor-pointer border-2 transition-all duration-200
+                        {% if item.id in selected_ids %}border-primary-500 bg-primary-50 ring-1 ring-primary-500 shadow-sm
+                        {% else %}border-slate-200 hover:border-slate-300 hover:bg-slate-50 bg-white{% endif %}">
+
+                        <div class="checkbox-icon flex-shrink-0 w-6 h-6 rounded-md border flex items-center justify-center transition-colors
+                            {% if item.id in selected_ids %}bg-primary-500 border-primary-500 text-white{% else %}border-slate-300 bg-white{% endif %}">
+                            {% if item.id in selected_ids %}<span class="checkmark">✓</span>{% endif %}
+                        </div>
+
+                        <input type="checkbox" name="checklist" value="{{ item.id }}" class="hidden checkbox-input" {% if item.id in selected_ids %}checked{% endif %}>
+
+                        <span class="checkbox-text text-sm md:text-base font-medium {% if item.id in selected_ids %}text-primary-900{% else %}text-slate-700{% endif %}">
+                            {{ item.q }}
+                        </span>
+                    </label>
+                    {% endfor %}
+                </div>
+
+                {% if RECAPTCHA_ENABLED and RECAPTCHA_SITE_KEY %}
+                <div class="flex justify-center mt-6">
+                    <div class="g-recaptcha" data-sitekey="{{ RECAPTCHA_SITE_KEY }}" data-callback="onRecaptchaSuccess" data-expired-callback="onRecaptchaExpired"></div>
+                </div>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+
+    <!-- Vista Previa -->
+    <div id="preview-panel" class="hidden bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden flex flex-col max-h-[600px]">
+        <div class="bg-primary-50 border-b border-slate-200 px-6 py-4 flex items-center justify-between">
+            <div>
+                <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                    </svg>
+                    {% trans "preview_title" %}
+                </h3>
+                <p class="text-xs text-slate-500 mt-1">{% trans "preview_description" %}</p>
+            </div>
+            <button onclick="togglePreviewPanel()" class="text-slate-400 hover:text-slate-700 p-1 hover:bg-slate-200 rounded-full transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="preview-container" class="flex-1 overflow-auto min-h-[400px]">
+            <div id="preview-content" class="p-4 text-sm text-slate-400 text-center">
+                {% trans "preview_placeholder_step1" %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sticky Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-slate-200 p-4 z-40">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div></div>
+        <div class="flex flex-col sm:flex-row items-center gap-3">
+            <button type="submit" form="stepForm" id="submitBtn" class="flex items-center gap-2 px-8 py-3 rounded-xl font-bold text-sm text-white shadow-xl transition-all transform hover:-translate-y-0.5 bg-primary-600 hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed" {% if RECAPTCHA_ENABLED %}disabled{% endif %}>
+                {% trans "Siguiente" %}
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+{% if RECAPTCHA_ENABLED and RECAPTCHA_SITE_KEY %}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+    // Funciones de callback para reCAPTCHA
+    function onRecaptchaSuccess(token) {
+        document.getElementById('submitBtn').disabled = false;
+        // Guardar el token en una variable de sesión
+        sessionStorage.setItem('recaptcha_verified_step1', 'true');
+        sessionStorage.setItem('recaptcha_token_step1', token);
+    }
+
+    function onRecaptchaExpired() {
+        document.getElementById('submitBtn').disabled = true;
+        sessionStorage.removeItem('recaptcha_verified_step1');
+        sessionStorage.removeItem('recaptcha_token_step1');
+    }
+</script>
+{% endif %}
+<script src="{% static 'js/step1.js' %}"></script>
+<script src="{% static 'js/preview.js' %}"></script>
+<script>
+    // Traducciones para la vista previa
+    window.PREVIEW_TRANSLATIONS = {
+        updating: '{% trans "preview_updating" %}',
+        error: '{% trans "preview_error" %}',
+        unavailable: '{% trans "preview_unavailable" %}'
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+        initPreviewListeners(1);
+
+        // El grid siempre es de 1 columna, la vista previa aparece debajo
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Firmar Compromiso Ético de IA" %} - Declarador{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-[#FAFAFA] text-slate-900 -m-10">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 py-8 md:py-12 lg:py-20">
+        <div id="app">
+            <!-- Header -->
+            <div class="text-center mb-10 md:mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full shadow-sm mb-4 md:mb-6">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-xs font-medium text-slate-600 tracking-wide uppercase">{% trans "Iniciativa Abierta" %}</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-4 md:mb-6">{% trans "Uso Ético de la IA" %}</h1>
+                <p class="text-base md:text-lg text-slate-500 leading-relaxed max-w-md mx-auto px-2">
+                    {% trans "Únete a la comunidad de profesionales comprometidos con la transparencia y responsabilidad en inteligencia artificial." %}
+                </p>
+            </div>
+
+            <!-- Step Navigation -->
+            <div id="stepNav" class="flex items-center justify-center gap-1 md:gap-2 mb-6 md:mb-8 overflow-x-auto px-2"></div>
+
+            <!-- Main Form Card -->
+            <div class="bg-white rounded-2xl md:rounded-[2rem] p-5 md:p-8 lg:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 relative overflow-hidden">
+                <!-- Progress Bar -->
+                <div class="absolute top-0 left-0 h-1 bg-slate-50 w-full">
+                    <div id="progressBar" class="h-full bg-gradient-to-r from-emerald-400 to-cyan-400 transition-all duration-500" style="width: 25%"></div>
+                </div>
+
+                <!-- Form Steps Container -->
+                <div class="mt-4" id="formStepsContainer"></div>
+
+                <!-- Navigation Buttons -->
+                <div class="mt-8 md:mt-10 pt-4 md:pt-6 border-t border-slate-100 flex justify-between items-center gap-2">
+                    <button id="prevBtn" class="hidden group items-center gap-1 md:gap-2 px-3 md:px-4 py-2 text-slate-500 hover:text-slate-900 text-sm md:text-base font-medium transition-colors">
+                        <span class="hidden sm:inline">←</span> {% trans "Anterior" %}
+                    </button>
+                    <div id="prevPlaceholder"></div>
+
+                    <button id="nextBtn" class="group flex items-center gap-1 md:gap-2 px-4 md:px-6 py-2.5 md:py-3 bg-slate-900 text-white text-sm md:text-base font-medium rounded-xl hover:bg-slate-800 transition-all shadow-lg shadow-slate-200 hover:shadow-xl">
+                        {% trans "Continuar" %} <span class="hidden sm:inline">→</span>
+                    </button>
+                    <button id="submitBtn" class="hidden items-center gap-2 px-6 md:px-8 py-2.5 md:py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-sm md:text-base font-semibold rounded-xl hover:opacity-90 transition-all shadow-lg shadow-cyan-200 hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed">
+                        ✓ {% trans "Firmar Ahora" %}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Configuración
+    window.SIGNER_CONFIG = {
+        apiEndpoint: "{% url 'signer_create' %}",
+        csrfToken: "{{ csrf_token }}",
+        geminiApiKey: "{{ settings.GEMINI_API_KEY|default:'' }}",
+        language: "{{ LANGUAGE_CODE }}"
+    };
+
+    // Traducciones para JavaScript
+    window.SIGNER_TRANSLATIONS = {
+        academico: '{% trans "Académico" %}',
+        investigador: '{% trans "Investigador" %}',
+        tecnico: '{% trans "Técnico" %}',
+        gestor: '{% trans "Gestor" %}',
+        estudiante: '{% trans "Estudiante" %}',
+        otro: '{% trans "Otro" %}',
+        tuIdentidad: '{% trans "Tu identidad" %}',
+        datosVerificables: '{% trans "Datos verificables para tu firma digital." %}',
+        nombreCompleto: '{% trans "Nombre completo" %}',
+        placeholderNombre: '{% trans "Ej. Dra. María García" %}',
+        correoElectronico: '{% trans "Correo electrónico" %}',
+        placeholderEmail: '{% trans "nombre@institucion.edu" %}',
+        privadoValidacion: '{% trans "Privado. Solo para validación." %}',
+        obtenerOrcid: '{% trans "Obtener ORCID" %}',
+        contextoProfesional: '{% trans "Contexto profesional" %}',
+        desdeQueRol: '{% trans "¿Desde qué rol firmas este compromiso?" %}',
+        institucionOrganizacion: '{% trans "Institución / Organización" %}',
+        placeholderInstitucion: '{% trans "Ej. Universidad Nacional, Google, NASA..." %}',
+        rorSugerira: '{% trans "Escribe el nombre de tu institución. ROR sugerirá opciones verificadas (opcional)." %}',
+        disciplinaRol: '{% trans "Disciplina / Rol" %}',
+        selecciona: '{% trans "Selecciona..." %}',
+        pais: '{% trans "País" %}',
+        enlacePerfil: '{% trans "Enlace a perfil" %}',
+        opcional: '{% trans "Opcional" %}',
+        declaracion: '{% trans "Declaración" %}',
+        fraseBreveMotiviacion: '{% trans "Una frase breve sobre tu motivación" %}',
+        mensajePersonal: '{% trans "Mensaje personal" %}',
+        redactarConIA: '{% trans "Redactar con IA" %}',
+        placeholderDeclaracion: '{% trans "Escribe aquí tu compromiso..." %}',
+        elBotonRedactarIA: '{% trans "El botón <strong class=\"text-violet-600\">Redactar con IA</strong> utiliza Gemini para generar un texto profesional basado en tu perfil. Puedes editar el resultado." %}',
+        revisarYFirmar: '{% trans "Revisar y Firmar" %}',
+        confirmaDatos: '{% trans "Confirma que los datos son correctos." %}',
+        nombre: '{% trans "Nombre" %}',
+        afiliacion: '{% trans "Afiliación" %}',
+        aceptoPublicar: '{% trans "Acepto publicar esta firma bajo licencia abierta CC0. Entiendo que se generará un hash inmutable." %}',
+        compromisoRegistrado: '{% trans "¡Compromiso registrado!" %}',
+        firmaVerificada: '{% trans "Tu firma ha sido verificada criptográficamente." %}',
+        hashVerificacion: '{% trans "Hash de verificación" %}',
+        verBadge: '{% trans "Ver Badge" %}',
+        firmarOtro: '{% trans "Firmar otro" %}',
+        generando: '{% trans "Generando..." %}',
+        generandoDeclaracion: '{% trans "Generando declaración con IA..." %}',
+        declaracionGenerada: '{% trans "Declaración generada. Puedes editarla si lo deseas." %}',
+        enlaceCopiado: '{% trans "¡Enlace copiado al portapeles!" %}'
+    };
+</script>
+<script src="{% static 'js/signer_register.js' %}"></script>
+{% endblock %}

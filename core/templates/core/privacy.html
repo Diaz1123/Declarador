@@ -1,0 +1,493 @@
+{% extends "core/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto py-6 md:py-12 px-3 md:px-4">
+    <div class="bg-white rounded-2xl shadow-sm border p-4 md:p-8 lg:p-12">
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-2">{% trans "Aviso de Privacidad Integral" %}</h1>
+        <p class="text-base md:text-lg lg:text-xl text-slate-600 mb-3 md:mb-4">{% trans "Declarador.io - Plataforma de Transparencia Académica en el Uso de IA" %}</p>
+        <p class="text-xs md:text-sm text-slate-500 mb-6 md:mb-8">{% trans "Última actualización: Diciembre 2025" %}</p>
+
+        <div class="prose prose-slate max-w-none space-y-6 md:space-y-8">
+            <!-- Introducción -->
+            <section>
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-3 md:mb-4">{% trans "1. Identificación y Compromiso Fundacional" %}</h2>
+
+                <h3 class="text-lg md:text-xl font-semibold text-slate-800 mb-2 md:mb-3">{% trans "1.1 Responsable del Tratamiento de Datos" %}</h3>
+                <ul class="list-disc list-inside text-slate-700 text-sm md:text-base space-y-1 mb-4">
+                    <li class="break-words"><strong>{% trans "Nombre del proyecto:" %}</strong> Declarador.io</li>
+                    <li class="break-words"><strong>{% trans "Naturaleza:" %}</strong> {% trans "Herramienta educativa sin fines de lucro" %}</li>
+                </ul>
+
+                <h3 class="text-lg md:text-xl font-semibold text-slate-800 mb-2 md:mb-3">{% trans "1.2 Compromiso con la Transparencia y Soberanía Digital" %}</h3>
+                <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
+                    {% trans "Declarador.io nace del compromiso con la Ciencia Abierta como derecho fundamental, la Soberanía Digital Latinoamericana y la Transparencia Radical en el uso académico de Inteligencia Artificial Generativa." %}
+                </p>
+
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-3 md:p-4 rounded-r-lg mb-4">
+                    <p class="text-blue-900 font-semibold mb-2 text-sm md:text-base">{% trans "Principio de Estándar Más Alto:" %}</p>
+                    <p class="text-blue-800 text-xs md:text-sm leading-relaxed mb-3">
+                        {% trans "Aplicamos voluntariamente el nivel de protección de datos más robusto a TODOS nuestros usuarios, independientemente de su ubicación geográfica. Esto significa que garantizamos derechos que incluyen:" %}
+                    </p>
+                    <ul class="list-disc list-inside text-blue-800 text-xs md:text-sm space-y-1">
+                        <li class="break-words">{% trans "Derecho al olvido (cancelación de datos)" %}</li>
+                        <li class="break-words">{% trans "Portabilidad de datos en formatos estructurados" %}</li>
+                        <li class="break-words">{% trans "Revisión humana de decisiones automatizadas" %}</li>
+                        <li class="break-words">{% trans "Limitación del tratamiento de datos" %}</li>
+                        <li class="break-words">{% trans "Transparencia total en el uso de IA" %}</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Marco Legal -->
+            <section>
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-3 md:mb-4">{% trans "2. Marco Legal y Cumplimiento Normativo" %}</h2>
+
+                <h3 class="text-lg md:text-xl font-semibold text-slate-800 mb-2 md:mb-3">{% trans "2.1 Legislación Primaria Aplicable" %}</h3>
+                <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
+                    {% trans "Declarador.io cumple con las siguientes normativas de protección de datos personales:" %}
+                </p>
+
+                <div class="space-y-2 md:space-y-3 mb-4">
+                    <div class="border-l-4 border-slate-300 pl-3 md:pl-4 py-2">
+                        <h4 class="font-semibold text-slate-900 flex items-center gap-2 text-sm md:text-base break-words">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="4" y="4" width="16" height="16" rx="2" fill="#006847"/>
+                                <path d="M12 8v8M8 12h8" stroke="white" stroke-width="2"/>
+                            </svg>
+                            {% trans "México (Jurisdicción Principal)" %}
+                        </h4>
+                        <ul class="text-slate-700 text-xs md:text-sm space-y-1 mt-1">
+                            <li class="break-words">{% trans "Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP)" %}</li>
+                            <li class="break-words">{% trans "Lineamientos del INAI" %}</li>
+                        </ul>
+                    </div>
+
+                    <div class="border-l-4 border-blue-500 pl-3 md:pl-4 py-2">
+                        <h4 class="font-semibold text-slate-900 flex items-center gap-2 text-sm md:text-base break-words">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="8" fill="#003399"/>
+                                <circle cx="12" cy="12" r="5" fill="#FFCC00"/>
+                            </svg>
+                            {% trans "Unión Europea" %}
+                        </h4>
+                        <p class="text-slate-700 text-xs md:text-sm break-words">{% trans "Reglamento General de Protección de Datos (GDPR) - Reglamento (UE) 2016/679" %}</p>
+                    </div>
+
+                    <div class="border-l-4 border-green-500 pl-3 md:pl-4 py-2">
+                        <h4 class="font-semibold text-slate-900 flex items-center gap-2 text-sm md:text-base break-words">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="4" y="4" width="16" height="16" rx="2" fill="#009739"/>
+                                <circle cx="12" cy="12" r="3" fill="#FEDD00"/>
+                            </svg>
+                            {% trans "Brasil" %}
+                        </h4>
+                        <p class="text-slate-700 text-xs md:text-sm break-words">{% trans "Lei Geral de Proteção de Dados (LGPD) - Ley 13.709/2018" %}</p>
+                    </div>
+
+                    <div class="border-l-4 border-cyan-500 pl-3 md:pl-4 py-2">
+                        <h4 class="font-semibold text-slate-900 flex items-center gap-2 text-sm md:text-base break-words">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="4" y="4" width="16" height="16" rx="2" fill="#74ACDF"/>
+                                <circle cx="12" cy="12" r="2" fill="white"/>
+                            </svg>
+                            {% trans "Argentina" %}
+                        </h4>
+                        <p class="text-slate-700 text-xs md:text-sm break-words">{% trans "Ley de Protección de Datos Personales (LPDP) - Ley 25.326" %}</p>
+                    </div>
+
+                    <div class="border-l-4 border-red-500 pl-3 md:pl-4 py-2">
+                        <h4 class="font-semibold text-slate-900 flex items-center gap-2 text-sm md:text-base break-words">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="4" y="4" width="16" height="16" rx="2" fill="#D52B1E"/>
+                                <circle cx="12" cy="12" r="3" fill="white"/>
+                            </svg>
+                            {% trans "Chile" %}
+                        </h4>
+                        <p class="text-slate-700 text-xs md:text-sm break-words">{% trans "Ley sobre Protección de la Vida Privada - Ley 19.628" %}</p>
+                    </div>
+
+                    <div class="border-l-4 border-purple-500 pl-3 md:pl-4 py-2">
+                        <h4 class="font-semibold text-slate-900 flex items-center gap-2 text-sm md:text-base break-words">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="4" y="4" width="16" height="16" rx="2" fill="#B22234"/>
+                                <path d="M4 6h16M4 8h16M4 10h16" stroke="white" stroke-width="1"/>
+                                <rect x="4" y="4" width="7" height="7" fill="#3C3B6E"/>
+                            </svg>
+                            {% trans "Estados Unidos" %}
+                        </h4>
+                        <p class="text-slate-700 text-xs md:text-sm break-words">{% trans "COPPA para menores y FERPA para contextos educativos" %}</p>
+                    </div>
+                </div>
+
+                <h3 class="text-lg md:text-xl font-semibold text-slate-800 mb-2 md:mb-3">{% trans "2.2 Principios Rectores del Tratamiento" %}</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
+                    <div class="bg-slate-50 p-3 rounded-lg">
+                        <p class="font-semibold text-slate-900 text-sm md:text-base">{% trans "Licitud" %}</p>
+                        <p class="text-xs md:text-sm text-slate-600 break-words">{% trans "Solo recopilamos datos con base legal clara" %}</p>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-lg">
+                        <p class="font-semibold text-slate-900 text-sm md:text-base">{% trans "Consentimiento" %}</p>
+                        <p class="text-xs md:text-sm text-slate-600 break-words">{% trans "Informado, específico y revocable" %}</p>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-lg">
+                        <p class="font-semibold text-slate-900 text-sm md:text-base">{% trans "Finalidad" %}</p>
+                        <p class="text-xs md:text-sm text-slate-600 break-words">{% trans "Uso limitado a los propósitos declarados" %}</p>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-lg">
+                        <p class="font-semibold text-slate-900 text-sm md:text-base">{% trans "Proporcionalidad" %}</p>
+                        <p class="text-xs md:text-sm text-slate-600 break-words">{% trans "Solo recopilamos lo estrictamente necesario" %}</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Datos que recopilamos -->
+            <section>
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-3 md:mb-4">{% trans "3. Datos Personales Recopilados" %}</h2>
+
+                <h3 class="text-lg md:text-xl font-semibold text-slate-800 mb-2 md:mb-3">{% trans "3.1 Principio de Minimización de Datos" %}</h3>
+                <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
+                    {% trans "Aplicamos estrictamente el principio de minimización: solo recopilamos los datos absolutamente necesarios para prestar el servicio." %}
+                    <strong>{% trans "NUNCA compramos datos personales de terceros comerciales." %}</strong>
+                </p>
+
+                <h3 class="text-lg md:text-xl font-semibold text-slate-800 mb-2 md:mb-3">{% trans "3.2 Categorías de Datos y Finalidades" %}</h3>
+                <div class="space-y-3 md:space-y-4">
+                    <div class="border border-slate-200 rounded-lg p-3 md:p-4">
+                        <h4 class="font-semibold text-slate-900 mb-2 text-sm md:text-base">{% trans "Datos de Declaración (Esenciales)" %}</h4>
+                        <ul class="list-disc list-inside text-slate-700 text-xs md:text-sm space-y-1">
+                            <li class="break-words">{% trans "Respuestas del checklist de diagnóstico" %}</li>
+                            <li class="break-words">{% trans "Tipos de uso de IA seleccionados" %}</li>
+                            <li class="break-words">{% trans "Información de herramienta AI (nombre, versión, proveedor, fecha)" %}</li>
+                            <li class="break-words">{% trans "Descripción del propósito académico" %}</li>
+                            <li class="break-words">{% trans "Prompts/instrucciones utilizadas" %}</li>
+                            <li class="break-words">{% trans "Modo de integración del contenido" %}</li>
+                            <li class="break-words">{% trans "Nivel de revisión humana" %}</li>
+                            <li class="break-words">{% trans "Licencia del trabajo final" %}</li>
+                        </ul>
+                        <p class="text-xs md:text-sm text-slate-600 mt-2 break-words"><strong>{% trans "Finalidad:" %}</strong> {% trans "Generar declaraciones TXT/JSON de transparencia académica" %}</p>
+                    </div>
+
+                    <div class="border border-slate-200 rounded-lg p-3 md:p-4">
+                        <h4 class="font-semibold text-slate-900 mb-2 text-sm md:text-base">{% trans "Datos del Revisor (Opcionales)" %}</h4>
+                        <ul class="list-disc list-inside text-slate-700 text-xs md:text-sm space-y-1">
+                            <li class="break-words">{% trans "Nombre del revisor" %}</li>
+                            <li class="break-words">{% trans "Rol del revisor" %}</li>
+                        </ul>
+                        <p class="text-xs md:text-sm text-slate-600 mt-2 break-words"><strong>{% trans "Finalidad:" %}</strong> {% trans "Documentar supervisión humana del uso de IA" %}</p>
+                    </div>
+
+                    <div class="border border-slate-200 rounded-lg p-3 md:p-4">
+                        <h4 class="font-semibold text-slate-900 mb-2 text-sm md:text-base">{% trans "Datos de Sesión (Temporales)" %}</h4>
+                        <ul class="list-disc list-inside text-slate-700 text-xs md:text-sm space-y-1">
+                            <li class="break-words">{% trans "Cookies de sesión de Django" %}</li>
+                            <li class="break-words">{% trans "Estado del wizard entre pasos" %}</li>
+                        </ul>
+                        <p class="text-xs md:text-sm text-slate-600 mt-2 break-words"><strong>{% trans "Conservación:" %}</strong> {% trans "Se eliminan al cerrar el navegador" %}</p>
+                    </div>
+
+                    <div class="border border-slate-200 rounded-lg p-3 md:p-4">
+                        <h4 class="font-semibold text-slate-900 mb-2 text-sm md:text-base">{% trans "Datos Técnicos (Automatizados)" %}</h4>
+                        <ul class="list-disc list-inside text-slate-700 text-xs md:text-sm space-y-1">
+                            <li class="break-words">{% trans "Dirección IP (anonimizada después de 30 días)" %}</li>
+                            <li class="break-words">{% trans "Tipo de navegador y sistema operativo" %}</li>
+                            <li class="break-words">{% trans "Fecha y hora de acceso" %}</li>
+                            <li class="break-words">{% trans "Páginas visitadas" %}</li>
+                        </ul>
+                        <p class="text-xs md:text-sm text-slate-600 mt-2 break-words"><strong>{% trans "Finalidad:" %}</strong> {% trans "Seguridad y prevención de fraude, optimización de experiencia" %}</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Uso de los Datos -->
+            <section>
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-3 md:mb-4">{% trans "4. Uso de los Datos" %}</h2>
+
+                <h3 class="text-lg md:text-xl font-semibold text-slate-800 mb-2 md:mb-3">{% trans "4.1 Finalidades Primarias" %}</h3>
+                <ol class="list-decimal list-inside space-y-2 text-slate-700 text-sm md:text-base mb-4">
+                    <li class="break-words"><strong>{% trans "Generar declaraciones de transparencia:" %}</strong> {% trans "Crear archivos TXT y JSON personalizados según las respuestas del usuario" %}</li>
+                    <li class="break-words"><strong>{% trans "Verificación académica:" %}</strong> {% trans "Si el usuario completa el Paso 4, almacenar la declaración para búsquedas futuras y validación de integridad mediante hash SHA-256" %}</li>
+                    <li class="break-words"><strong>{% trans "Seguridad del servicio:" %}</strong> {% trans "Prevenir fraude, detectar anomalías y proteger la integridad de la plataforma" %}</li>
+                </ol>
+
+                <div class="bg-amber-50 border-l-4 border-amber-500 p-3 md:p-4 rounded-r-lg mt-4">
+                    <p class="text-amber-900 font-semibold mb-2 flex items-start gap-2 text-sm md:text-base">
+                        <svg class="w-4 h-4 md:w-5 md:h-5 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" fill="#F59E0B"/>
+                            <path d="M12 8v4M12 16h.01" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span class="break-words">{% trans "IMPORTANTE: Puedes usar Declarador.io SIN guardar datos en nuestros servidores" %}</span>
+                    </p>
+                    <p class="text-amber-800 text-xs md:text-sm break-words">
+                        {% trans "Tienes dos opciones al llegar al Paso 4: Solo descargar archivos (tus datos NO se guardan) o Completar Paso 4 (se guardan para verificación futura)." %}
+                    </p>
+                </div>
+            </section>
+
+            <!-- Uso de IA -->
+            <section>
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-3 md:mb-4">{% trans "5. Uso Responsable de Inteligencia Artificial (IA)" %}</h2>
+
+                <h3 class="text-lg md:text-xl font-semibold text-slate-800 mb-2 md:mb-3">{% trans "5.1 Principios del Uso de IA en Declarador.io" %}</h3>
+                <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
+                    {% trans "Nuestra política de IA se fundamenta en 7 principios éticos adaptados para el contexto académico latinoamericano:" %}
+                </p>
+
+                <div class="space-y-2 md:space-y-3">
+                    <div class="border border-slate-200 rounded-lg p-3 md:p-4">
+                        <h4 class="font-semibold text-slate-900 mb-2 flex items-start gap-2 text-sm md:text-base">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-blue-600 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 4v16m-8-8h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span class="break-words">1. {% trans "Transparencia" %}</span>
+                        </h4>
+                        <p class="text-slate-700 text-xs md:text-sm break-words">{% trans "Etiquetado visible de contenido generado con asistencia de IA y divulgación de modelos utilizados" %}</p>
+                    </div>
+                    <div class="border border-slate-200 rounded-lg p-3 md:p-4">
+                        <h4 class="font-semibold text-slate-900 mb-2 flex items-start gap-2 text-sm md:text-base">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-purple-600 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 4.5c-4.5 0-8 2.5-8 6s3.5 6 8 6 8-2.5 8-6-3.5-6-8-6z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="12" cy="10.5" r="1.5" fill="currentColor"/>
+                            </svg>
+                            <span class="break-words">2. {% trans "Supervisión Humana" %}</span>
+                        </h4>
+                        <p class="text-slate-700 text-xs md:text-sm break-words">{% trans "La IA sugiere; los humanos deciden. Ninguna decisión que afecte derechos académicos es automática" %}</p>
+                    </div>
+                    <div class="border border-slate-200 rounded-lg p-3 md:p-4">
+                        <h4 class="font-semibold text-slate-900 mb-2 flex items-start gap-2 text-sm md:text-base">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-green-600 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="5" y="4" width="14" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="M9 10l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span class="break-words">3. {% trans "Privacidad y No-Entrenamiento" %}</span>
+                        </h4>
+                        <p class="text-slate-700 text-xs md:text-sm break-words">{% trans "NO usamos tus declaraciones ni consultas para entrenar modelos comerciales" %}</p>
+                    </div>
+                    <div class="border border-slate-200 rounded-lg p-3 md:p-4">
+                        <h4 class="font-semibold text-slate-900 mb-2 flex items-start gap-2 text-sm md:text-base">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-orange-600 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="9" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="15" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                            <span class="break-words">4. {% trans "Equidad y No Discriminación" %}</span>
+                        </h4>
+                        <p class="text-slate-700 text-xs md:text-sm break-words">{% trans "Monitoreo activo de sesgos algorítmicos con enfoque en diversidad latinoamericana" %}</p>
+                    </div>
+                    <div class="border border-slate-200 rounded-lg p-3 md:p-4">
+                        <h4 class="font-semibold text-slate-900 mb-2 flex items-start gap-2 text-sm md:text-base">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-indigo-600 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+                            </svg>
+                            <span class="break-words">5. {% trans "Integridad Académica" %}</span>
+                        </h4>
+                        <p class="text-slate-700 text-xs md:text-sm break-words">{% trans "Las declaraciones promueven honestidad sobre el uso de IA y disuaden del plagio tecnológico" %}</p>
+                    </div>
+                    <div class="border border-slate-200 rounded-lg p-3 md:p-4">
+                        <h4 class="font-semibold text-slate-900 mb-2 flex items-start gap-2 text-sm md:text-base">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-cyan-600 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="M9 22V12h6v10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span class="break-words">6. {% trans "Soberanía de Datos Académicos" %}</span>
+                        </h4>
+                        <p class="text-slate-700 text-xs md:text-sm break-words">{% trans "Priorización de infraestructura regional y control sobre datos académicos sensibles" %}</p>
+                    </div>
+                    <div class="border border-slate-200 rounded-lg p-3 md:p-4">
+                        <h4 class="font-semibold text-slate-900 mb-2 flex items-start gap-2 text-sm md:text-base">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-emerald-600 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
+                                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
+                            </svg>
+                            <span class="break-words">7. {% trans "Acceso Abierto y Gratuito" %}</span>
+                        </h4>
+                        <p class="text-slate-700 text-xs md:text-sm break-words">{% trans "Herramienta completamente gratuita sin barreras financieras" %}</p>
+                    </div>
+                </div>
+
+                <h3 class="text-lg md:text-xl font-semibold text-slate-800 mt-4 md:mt-6 mb-2 md:mb-3">{% trans "5.2 Garantías Específicas" %}</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+                    <div class="bg-green-50 p-3 md:p-4 rounded-lg">
+                        <h4 class="font-semibold text-green-900 mb-2 flex items-start gap-2 text-sm md:text-base">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" stroke="#15803D" stroke-width="2" fill="none"/>
+                                <path d="M9 12l2 2 4-4" stroke="#15803D" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span class="break-words">{% trans "Lo que SÍ hacemos:" %}</span>
+                        </h4>
+                        <ul class="text-green-800 text-xs md:text-sm space-y-1">
+                            <li class="break-words">{% trans "Procesar declaraciones localmente" %}</li>
+                            <li class="break-words">{% trans "Usar algoritmos deterministas para validación" %}</li>
+                            <li class="break-words">{% trans "Mantener registros auditables" %}</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-3 md:p-4 rounded-lg">
+                        <h4 class="font-semibold text-red-900 mb-2 flex items-start gap-2 text-sm md:text-base">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" stroke="#991B1B" stroke-width="2" fill="none"/>
+                                <path d="M15 9l-6 6M9 9l6 6" stroke="#991B1B" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span class="break-words">{% trans "Lo que NUNCA hacemos:" %}</span>
+                        </h4>
+                        <ul class="text-red-800 text-xs md:text-sm space-y-1">
+                            <li class="break-words">{% trans "Enviar manuscritos a APIs externas sin tu conocimiento" %}</li>
+                            <li class="break-words">{% trans "Usar declaraciones para entrenar modelos comerciales" %}</li>
+                            <li class="break-words">{% trans "Otorgar a terceros derechos sobre tu contenido" %}</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Transferencias Internacionales -->
+            <section>
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-3 md:mb-4">{% trans "6. Transferencias Internacionales de Datos" %}</h2>
+
+                <div class="bg-red-50 border-l-4 border-red-500 p-3 md:p-4 rounded-r-lg mb-4">
+                    <p class="text-red-900 font-semibold text-sm md:text-base break-words">{% trans "NO VENDEMOS, ALQUILAMOS NI COMERCIALIZAMOS TUS DATOS PERSONALES BAJO NINGUNA CIRCUNSTANCIA." %}</p>
+                </div>
+
+                <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-4 break-words">
+                    {% trans "Cuando es inevitable transferir datos fuera de Latinoamérica, aplicamos Cláusulas Contractuales Modelo (CCM) que garantizan el mismo nivel de protección que en el país de origen." %}
+                </p>
+            </section>
+
+            <!-- Derechos ARCO -->
+            <section>
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-3 md:mb-4">{% trans "7. Derechos de los Titulares de Datos (Derechos ARCO+)" %}</h2>
+                <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
+                    {% trans "Garantizamos los derechos ARCO ampliados conforme a los estándares más altos internacionales:" %}
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-slate-700 text-sm md:text-base">
+                    <li class="break-words"><strong>{% trans "Acceso:" %}</strong> {% trans "Obtener copia de tus datos guardados" %}</li>
+                    <li class="break-words"><strong>{% trans "Rectificación:" %}</strong> {% trans "Corregir datos inexactos o incompletos" %}</li>
+                    <li class="break-words"><strong>{% trans "Cancelación:" %}</strong> {% trans "Eliminar permanentemente tu declaración (derecho al olvido)" %}</li>
+                    <li class="break-words"><strong>{% trans "Oposición:" %}</strong> {% trans "Detener el tratamiento para fines secundarios" %}</li>
+                    <li class="break-words"><strong>{% trans "Portabilidad:" %}</strong> {% trans "Recibir tus datos en formato JSON estructurado" %}</li>
+                    <li class="break-words"><strong>{% trans "Limitación:" %}</strong> {% trans "Congelar el procesamiento mientras verificamos exactitud" %}</li>
+                </ul>
+
+                <div class="bg-amber-50 border-l-4 border-amber-500 p-3 md:p-4 rounded-r-lg mt-4">
+                    <p class="text-amber-900 font-semibold mb-2 text-sm md:text-base">{% trans "Para ejercer estos derechos:" %}</p>
+                    <p class="text-amber-800 text-xs md:text-sm break-words">
+                        {% trans "Contáctanos en privacy@declarador.io con tu ID de declaración o hash SHA-256. Responderemos en un plazo máximo de 20 días hábiles." %}
+                    </p>
+                </div>
+            </section>
+
+            <!-- Seguridad -->
+            <section>
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-3 md:mb-4">{% trans "8. Seguridad de los Datos" %}</h2>
+                <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
+                    {% trans "Implementamos medidas técnicas y organizativas para proteger tus datos mediante una estrategia de seguridad multicapa:" %}
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-slate-700 text-sm md:text-base">
+                    <li class="break-words">{% trans "TLS 1.3 / HTTPS obligatorio para todo el tráfico" %}</li>
+                    <li class="break-words">{% trans "Encriptación AES-256 en reposo" %}</li>
+                    <li class="break-words">{% trans "Hashing SHA-256 para validación de integridad" %}</li>
+                    <li class="break-words">{% trans "Autenticación Multifactor (MFA) para administradores" %}</li>
+                    <li class="break-words">{% trans "Web Application Firewall (WAF)" %}</li>
+                    <li class="break-words">{% trans "Backups diarios encriptados" %}</li>
+                    <li class="break-words">{% trans "Monitoreo SIEM 24/7" %}</li>
+                </ul>
+            </section>
+
+            <!-- Retención -->
+            <section>
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-3 md:mb-4">{% trans "9. Retención y Eliminación de Datos" %}</h2>
+                <div class="overflow-x-auto -mx-3 md:mx-0 px-3 md:px-0">
+                    <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+                        <thead class="bg-slate-100">
+                            <tr>
+                                <th class="px-2 md:px-4 py-2 md:py-3 text-left text-slate-900 font-semibold text-xs md:text-sm">{% trans "Tipo de Dato" %}</th>
+                                <th class="px-2 md:px-4 py-2 md:py-3 text-left text-slate-900 font-semibold text-xs md:text-sm">{% trans "Periodo de Conservación" %}</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200">
+                            <tr>
+                                <td class="px-2 md:px-4 py-2 md:py-3 text-slate-700 text-xs md:text-sm">{% trans "Declaraciones guardadas" %}</td>
+                                <td class="px-2 md:px-4 py-2 md:py-3 text-slate-700 text-xs md:text-sm">{% trans "Indefinida (verificación histórica)" %}</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 md:px-4 py-2 md:py-3 text-slate-700 text-xs md:text-sm">{% trans "Datos de sesión" %}</td>
+                                <td class="px-2 md:px-4 py-2 md:py-3 text-slate-700 text-xs md:text-sm">{% trans "Hasta cierre del navegador" %}</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 md:px-4 py-2 md:py-3 text-slate-700 text-xs md:text-sm">{% trans "Logs de acceso (IP identificable)" %}</td>
+                                <td class="px-2 md:px-4 py-2 md:py-3 text-slate-700 text-xs md:text-sm">{% trans "30 días" %}</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 md:px-4 py-2 md:py-3 text-slate-700 text-xs md:text-sm">{% trans "Logs de seguridad (IP anonimizada)" %}</td>
+                                <td class="px-2 md:px-4 py-2 md:py-3 text-slate-700 text-xs md:text-sm">{% trans "90 días" %}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Cookies -->
+            <section>
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-3 md:mb-4">{% trans "10. Uso de Cookies" %}</h2>
+                <div class="overflow-x-auto -mx-3 md:mx-0 px-3 md:px-0">
+                    <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+                        <thead class="bg-slate-100">
+                            <tr>
+                                <th class="px-2 md:px-4 py-2 md:py-3 text-left text-slate-900 font-semibold text-xs md:text-sm">{% trans "Cookie" %}</th>
+                                <th class="px-2 md:px-4 py-2 md:py-3 text-left text-slate-900 font-semibold text-xs md:text-sm">{% trans "Propósito" %}</th>
+                                <th class="px-2 md:px-4 py-2 md:py-3 text-left text-slate-900 font-semibold text-xs md:text-sm">{% trans "Duración" %}</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200">
+                            <tr>
+                                <td class="px-2 md:px-4 py-2 md:py-3 text-slate-700 text-xs md:text-sm">sessionid</td>
+                                <td class="px-2 md:px-4 py-2 md:py-3 text-slate-700 text-xs md:text-sm">{% trans "Mantener datos del wizard entre pasos" %}</td>
+                                <td class="px-2 md:px-4 py-2 md:py-3 text-slate-700 text-xs md:text-sm">{% trans "Sesión (cierre de navegador)" %}</td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 md:px-4 py-2 md:py-3 text-slate-700 text-xs md:text-sm">csrftoken</td>
+                                <td class="px-2 md:px-4 py-2 md:py-3 text-slate-700 text-xs md:text-sm">{% trans "Seguridad contra ataques CSRF" %}</td>
+                                <td class="px-2 md:px-4 py-2 md:py-3 text-slate-700 text-xs md:text-sm">{% trans "1 año" %}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-slate-700 text-sm md:text-base mt-4 break-words">
+                    <strong>{% trans "NO utilizamos cookies de terceros para publicidad o tracking." %}</strong>
+                </p>
+            </section>
+
+            <!-- Menores de Edad -->
+            <section>
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-3 md:mb-4">{% trans "11. Menores de Edad" %}</h2>
+                <p class="text-slate-700 text-sm md:text-base leading-relaxed break-words">
+                    {% trans "No recopilamos intencionalmente datos de menores de 13 años conforme a COPPA. Para menores entre 13 y 17 años, recomendamos usar este servicio con supervisión de un tutor, docente o padre de familia." %}
+                </p>
+            </section>
+
+            <!-- Cambios en la Política -->
+            <section>
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-3 md:mb-4">{% trans "12. Cambios en esta Política" %}</h2>
+                <p class="text-slate-700 text-sm md:text-base leading-relaxed break-words">
+                    {% trans "Podemos actualizar esta política ocasionalmente. Para cambios sustanciales, notificaremos mediante aviso destacado en el sitio web por 30 días. El uso continuado después de los cambios implica aceptación de la nueva política." %}
+                </p>
+            </section>
+
+            <!-- Compromiso -->
+            <section class="bg-blue-50 p-4 md:p-6 rounded-lg">
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-3 md:mb-4">{% trans "Declaración de Compromiso Ético" %}</h2>
+                <p class="text-slate-700 text-sm md:text-base leading-relaxed italic break-words">
+                    {% trans "Al usar Declarador.io, participas en un movimiento de transparencia académica que trasciende fronteras. Tu privacidad no es un precio a pagar por la tecnología; es un derecho fundamental que defendemos incondicionalmente." %}
+                </p>
+                <p class="text-slate-600 text-xs md:text-sm mt-3 md:mt-4 break-words">
+                    {% trans '"La privacidad es un derecho, no un privilegio. La transparencia es un compromiso, no una opción."' %}
+                </p>
+            </section>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="mt-8 md:mt-12 flex justify-center">
+            <a href="{% url 'home' %}" class="px-6 md:px-8 py-2.5 md:py-3 rounded-xl font-bold text-white bg-primary-600 hover:bg-primary-700 transition-colors text-sm md:text-base">
+                {% trans "Volver al Inicio" %}
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

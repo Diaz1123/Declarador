@@ -1,0 +1,352 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Declarador - Transparencia Académica{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/output.css' %}">
+    <script src="https://cdn.userway.org/widget.js" data-account="fWs7D8qit7"></script>
+    <style>
+        /* Custom primary color - using a blue/indigo */
+        :root {
+            --primary-50: #eff6ff;
+            --primary-100: #dbeafe;
+            --primary-500: #3b82f6;
+            --primary-600: #2563eb;
+            --primary-700: #1d4ed8;
+            --primary-800: #1e40af;
+            --primary-900: #1e3a8a;
+        }
+        .bg-primary-50 { background-color: var(--primary-50); }
+        .bg-primary-100 { background-color: var(--primary-100); }
+        .bg-primary-500 { background-color: var(--primary-500); }
+        .bg-primary-600 { background-color: var(--primary-600); }
+        .bg-primary-700 { background-color: var(--primary-700); }
+        .bg-primary-800 { background-color: var(--primary-800); }
+        .text-primary-600 { color: var(--primary-600); }
+        .text-primary-700 { color: var(--primary-700); }
+        .text-primary-800 { color: var(--primary-800); }
+        .text-primary-900 { color: var(--primary-900); }
+        .border-primary-500 { border-color: var(--primary-500); }
+        .border-primary-600 { border-color: var(--primary-600); }
+        .ring-primary-500 { --tw-ring-color: var(--primary-500); }
+        .focus\:border-primary-500:focus { border-color: var(--primary-500); }
+        .focus\:ring-primary-500:focus { --tw-ring-color: var(--primary-500); }
+        .hover\:bg-primary-50:hover { background-color: var(--primary-50); }
+        .hover\:bg-primary-700:hover { background-color: var(--primary-700); }
+        .hover\:text-primary-700:hover { color: var(--primary-700); }
+        
+        /* Estilos mejorados para inputs, selects y textareas */
+        .form-input,
+        .form-select,
+        .form-textarea {
+            background-color: #f8fafc; /* bg-slate-50 */
+            border: 2px solid #cbd5e1; /* border-slate-300 más grueso */
+            transition: all 0.2s ease;
+            padding: 5px;
+        }
+        
+        .form-input:hover,
+        .form-select:hover,
+        .form-textarea:hover {
+            background-color: #ffffff;
+            border-color: #94a3b8; /* border-slate-400 */
+            
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            background-color: #ffffff;
+            border-color: var(--primary-500);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            outline: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans text-slate-900">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+        <div class="max-w-5xl mx-auto px-2 sm:px-6 h-16 md:h-20 flex items-center justify-between">
+            <div class="flex items-center gap-1.5 md:gap-3">
+                <div class="w-8 h-8 md:w-10 md:h-10 bg-slate-900 rounded-lg flex items-center justify-center text-white font-bold text-base md:text-xl shadow-md shrink-0">
+                    AI
+                </div>
+                <div class="min-w-0">
+                    <a href="{% url 'home' %}">
+                        <h1 class="font-bold text-sm md:text-xl tracking-tight text-slate-900 leading-none">
+                            Declarador
+                        </h1>
+                        <span class="text-[8px] md:text-[10px] font-medium text-slate-400 uppercase tracking-widest hidden sm:inline">{% trans "Transparencia Académica" %}</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-0.5 md:gap-2 lg:gap-4">
+                <!-- Home Button -->
+                <a
+                    href="https://usoeticoia.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex items-center gap-1 px-1.5 md:px-3 py-1.5 md:py-2 text-slate-600 hover:text-primary-700 hover:bg-slate-50 rounded-lg transition-colors text-sm font-medium"
+                    title="{% trans 'Inicio - usoeticoia.org' %}"
+                >
+                    <svg class="w-4 h-4 md:w-[18px] md:h-[18px] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                    </svg>
+                    <span class="hidden lg:inline text-xs md:text-sm">{% trans "Inicio" %}</span>
+                </a>
+                <!-- Signers Button -->
+                <a
+                    href="{% url 'signers_list' %}"
+                    class="flex items-center gap-1 px-1.5 md:px-3 py-1.5 md:py-2 text-slate-600 hover:text-primary-700 hover:bg-slate-50 rounded-lg transition-colors text-sm font-medium"
+                    title="{% trans 'Firmantes' %}"
+                >
+                    <svg class="w-4 h-4 md:w-[18px] md:h-[18px] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                    <span class="hidden lg:inline text-xs md:text-sm">{% trans "Firmantes" %}</span>
+                </a>
+
+                <!-- Search Button -->
+                <a
+                    href="{% url 'search' %}"
+                    class="flex items-center gap-1 px-1.5 md:px-3 py-1.5 md:py-2 text-slate-600 hover:text-primary-700 hover:bg-slate-50 rounded-lg transition-colors text-sm font-medium"
+                    title="{% trans 'Verificar' %}"
+                >
+                    <svg class="w-4 h-4 md:w-[18px] md:h-[18px] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <span class="hidden lg:inline text-xs md:text-sm">{% trans "Verificar" %}</span>
+                </a>
+
+                <!-- Help Button -->
+                <button
+                    onclick="toggleHelp()"
+                    class="flex items-center gap-1 px-1.5 md:px-3 py-1.5 md:py-2 text-slate-600 hover:text-primary-700 hover:bg-slate-50 rounded-lg transition-colors text-sm font-medium"
+                    title="{% trans 'Ayuda' %}"
+                >
+                    <svg class="w-4 h-4 md:w-[18px] md:h-[18px] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    <span class="hidden lg:inline text-xs md:text-sm">{% trans "Ayuda" %}</span>
+                </button>
+
+                <!-- Language Selector -->
+                <div class="relative language-selector">
+                    <button
+                        onclick="toggleLanguageMenu()"
+                        class="flex items-center gap-0.5 md:gap-1 px-1.5 md:px-3 py-1.5 md:py-2 text-slate-600 hover:text-primary-700 hover:bg-slate-50 rounded-lg transition-colors text-sm font-medium"
+                        aria-label="Select language"
+                        title="{% trans 'Cambiar idioma' %}"
+                    >
+                        <svg class="w-4 h-4 md:w-[18px] md:h-[18px] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+                        </svg>
+                        <span class="hidden md:inline uppercase text-[10px] md:text-xs">{{ LANGUAGE_CODE }}</span>
+                        <svg class="w-2.5 h-2.5 md:w-3 md:h-3 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Language Dropdown Menu -->
+                    <div id="languageMenu" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-slate-200 py-1 z-50">
+                        <form action="{% url 'set_language' %}" method="post" id="languageForm">
+                            {% csrf_token %}
+                            {% get_current_language as CURRENT_LANGUAGE %}
+                            {% get_available_languages as AVAILABLE_LANGUAGES %}
+                            {% for lang_code, lang_name in AVAILABLE_LANGUAGES %}
+                                <button
+                                    type="submit"
+                                    name="language"
+                                    value="{{ lang_code }}"
+                                    onclick="event.preventDefault(); setLanguageNext('{{ lang_code }}'); document.getElementById('languageForm').submit();"
+                                    class="w-full text-left px-4 py-2 text-sm hover:bg-slate-50 transition-colors flex items-center justify-between {% if lang_code == CURRENT_LANGUAGE %}bg-primary-50 text-primary-700 font-semibold{% else %}text-slate-700{% endif %}"
+                                >
+                                    <span>{{ lang_name }}</span>
+                                    {% if lang_code == CURRENT_LANGUAGE %}
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    {% endif %}
+                                </button>
+                            {% endfor %}
+                        </form>
+                    </div>
+                </div>
+
+                <div class="w-px h-6 bg-slate-200 mx-0.5 md:mx-1 hidden sm:block"></div>
+
+                <!-- Sign Ethical Use Button -->
+                <a
+                    href="{% url 'signer_register' %}"
+                    class="flex items-center gap-0.5 md:gap-2 px-1.5 md:px-4 py-1.5 md:py-2 text-white bg-gradient-to-r from-emerald-500 to-cyan-500 hover:opacity-90 rounded-lg transition-all shadow-sm hover:shadow-md text-[10px] md:text-sm font-medium"
+                    title="{% trans 'Firmar Compromiso' %}"
+                >
+                    <svg class="w-3 h-3 md:w-4 md:h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span class="hidden sm:inline">{% trans "Firmar" %}</span>
+                </a>
+
+                <!-- New Declaration Button -->
+                <a
+                    href="{% url 'home' %}?reset=1"
+                    class="flex items-center gap-0.5 md:gap-2 px-1.5 md:px-4 py-1.5 md:py-2 text-white bg-slate-900 hover:bg-slate-800 rounded-lg transition-all shadow-sm hover:shadow-md text-[10px] md:text-sm font-medium"
+                    title="{% trans 'Nueva Declaración' %}"
+                >
+                    <svg class="w-3 h-3 md:w-4 md:h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 5v14M5 12h14" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                    <span class="hidden sm:inline">{% trans "Nueva" %}</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 w-full max-w-5xl mx-auto p-4 md:p-10 flex flex-col min-h-screen">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-slate-50 border-t border-slate-200 py-6 mt-auto">
+        <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+            <div class="text-center sm:text-left flex items-center gap-3">
+                <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" title="Creative Commons BY 4.0" class="flex items-center gap-1 hover:opacity-75 transition-opacity">
+                    <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+                        <path d="M10 5.5c-2.481 0-4.5 2.019-4.5 4.5s2.019 4.5 4.5 4.5 4.5-2.019 4.5-4.5-2.019-4.5-4.5-4.5zm0 7.5c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3z"/>
+                        <path d="M6.5 9.25c-.414 0-.75.336-.75.75s.336.75.75.75.75-.336.75-.75-.336-.75-.75-.75zm7 0c-.414 0-.75.336-.75.75s.336.75.75.75.75-.336.75-.75-.336-.75-.75-.75z"/>
+                    </svg>
+                    <span class="text-xs font-medium">CC-BY 4.0</span>
+                </a>
+                <span class="text-slate-400">•</span>
+                <a href="https://usoeticoia.org" target="_blank" rel="noopener noreferrer" class="hover:text-primary-600 transition-colors font-medium">
+                    usoeticoia.org
+                </a>
+            </div>
+            <div class="flex gap-6">
+                <a href="{% url 'privacy' %}" class="hover:text-primary-600 transition-colors">{% trans "Privacidad" %}</a>
+                <a href="{% url 'search' %}" class="hover:text-primary-600 transition-colors">{% trans "Buscar" %}</a>
+                <a href="https://github.com/declarador" target="_blank" class="hover:text-primary-600 transition-colors">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Help Modal -->
+    <div id="helpModal" class="hidden fixed inset-0 z-[60] flex items-center justify-center p-4 bg-slate-900/50" onclick="if(event.target === this) toggleHelp()">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden">
+            <div class="p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+                <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z" stroke-width="2"></path>
+                    </svg>
+                    {% trans "Glosario para No Expertos" %}
+                </h3>
+                <button onclick="toggleHelp()" class="text-slate-400 hover:text-slate-700 p-1 hover:bg-slate-200 rounded-full transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="p-6 max-h-[60vh] overflow-y-auto space-y-4">
+                {% for term in glossary %}
+                <div class="pb-4 border-b border-slate-100 last:border-0 last:pb-0">
+                    <h4 class="font-bold text-slate-800 text-sm mb-1">{{ term.term }}</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">{{ term.definition }}</p>
+                </div>
+                {% endfor %}
+                <div class="p-4 bg-primary-50 rounded-xl text-xs text-primary-800 mt-4 leading-relaxed">
+                    <strong>{% trans "Tip Ético" %}:</strong> {% trans "La transparencia no juzga el uso de la IA, solo lo hace visible. Un uso honesto y declarado siempre es mejor académicamente que un uso oculto." %}
+                </div>
+            </div>
+            <div class="p-4 border-t border-slate-100 text-center">
+                <button onclick="toggleHelp()" class="text-sm font-medium text-primary-600 hover:text-primary-800">
+                    {% trans "Cerrar Glosario" %}
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        {% get_current_language as CURRENT_LANG %}
+        const currentLanguage = '{{ CURRENT_LANG }}';
+        
+        function toggleHelp() {
+            const modal = document.getElementById('helpModal');
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+            } else {
+                modal.classList.add('hidden');
+            }
+        }
+
+        function toggleLanguageMenu() {
+            const menu = document.getElementById('languageMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function setLanguageNext(langCode) {
+            const form = document.getElementById('languageForm');
+            if (!form) return;
+            
+            // Get current path and remove language prefix if present
+            let currentPath = window.location.pathname;
+            const availableLangs = ['es', 'en', 'pt', 'it'];
+            
+            // Remove current language prefix
+            for (const lang of availableLangs) {
+                if (currentPath.startsWith('/' + lang + '/')) {
+                    currentPath = currentPath.substring(lang.length + 1);
+                    break;
+                } else if (currentPath === '/' + lang) {
+                    currentPath = '/';
+                    break;
+                }
+            }
+            
+            // Add new language prefix
+            const newPath = '/' + langCode + currentPath;
+            
+            // Add query string if present
+            const queryString = window.location.search;
+            const nextValue = newPath + queryString;
+            
+            // Create or update hidden input for 'next'
+            let nextInput = form.querySelector('input[name="next"]');
+            if (!nextInput) {
+                nextInput = document.createElement('input');
+                nextInput.type = 'hidden';
+                nextInput.name = 'next';
+                form.appendChild(nextInput);
+            }
+            nextInput.value = nextValue;
+        }
+
+        // Close modals on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.getElementById('helpModal').classList.add('hidden');
+                document.getElementById('languageMenu').classList.add('hidden');
+            }
+        });
+
+        // Close language menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const languageSelector = document.querySelector('.language-selector');
+            const languageMenu = document.getElementById('languageMenu');
+            if (languageSelector && !languageSelector.contains(e.target)) {
+                languageMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,149 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Verificar Firmante" %} - {{ signer.full_name }} - Declarador{% endblock %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto px-4">
+    <div class="bg-white rounded-[2rem] shadow-2xl shadow-slate-200 p-6 md:p-8 lg:p-12 overflow-hidden relative">
+        <!-- Decorative top bar -->
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-lime-400 via-cyan-400 to-violet-400"></div>
+
+        <!-- Header -->
+        <div class="text-center mb-8 md:mb-10">
+            <div class="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-emerald-50 mb-4 md:mb-6 border border-emerald-100">
+                <svg class="w-8 h-8 md:w-10 md:h-10 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+            </div>
+            <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">{% trans "Firma Verificada" %}</h1>
+            <p class="text-sm md:text-base text-slate-500 px-4">{% trans "Esta persona ha firmado el compromiso ético de IA" %}</p>
+        </div>
+
+        <!-- Signer Info Card -->
+        <div class="bg-slate-50 rounded-2xl p-4 md:p-6 lg:p-8 border border-slate-100 mb-6 md:mb-8">
+            <div class="text-center mb-4 md:mb-6">
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-2 break-words">{{ signer.full_name }}</h2>
+                <p class="text-sm md:text-base text-slate-600 mb-3 md:mb-4 break-words">{{ signer.affiliation }}</p>
+
+                <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2 md:gap-3">
+                    <!-- ORCID Badge -->
+                    <a href="https://orcid.org/{{ signer.orcid }}" target="_blank"
+                       class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-3 md:px-4 py-2 bg-white border border-slate-200 rounded-lg hover:border-emerald-300 transition-colors">
+                        <svg class="w-4 h-4 shrink-0" viewBox="0 0 256 256" fill="#A6CE39">
+                            <path d="M256,128c0,70.7-57.3,128-128,128C57.3,256,0,198.7,0,128C0,57.3,57.3,0,128,0C198.7,0,256,57.3,256,128z"/>
+                            <g>
+                                <path fill="#FFFFFF" d="M86.3,186.2H70.9V79.1h15.4v48.4V186.2z"/>
+                                <path fill="#FFFFFF" d="M108.9,79.1h41.6c39.6,0,57,28.3,57,53.6c0,27.5-21.5,53.6-56.8,53.6h-41.8V79.1z M124.3,172.4h24.5 c34.9,0,42.9-26.5,42.9-39.7c0-21.5-13.7-39.7-43.7-39.7h-23.7V172.4z"/>
+                                <path fill="#FFFFFF" d="M88.7,56.8c0,5.5-4.5,10.1-10.1,10.1c-5.6,0-10.1-4.6-10.1-10.1c0-5.6,4.5-10.1,10.1-10.1 C84.2,46.7,88.7,51.3,88.7,56.8z"/>
+                            </g>
+                        </svg>
+                        <span class="font-mono text-xs md:text-sm text-slate-700 truncate">{{ signer.orcid }}</span>
+                    </a>
+
+                    <!-- ROR Badge -->
+                    {% if signer.affiliation_ror_id %}
+                    <a href="{{ signer.affiliation_ror_id }}" target="_blank"
+                       class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-3 md:px-4 py-2 bg-white border border-slate-200 rounded-lg hover:border-emerald-300 transition-colors">
+                        <svg class="w-4 h-4 shrink-0 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                        <span class="text-xs md:text-sm text-slate-700">ROR</span>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Additional Details -->
+            <div class="space-y-2 md:space-y-3 mb-4 md:mb-6">
+                <div class="flex items-center justify-between py-2 border-b border-slate-200 gap-3">
+                    <span class="text-xs md:text-sm text-slate-500 shrink-0">{% trans "Disciplina" %}</span>
+                    <span class="font-medium text-slate-900 text-xs md:text-sm text-right truncate">{{ signer.discipline }}</span>
+                </div>
+
+                {% if signer.country %}
+                <div class="flex items-center justify-between py-2 border-b border-slate-200 gap-3">
+                    <span class="text-xs md:text-sm text-slate-500 shrink-0">{% trans "País" %}</span>
+                    <span class="font-medium text-slate-900 text-xs md:text-sm text-right truncate inline-flex items-center gap-1.5">
+                        <span>{{ signer.country_flag }}</span>
+                        <span>{{ signer.country }}</span>
+                    </span>
+                </div>
+                {% endif %}
+
+                {% if signer.profile_url %}
+                <div class="flex items-center justify-between py-2 border-b border-slate-200 gap-3">
+                    <span class="text-xs md:text-sm text-slate-500 shrink-0">{% trans "Perfil" %}</span>
+                    <a href="{{ signer.profile_url }}" target="_blank" class="font-medium text-cyan-600 hover:text-cyan-700 text-xs md:text-sm truncate">
+                        {% trans "Ver perfil" %} →
+                    </a>
+                </div>
+                {% endif %}
+
+                <div class="flex items-center justify-between py-2 gap-3">
+                    <span class="text-xs md:text-sm text-slate-500 shrink-0">{% trans "Fecha de firma" %}</span>
+                    <span class="font-medium text-slate-900 text-xs md:text-sm">{{ signer.created_at|date:"d/m/Y" }}</span>
+                </div>
+            </div>
+
+            <!-- Declaration Statement -->
+            {% if signer.declaration %}
+            <div class="bg-white rounded-xl p-3 md:p-4 border border-slate-100">
+                <p class="text-xs md:text-sm text-slate-500 mb-2">{% trans "Declaración personal" %}:</p>
+                <p class="text-xs md:text-sm text-slate-700 italic break-words">"{{ signer.declaration }}"</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Verification Info -->
+        <div class="bg-gradient-to-br from-cyan-50 to-emerald-50 rounded-2xl p-4 md:p-6 border border-emerald-100 mb-6 md:mb-8">
+            <div class="flex items-start gap-3 md:gap-4">
+                <div class="shrink-0 w-8 h-8 md:w-10 md:h-10 bg-emerald-500 rounded-full flex items-center justify-center">
+                    <svg class="w-5 h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <h3 class="font-bold text-slate-900 mb-2 text-sm md:text-base">{% trans "Verificación Criptográfica" %}</h3>
+                    <p class="text-xs md:text-sm text-slate-600 mb-3">
+                        {% trans "Esta firma ha sido validada mediante hash SHA-256 y está vinculada al perfil ORCID del firmante." %}
+                    </p>
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="text-xs text-slate-500 shrink-0">Hash:</span>
+                        <code class="text-xs font-mono bg-white px-2 py-1 rounded border border-slate-200 truncate">{{ signer.hash_short }}</code>
+                    </div>
+                    {% if signer.orcid_verified %}
+                    <div class="mt-2 flex items-center gap-2 text-xs text-emerald-700">
+                        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>ORCID verificado automáticamente</span>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3">
+            <a href="{% url 'signers_list' %}" class="flex items-center justify-center gap-2 py-2.5 md:py-3.5 px-4 md:px-6 rounded-xl bg-white border-2 border-slate-100 text-slate-700 text-sm md:text-base font-medium hover:border-slate-200 transition-colors">
+                <span class="truncate">{% trans "Ver todos los firmantes" %}</span>
+            </a>
+            <a href="{% url 'signer_register' %}" class="flex items-center justify-center gap-2 py-2.5 md:py-3.5 px-4 md:px-6 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-sm md:text-base font-medium hover:opacity-90 transition-all shadow-lg shadow-cyan-200">
+                <span class="truncate">{% trans "Firmar compromiso" %}</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Info Section -->
+    <div class="mt-6 md:mt-8 text-center text-xs md:text-sm text-slate-500 px-4">
+        <p class="mb-2">
+            {% trans "Este badge puede ser compartido y verificado públicamente." %}
+        </p>
+        <p class="break-all">
+            {% trans "URL de verificación:" %} <code class="text-xs bg-slate-100 px-2 py-1 rounded">{{ request.build_absolute_uri }}</code>
+        </p>
+    </div>
+</div>
+{% endblock %}

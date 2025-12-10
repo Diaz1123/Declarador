@@ -1,0 +1,1258 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Declarador.io 1.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-02 12:00+0000\n"
+"PO-Revision-Date: 2025-12-02 12:00+0000\n"
+"Last-Translator: Declarador Team\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# Header
+msgid "Transparencia Académica"
+msgstr "Academic Transparency"
+
+msgid "Verificar"
+msgstr "Verify"
+
+msgid "Ayuda"
+msgstr "Help"
+
+msgid "Nueva"
+msgstr "New"
+
+# Footer
+msgid "Transparencia Académica en IA"
+msgstr "AI Academic Transparency"
+
+msgid "Privacidad"
+msgstr "Privacy"
+
+msgid "Buscar"
+msgstr "Search"
+
+# Help Modal
+msgid "Glosario para No Expertos"
+msgstr "Glossary for Non-Experts"
+
+msgid "Tip Ético"
+msgstr "Ethical Tip"
+
+msgid "La transparencia no juzga el uso de la IA, solo lo hace visible. Un uso honesto y declarado siempre es mejor académicamente que un uso oculto."
+msgstr "Transparency doesn't judge AI use, it just makes it visible. Honest and declared use is always better academically than hidden use."
+
+msgid "Cerrar Glosario"
+msgstr "Close Glossary"
+
+# Steps
+msgid "Diagnóstico"
+msgstr "Diagnostic"
+
+msgid "Clasificación"
+msgstr "Classification"
+
+msgid "Detalles"
+msgstr "Details"
+
+msgid "Resultado"
+msgstr "Output"
+
+# Step 2 - Usage Types
+msgid "Generación de Borrador"
+msgstr "Draft Generation"
+
+msgid "La IA escribió una primera versión completa o secciones sustanciales que sirvieron de base."
+msgstr "AI wrote a complete first version or substantial sections that served as the basis."
+
+msgid "Co-creación Sustantiva"
+msgstr "Substantive Co-creation"
+
+msgid "Colaboración iterativa donde la IA y el humano construyen argumentos o narrativas conjuntamente."
+msgstr "Iterative collaboration where AI and human jointly build arguments or narratives."
+
+msgid "Asistencia de Estilo y Redacción"
+msgstr "Style and Writing Assistance"
+
+msgid "Mejora de la forma sin alterar el fondo o las ideas principales."
+msgstr "Improvement of form without altering substance or main ideas."
+
+msgid "Parafraseo para mejorar fluidez"
+msgstr "Paraphrasing to improve fluency"
+
+msgid "Corrección gramatical y ortográfica"
+msgstr "Grammar and spelling correction"
+
+msgid "Adaptación de texto a formato académico estándar"
+msgstr "Adaptation of text to standard academic format"
+
+msgid "Ideación y Estructura"
+msgstr "Ideation and Structure"
+
+msgid "Apoyo en la fase previa a la escritura (brainstorming, esquemas)."
+msgstr "Support in the pre-writing phase (brainstorming, outlines)."
+
+msgid "Análisis de Datos"
+msgstr "Data Analysis"
+
+msgid "Uso de capacidades computacionales para sintetizar o transformar información."
+msgstr "Use of computational capabilities to synthesize or transform information."
+
+msgid "Generación de Código"
+msgstr "Code Generation"
+
+msgid "Creación de scripts, algoritmos o modelos matemáticos."
+msgstr "Creation of scripts, algorithms, or mathematical models."
+
+msgid "Traducción Técnica"
+msgstr "Technical Translation"
+
+msgid "Traducción de textos académicos o técnicos entre idiomas."
+msgstr "Translation of academic or technical texts between languages."
+
+msgid "Simulación de Revisión (Feedback)"
+msgstr "Review Simulation (Feedback)"
+
+msgid "La IA actúa como \"abogado del diablo\" o revisor par simulado."
+msgstr "AI acts as \"devil's advocate\" or simulated peer reviewer."
+
+msgid "Otro uso no listado"
+msgstr "Other unlisted use"
+
+msgid "Cualquier otro uso que no encaje en las categorías anteriores."
+msgstr "Any other use that doesn't fit the above categories."
+
+# Additional translations
+msgid "Anterior"
+msgstr "Previous"
+
+msgid "Siguiente"
+msgstr "Next"
+
+msgid "Generar Declaración"
+msgstr "Generate Declaration"
+
+msgid "Descargar TXT"
+msgstr "Download TXT"
+
+msgid "Descargar JSON"
+msgstr "Download JSON"
+
+msgid "Copiar"
+msgstr "Copy"
+
+msgid "Copiado"
+msgstr "Copied"
+
+# Step 1 - Help Checklist Questions
+msgid "¿Generó texto nuevo (párrafos, capítulos) que usaste como base?"
+msgstr "Did it generate new text (paragraphs, chapters) that you used as a base?"
+
+msgid "¿Te ayudó a escribir código, scripts o fórmulas matemáticas?"
+msgstr "Did it help you write code, scripts, or mathematical formulas?"
+
+msgid "¿Resumió artículos, extrajo datos o analizó documentos PDF?"
+msgstr "Did it summarize articles, extract data, or analyze PDF documents?"
+
+msgid "¿Tradujo textos técnicos o abstracts a otro idioma?"
+msgstr "Did it translate technical texts or abstracts to another language?"
+
+msgid "¿Sugirió estructuras, preguntas de investigación o ideas?"
+msgstr "Did it suggest structures, research questions, or ideas?"
+
+msgid "¿Solo mejoró la redacción, el vocabulario o la ortografía?"
+msgstr "Did it only improve writing, vocabulary, or spelling?"
+
+msgid "¿Evaluó tu trabajo buscando errores o debilidades?"
+msgstr "Did it evaluate your work looking for errors or weaknesses?"
+
+# Content Use Modes
+msgid "Incorporado tal cual (Verbatim)"
+msgstr "Incorporated as is (Verbatim)"
+
+msgid "Editado parcialmente (ajustes menores)"
+msgstr "Partially edited (minor adjustments)"
+
+msgid "Reescrito sustancialmente"
+msgstr "Substantially rewritten"
+
+msgid "Usado solo como inspiración/referencia"
+msgstr "Used only as inspiration/reference"
+
+msgid "Sintetizado con otras fuentes"
+msgstr "Synthesized with other sources"
+
+msgid "Otro"
+msgstr "Other"
+
+# Human Review Levels
+msgid "Nivel 0: Sin Revisión"
+msgstr "Level 0: No Review"
+
+msgid "El contenido generado se utilizó directamente sin verificación humana (RIESGO ALTO)."
+msgstr "Generated content was used directly without human verification (HIGH RISK)."
+
+msgid "Nivel 1: Revisión Superficial"
+msgstr "Level 1: Superficial Review"
+
+msgid "Lectura rápida para verificar coherencia general, sin entrar en detalles de exactitud."
+msgstr "Quick reading to verify general coherence, without accuracy details."
+
+msgid "Nivel 2: Revisión Gramatical"
+msgstr "Level 2: Grammatical Review"
+
+msgid "Corrección de errores tipográficos, sintaxis y tono, asumiendo la veracidad del contenido."
+msgstr "Correction of typos, syntax, and tone, assuming content truthfulness."
+
+msgid "Nivel 3: Verificación Selectiva"
+msgstr "Level 3: Selective Verification"
+
+msgid "Comprobación aleatoria (spot-checking) de datos clave o afirmaciones dudosas."
+msgstr "Random spot-checking of key data or doubtful claims."
+
+msgid "Nivel 4: Contrastación Documental"
+msgstr "Level 4: Documentary Verification"
+
+msgid "Verificación de citas, referencias y datos contra fuentes primarias fiables."
+msgstr "Verification of citations, references, and data against reliable primary sources."
+
+msgid "Nivel 5: Validación Experta"
+msgstr "Level 5: Expert Validation"
+
+msgid "Revisión profunda por un experto en la materia para asegurar integridad lógica y metodológica."
+msgstr "Deep review by subject matter expert to ensure logical and methodological integrity."
+
+msgid "Nivel 6: Revisión Crítica y Ética"
+msgstr "Level 6: Critical and Ethical Review"
+
+msgid "Análisis exhaustivo de sesgos, originalidad, ética y precisión técnica (Estándar \"Gold\")."
+msgstr "Exhaustive analysis of biases, originality, ethics, and technical accuracy (Gold Standard)."
+
+# Step 1 Heading and Instructions
+msgid "Diagnóstico de Uso Académico"
+msgstr "Academic Usage Diagnostic"
+
+msgid "Selecciona todas las acciones que realizaste con la IA durante tu investigación o redacción."
+msgstr "Select all actions you performed with AI during your research or writing."
+
+# Step 2 Heading and Instructions
+msgid "Categorización del Uso"
+msgstr "Usage Categorization"
+
+msgid "Confirma o añade categorías. Si tu trabajo es académico, sé preciso con la naturaleza de la contribución de la IA."
+msgstr "Confirm or add categories. If your work is academic, be precise about the nature of the AI contribution."
+
+msgid "Ejemplos:"
+msgstr "Examples:"
+
+msgid "Describa detalladamente el uso:"
+msgstr "Describe the use in detail:"
+
+msgid "Ej: La IA generó variantes de diseño experimental..."
+msgstr "E.g.: The AI generated experimental design variants..."
+
+# Step 3 - Transparency Details
+msgid "Detalles de Transparencia"
+msgstr "Transparency Details"
+
+msgid "Especifica la metodología, la ética de verificación y la licencia final."
+msgstr "Specify the methodology, verification ethics, and final license."
+
+msgid "Herramienta"
+msgstr "Tool"
+
+msgid "Nombre (ej. ChatGPT)"
+msgstr "Name (e.g. ChatGPT)"
+
+msgid "Versión (ej. GPT-4o)"
+msgstr "Version (e.g. GPT-4o)"
+
+msgid "Proveedor (ej. OpenAI, Google, Anthropic)"
+msgstr "Provider (e.g. OpenAI, Google, Anthropic)"
+
+msgid "Propósito Académico"
+msgstr "Academic Purpose"
+
+msgid "Describe la tarea específica (mínimo 20 caracteres, recomendado 100)..."
+msgstr "Describe the specific task (minimum 20 characters, recommended 100)..."
+
+msgid "Prompts (Instrucciones)"
+msgstr "Prompts (Instructions)"
+
+msgid "Copia aquí la instrucción principal..."
+msgstr "Copy the main instruction here..."
+
+msgid "Añadir otro prompt"
+msgstr "Add another prompt"
+
+msgid "Integración del Contenido"
+msgstr "Content Integration"
+
+msgid "Contexto adicional (mínimo 10 caracteres)..."
+msgstr "Additional context (minimum 10 characters)..."
+
+msgid "Nivel de Revisión Humana"
+msgstr "Human Review Level"
+
+msgid "Nombre del Revisor"
+msgstr "Reviewer Name"
+
+msgid "Rol/Cargo"
+msgstr "Role/Position"
+
+msgid "Licencia"
+msgstr "License"
+
+msgid "Generar Declaración"
+msgstr "Generate Declaration"
+
+# Step 4 - Output
+msgid "¡Declaración Lista!"
+msgstr "Declaration Ready!"
+
+msgid "Tu documento ha sido generado con trazabilidad completa y código de validación único."
+msgstr "Your document has been generated with complete traceability and unique validation code."
+
+msgid "Certificado de Integridad"
+msgstr "Integrity Certificate"
+
+msgid "Licencia del Producto"
+msgstr "Product License"
+
+msgid "Texto Legible"
+msgstr "Readable Text"
+
+msgid "JSON Estructurado"
+msgstr "Structured JSON"
+
+msgid "Crear nueva declaración"
+msgstr "Create new declaration"
+
+msgid "Recomendación Académica:"
+msgstr "Academic Recommendation:"
+
+msgid "Adjunte el archivo .json como metadato digital y copie el texto de la declaración en el apartado de \"Metodología\" o \"Anexos\" de su trabajo. El Hash de validación permite a los revisores certificar que la información no ha sido manipulada."
+msgstr "Attach the .json file as digital metadata and copy the declaration text in the \"Methodology\" or \"Appendices\" section of your work. The validation hash allows reviewers to certify that the information has not been tampered with."
+
+# Glossary Terms
+msgid "Prompt"
+msgstr "Prompt"
+
+msgid "La instrucción o texto de entrada que se le da a la IA para generar una respuesta."
+msgstr "The instruction or input text given to the AI to generate a response."
+
+msgid "Alucinación"
+msgstr "Hallucination"
+
+msgid "Fenómeno donde la IA genera información falsa o inventada con apariencia de ser real."
+msgstr "Phenomenon where AI generates false or made-up information with the appearance of being real."
+
+msgid "Sesgo (Bias)"
+msgstr "Bias"
+
+msgid "Prejuicios o inclinaciones injustas presentes en los datos de entrenamiento de la IA que se reflejan en sus respuestas."
+msgstr "Unfair prejudices or inclinations present in the AI's training data that are reflected in its responses."
+
+msgid "Verbatim"
+msgstr "Verbatim"
+
+msgid "Copia textual, palabra por palabra, del contenido generado."
+msgstr "Literal copy, word for word, of the generated content."
+
+msgid "LLM (Large Language Model)"
+msgstr "LLM (Large Language Model)"
+
+msgid "Modelo de lenguaje grande (como GPT, Claude, Gemini) entrenado con vastas cantidades de texto."
+msgstr "Large language model (such as GPT, Claude, Gemini) trained with vast amounts of text."
+
+# Search Page
+msgid "Buscar Declaración"
+msgstr "Search Declaration"
+
+msgid "Verificar Declaración"
+msgstr "Verify Declaration"
+
+msgid "Busca una declaración por su Hash de Validación o ID para verificar su autenticidad"
+msgstr "Search for a declaration by its Validation Hash or ID to verify its authenticity"
+
+msgid "Hash de Validación o ID de Declaración"
+msgstr "Validation Hash or Declaration ID"
+
+msgid "Ej: 1A2B3C4D5E6F7G8H o ABC12345"
+msgstr "E.g.: 1A2B3C4D5E6F7G8H or ABC12345"
+
+msgid "El hash es un código de 16 caracteres que aparece en la declaración descargada."
+msgstr "The hash is a 16-character code that appears in the downloaded declaration."
+
+# Search Page Help Section
+msgid "¿Dónde encuentro el Hash o ID?"
+msgstr "Where do I find the Hash or ID?"
+
+msgid "El <strong>Hash de Validación</strong> y el <strong>ID de Declaración</strong> aparecen en:"
+msgstr "The <strong>Validation Hash</strong> and <strong>Declaration ID</strong> appear in:"
+
+msgid "La parte superior de la declaración descargada (archivo .txt o .json)"
+msgstr "The top of the downloaded declaration (file .txt or .json)"
+
+msgid "El paso 4 del wizard después de generar la declaración"
+msgstr "Step 4 of the wizard after generating the declaration"
+
+msgid "La sección de metadatos de la declaración"
+msgstr "The metadata section of the declaration"
+
+msgid "Ejemplo de Hash:"
+msgstr "Hash Example:"
+
+msgid "Ejemplo de ID:"
+msgstr "ID Example:"
+
+# Search Results
+msgid "Declaración Verificada"
+msgstr "Declaration Verified"
+
+msgid "Esta declaración fue encontrada en nuestra base de datos y es auténtica."
+msgstr "This declaration was found in our database and is authentic."
+
+msgid "Información de la Declaración"
+msgstr "Declaration Information"
+
+msgid "ID de Declaración"
+msgstr "Declaration ID"
+
+msgid "Hash de Validación"
+msgstr "Validation Hash"
+
+msgid "Herramienta IA"
+msgstr "AI Tool"
+
+msgid "Fecha de Creación"
+msgstr "Creation Date"
+
+msgid "Ver Declaración Completa"
+msgstr "View Full Declaration"
+
+msgid "Declaración No Encontrada"
+msgstr "Declaration Not Found"
+
+msgid "No se encontró ninguna declaración con el hash o ID:"
+msgstr "No declaration was found with the hash or ID:"
+
+msgid "Verifica que hayas copiado correctamente el hash o ID de la declaración."
+msgstr "Verify that you have correctly copied the hash or ID of the declaration."
+
+# Preview Panel
+msgid "preview_title"
+msgstr "Preview"
+
+msgid "preview_description"
+msgstr "Updates automatically as you complete the form"
+
+msgid "preview_placeholder_step1"
+msgstr "Check options to see the preview"
+
+msgid "preview_placeholder_step2"
+msgstr "Check options to see the preview"
+
+msgid "preview_placeholder_step3"
+msgstr "Complete the fields to see the preview"
+
+msgid "preview_updating"
+msgstr "Updating preview..."
+
+msgid "preview_error"
+msgstr "Error generating preview"
+
+msgid "preview_unavailable"
+msgstr "Preview unavailable"
+
+# Privacy Policy
+msgid "Aviso de Privacidad Integral"
+msgstr "Comprehensive Privacy Notice"
+
+msgid "Declarador.io - Plataforma de Transparencia Académica en el Uso de IA"
+msgstr "Declarador.io - Platform for Academic Transparency in AI Use"
+
+msgid "Última actualización: Diciembre 2025"
+msgstr "Last updated: December 2025"
+
+msgid "Versión: 2.0"
+msgstr "Version: 2.0"
+
+msgid "1. Identificación y Compromiso Fundacional"
+msgstr "1. Identification and Foundational Commitment"
+
+msgid "1.1 Responsable del Tratamiento de Datos"
+msgstr "1.1 Data Processing Controller"
+
+msgid "Nombre del proyecto:"
+msgstr "Project name:"
+
+msgid "Naturaleza:"
+msgstr "Nature:"
+
+msgid "Herramienta educativa sin fines de lucro"
+msgstr "Non-profit educational tool"
+
+msgid "1.2 Compromiso con la Transparencia y Soberanía Digital"
+msgstr "1.2 Commitment to Transparency and Digital Sovereignty"
+
+msgid "Declarador.io nace del compromiso con la Ciencia Abierta como derecho fundamental, la Soberanía Digital Latinoamericana y la Transparencia Radical en el uso académico de Inteligencia Artificial Generativa."
+msgstr "Declarador.io was born from a commitment to Open Science as a fundamental right, Latin American Digital Sovereignty, and Radical Transparency in the academic use of Generative Artificial Intelligence."
+
+msgid "Principio de Estándar Más Alto:"
+msgstr "Highest Standard Principle:"
+
+msgid "Aplicamos voluntariamente el nivel de protección de datos más robusto a TODOS nuestros usuarios, independientemente de su ubicación geográfica. Esto significa que garantizamos derechos que incluyen:"
+msgstr "We voluntarily apply the most robust level of data protection to ALL our users, regardless of their geographic location. This means we guarantee rights including:"
+
+msgid "Derecho al olvido (cancelación de datos)"
+msgstr "Right to be forgotten (data deletion)"
+
+msgid "Portabilidad de datos en formatos estructurados"
+msgstr "Data portability in structured formats"
+
+msgid "Revisión humana de decisiones automatizadas"
+msgstr "Human review of automated decisions"
+
+msgid "Limitación del tratamiento de datos"
+msgstr "Limitation of data processing"
+
+msgid "Transparencia total en el uso de IA"
+msgstr "Complete transparency in AI use"
+
+msgid "2. Marco Legal y Cumplimiento Normativo"
+msgstr "2. Legal Framework and Regulatory Compliance"
+
+msgid "2.1 Legislación Primaria Aplicable"
+msgstr "2.1 Applicable Primary Legislation"
+
+msgid "Declarador.io cumple con las siguientes normativas de protección de datos personales:"
+msgstr "Declarador.io complies with the following personal data protection regulations:"
+
+msgid "México (Jurisdicción Principal)"
+msgstr "Mexico (Primary Jurisdiction)"
+
+msgid "Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP)"
+msgstr "Federal Law on Protection of Personal Data Held by Private Parties (LFPDPPP)"
+
+msgid "Lineamientos del INAI"
+msgstr "INAI Guidelines"
+
+msgid "Unión Europea"
+msgstr "European Union"
+
+msgid "Reglamento General de Protección de Datos (GDPR) - Reglamento (UE) 2016/679"
+msgstr "General Data Protection Regulation (GDPR) - Regulation (EU) 2016/679"
+
+msgid "Brasil"
+msgstr "Brazil"
+
+msgid "Lei Geral de Proteção de Dados (LGPD) - Ley 13.709/2018"
+msgstr "General Data Protection Law (LGPD) - Law 13.709/2018"
+
+msgid "Argentina"
+msgstr "Argentina"
+
+msgid "Ley de Protección de Datos Personales (LPDP) - Ley 25.326"
+msgstr "Personal Data Protection Law (LPDP) - Law 25.326"
+
+msgid "Chile"
+msgstr "Chile"
+
+msgid "Ley sobre Protección de la Vida Privada - Ley 19.628"
+msgstr "Law on Protection of Private Life - Law 19.628"
+
+msgid "Estados Unidos"
+msgstr "United States"
+
+msgid "COPPA para menores y FERPA para contextos educativos"
+msgstr "COPPA for minors and FERPA for educational contexts"
+
+msgid "2.2 Principios Rectores del Tratamiento"
+msgstr "2.2 Guiding Principles of Processing"
+
+msgid "Licitud"
+msgstr "Lawfulness"
+
+msgid "Solo recopilamos datos con base legal clara"
+msgstr "We only collect data with clear legal basis"
+
+msgid "Consentimiento"
+msgstr "Consent"
+
+msgid "Informado, específico y revocable"
+msgstr "Informed, specific, and revocable"
+
+msgid "Finalidad"
+msgstr "Purpose"
+
+msgid "Uso limitado a los propósitos declarados"
+msgstr "Use limited to declared purposes"
+
+msgid "Proporcionalidad"
+msgstr "Proportionality"
+
+msgid "Solo recopilamos lo estrictamente necesario"
+msgstr "We only collect what is strictly necessary"
+
+msgid "3. Datos Personales Recopilados"
+msgstr "3. Personal Data Collected"
+
+msgid "3.1 Principio de Minimización de Datos"
+msgstr "3.1 Data Minimization Principle"
+
+msgid "Aplicamos estrictamente el principio de minimización: solo recopilamos los datos absolutamente necesarios para prestar el servicio."
+msgstr "We strictly apply the minimization principle: we only collect data that is absolutely necessary to provide the service."
+
+msgid "NUNCA compramos datos personales de terceros comerciales."
+msgstr "We NEVER purchase personal data from commercial third parties."
+
+msgid "3.2 Categorías de Datos y Finalidades"
+msgstr "3.2 Data Categories and Purposes"
+
+msgid "Datos de Declaración (Esenciales)"
+msgstr "Declaration Data (Essential)"
+
+msgid "Respuestas del checklist de diagnóstico"
+msgstr "Diagnostic checklist responses"
+
+msgid "Tipos de uso de IA seleccionados"
+msgstr "Selected AI usage types"
+
+msgid "Información de herramienta AI (nombre, versión, proveedor, fecha)"
+msgstr "AI tool information (name, version, provider, date)"
+
+msgid "Descripción del propósito académico"
+msgstr "Description of academic purpose"
+
+msgid "Prompts/instrucciones utilizadas"
+msgstr "Prompts/instructions used"
+
+msgid "Modo de integración del contenido"
+msgstr "Content integration mode"
+
+msgid "Nivel de revisión humana"
+msgstr "Level of human review"
+
+msgid "Licencia del trabajo final"
+msgstr "Final work license"
+
+msgid "Finalidad:"
+msgstr "Purpose:"
+
+msgid "Generar declaraciones TXT/JSON de transparencia académica"
+msgstr "Generate TXT/JSON academic transparency declarations"
+
+msgid "Datos del Revisor (Opcionales)"
+msgstr "Reviewer Data (Optional)"
+
+msgid "Nombre del revisor"
+msgstr "Reviewer name"
+
+msgid "Rol del revisor"
+msgstr "Reviewer role"
+
+msgid "Documentar supervisión humana del uso de IA"
+msgstr "Document human supervision of AI use"
+
+msgid "Datos de Sesión (Temporales)"
+msgstr "Session Data (Temporary)"
+
+msgid "Cookies de sesión de Django"
+msgstr "Django session cookies"
+
+msgid "Estado del wizard entre pasos"
+msgstr "Wizard state between steps"
+
+msgid "Conservación:"
+msgstr "Retention:"
+
+msgid "Se eliminan al cerrar el navegador"
+msgstr "Deleted upon closing browser"
+
+msgid "Datos Técnicos (Automatizados)"
+msgstr "Technical Data (Automated)"
+
+msgid "Dirección IP (anonimizada después de 30 días)"
+msgstr "IP address (anonymized after 30 days)"
+
+msgid "Tipo de navegador y sistema operativo"
+msgstr "Browser type and operating system"
+
+msgid "Fecha y hora de acceso"
+msgstr "Access date and time"
+
+msgid "Páginas visitadas"
+msgstr "Pages visited"
+
+msgid "Seguridad y prevención de fraude, optimización de experiencia"
+msgstr "Security and fraud prevention, experience optimization"
+
+msgid "4. Uso de los Datos"
+msgstr "4. Use of Data"
+
+msgid "4.1 Finalidades Primarias"
+msgstr "4.1 Primary Purposes"
+
+msgid "Generar declaraciones de transparencia:"
+msgstr "Generate transparency declarations:"
+
+msgid "Crear archivos TXT y JSON personalizados según las respuestas del usuario"
+msgstr "Create customized TXT and JSON files based on user responses"
+
+msgid "Verificación académica:"
+msgstr "Academic verification:"
+
+msgid "Si el usuario completa el Paso 4, almacenar la declaración para búsquedas futuras y validación de integridad mediante hash SHA-256"
+msgstr "If the user completes Step 4, store the declaration for future searches and integrity validation using SHA-256 hash"
+
+msgid "Seguridad del servicio:"
+msgstr "Service security:"
+
+msgid "Prevenir fraude, detectar anomalías y proteger la integridad de la plataforma"
+msgstr "Prevent fraud, detect anomalies, and protect platform integrity"
+
+msgid "IMPORTANTE: Puedes usar Declarador.io SIN guardar datos en nuestros servidores"
+msgstr "IMPORTANT: You can use Declarador.io WITHOUT saving data on our servers"
+
+msgid "Tienes dos opciones al llegar al Paso 4: Solo descargar archivos (tus datos NO se guardan) o Completar Paso 4 (se guardan para verificación futura)."
+msgstr "You have two options when reaching Step 4: Only download files (your data is NOT saved) or Complete Step 4 (saved for future verification)."
+
+msgid "5. Uso Responsable de Inteligencia Artificial (IA)"
+msgstr "5. Responsible Use of Artificial Intelligence (AI)"
+
+msgid "5.1 Principios del Uso de IA en Declarador.io"
+msgstr "5.1 AI Use Principles at Declarador.io"
+
+msgid "Nuestra política de IA se fundamenta en 7 principios éticos adaptados para el contexto académico latinoamericano:"
+msgstr "Our AI policy is based on 7 ethical principles adapted for the Latin American academic context:"
+
+msgid "Transparencia"
+msgstr "Transparency"
+
+msgid "Etiquetado visible de contenido generado con asistencia de IA y divulgación de modelos utilizados"
+msgstr "Visible labeling of AI-assisted content and disclosure of models used"
+
+msgid "Supervisión Humana"
+msgstr "Human Supervision"
+
+msgid "La IA sugiere; los humanos deciden. Ninguna decisión que afecte derechos académicos es automática"
+msgstr "AI suggests; humans decide. No decision affecting academic rights is automatic"
+
+msgid "Privacidad y No-Entrenamiento"
+msgstr "Privacy and No-Training"
+
+msgid "NO usamos tus declaraciones ni consultas para entrenar modelos comerciales"
+msgstr "We DO NOT use your declarations or queries to train commercial models"
+
+msgid "Equidad y No Discriminación"
+msgstr "Equity and Non-Discrimination"
+
+msgid "Monitoreo activo de sesgos algorítmicos con enfoque en diversidad latinoamericana"
+msgstr "Active monitoring of algorithmic biases with focus on Latin American diversity"
+
+msgid "Integridad Académica"
+msgstr "Academic Integrity"
+
+msgid "Las declaraciones promueven honestidad sobre el uso de IA y disuaden del plagio tecnológico"
+msgstr "Declarations promote honesty about AI use and discourage technological plagiarism"
+
+msgid "Soberanía de Datos Académicos"
+msgstr "Academic Data Sovereignty"
+
+msgid "Priorización de infraestructura regional y control sobre datos académicos sensibles"
+msgstr "Prioritization of regional infrastructure and control over sensitive academic data"
+
+msgid "Acceso Abierto y Gratuito"
+msgstr "Open and Free Access"
+
+msgid "Herramienta completamente gratuita sin barreras financieras"
+msgstr "Completely free tool with no financial barriers"
+
+msgid "5.2 Garantías Específicas"
+msgstr "5.2 Specific Guarantees"
+
+msgid "Lo que SÍ hacemos:"
+msgstr "What we DO:"
+
+msgid "Procesar declaraciones localmente"
+msgstr "Process declarations locally"
+
+msgid "Usar algoritmos deterministas para validación"
+msgstr "Use deterministic algorithms for validation"
+
+msgid "Mantener registros auditables"
+msgstr "Maintain auditable records"
+
+msgid "Lo que NUNCA hacemos:"
+msgstr "What we NEVER do:"
+
+msgid "Enviar manuscritos a APIs externas sin tu conocimiento"
+msgstr "Send manuscripts to external APIs without your knowledge"
+
+msgid "Usar declaraciones para entrenar modelos comerciales"
+msgstr "Use declarations to train commercial models"
+
+msgid "Otorgar a terceros derechos sobre tu contenido"
+msgstr "Grant third parties rights to your content"
+
+msgid "6. Transferencias Internacionales de Datos"
+msgstr "6. International Data Transfers"
+
+msgid "NO VENDEMOS, ALQUILAMOS NI COMERCIALIZAMOS TUS DATOS PERSONALES BAJO NINGUNA CIRCUNSTANCIA."
+msgstr "WE DO NOT SELL, RENT, OR COMMERCIALIZE YOUR PERSONAL DATA UNDER ANY CIRCUMSTANCES."
+
+msgid "Cuando es inevitable transferir datos fuera de Latinoamérica, aplicamos Cláusulas Contractuales Modelo (CCM) que garantizan el mismo nivel de protección que en el país de origen."
+msgstr "When it is inevitable to transfer data outside Latin America, we apply Model Contractual Clauses (MCC) that guarantee the same level of protection as in the country of origin."
+
+msgid "7. Derechos de los Titulares de Datos (Derechos ARCO+)"
+msgstr "7. Data Subject Rights (ARCO+ Rights)"
+
+msgid "Garantizamos los derechos ARCO ampliados conforme a los estándares más altos internacionales:"
+msgstr "We guarantee extended ARCO rights in accordance with the highest international standards:"
+
+msgid "Acceso:"
+msgstr "Access:"
+
+msgid "Obtener copia de tus datos guardados"
+msgstr "Obtain a copy of your saved data"
+
+msgid "Rectificación:"
+msgstr "Rectification:"
+
+msgid "Corregir datos inexactos o incompletos"
+msgstr "Correct inaccurate or incomplete data"
+
+msgid "Cancelación:"
+msgstr "Deletion:"
+
+msgid "Eliminar permanentemente tu declaración (derecho al olvido)"
+msgstr "Permanently delete your declaration (right to be forgotten)"
+
+msgid "Oposición:"
+msgstr "Opposition:"
+
+msgid "Detener el tratamiento para fines secundarios"
+msgstr "Stop processing for secondary purposes"
+
+msgid "Portabilidad:"
+msgstr "Portability:"
+
+msgid "Recibir tus datos en formato JSON estructurado"
+msgstr "Receive your data in structured JSON format"
+
+msgid "Limitación:"
+msgstr "Limitation:"
+
+msgid "Congelar el procesamiento mientras verificamos exactitud"
+msgstr "Freeze processing while we verify accuracy"
+
+msgid "Para ejercer estos derechos:"
+msgstr "To exercise these rights:"
+
+msgid "Contáctanos en privacy@declarador.io con tu ID de declaración o hash SHA-256. Responderemos en un plazo máximo de 20 días hábiles."
+msgstr "Contact us at privacy@declarador.io with your declaration ID or SHA-256 hash. We will respond within a maximum of 20 business days."
+
+msgid "8. Seguridad de los Datos"
+msgstr "8. Data Security"
+
+msgid "Implementamos medidas técnicas y organizativas para proteger tus datos mediante una estrategia de seguridad multicapa:"
+msgstr "We implement technical and organizational measures to protect your data through a multi-layered security strategy:"
+
+msgid "TLS 1.3 / HTTPS obligatorio para todo el tráfico"
+msgstr "TLS 1.3 / HTTPS mandatory for all traffic"
+
+msgid "Encriptación AES-256 en reposo"
+msgstr "AES-256 encryption at rest"
+
+msgid "Hashing SHA-256 para validación de integridad"
+msgstr "SHA-256 hashing for integrity validation"
+
+msgid "Autenticación Multifactor (MFA) para administradores"
+msgstr "Multi-Factor Authentication (MFA) for administrators"
+
+msgid "Web Application Firewall (WAF)"
+msgstr "Web Application Firewall (WAF)"
+
+msgid "Backups diarios encriptados"
+msgstr "Daily encrypted backups"
+
+msgid "Monitoreo SIEM 24/7"
+msgstr "24/7 SIEM monitoring"
+
+msgid "9. Retención y Eliminación de Datos"
+msgstr "9. Data Retention and Deletion"
+
+msgid "Tipo de Dato"
+msgstr "Data Type"
+
+msgid "Periodo de Conservación"
+msgstr "Retention Period"
+
+msgid "Declaraciones guardadas"
+msgstr "Saved declarations"
+
+msgid "Indefinida (verificación histórica)"
+msgstr "Indefinite (historical verification)"
+
+msgid "Datos de sesión"
+msgstr "Session data"
+
+msgid "Hasta cierre del navegador"
+msgstr "Until browser closes"
+
+msgid "Logs de acceso (IP identificable)"
+msgstr "Access logs (identifiable IP)"
+
+msgid "30 días"
+msgstr "30 days"
+
+msgid "Logs de seguridad (IP anonimizada)"
+msgstr "Security logs (anonymized IP)"
+
+msgid "90 días"
+msgstr "90 days"
+
+msgid "10. Uso de Cookies"
+msgstr "10. Cookie Usage"
+
+msgid "Cookie"
+msgstr "Cookie"
+
+msgid "Propósito"
+msgstr "Purpose"
+
+msgid "Duración"
+msgstr "Duration"
+
+msgid "Mantener datos del wizard entre pasos"
+msgstr "Maintain wizard data between steps"
+
+msgid "Sesión (cierre de navegador)"
+msgstr "Session (browser close)"
+
+msgid "Seguridad contra ataques CSRF"
+msgstr "Security against CSRF attacks"
+
+msgid "1 año"
+msgstr "1 year"
+
+msgid "NO utilizamos cookies de terceros para publicidad o tracking."
+msgstr "We DO NOT use third-party cookies for advertising or tracking."
+
+msgid "11. Menores de Edad"
+msgstr "11. Minors"
+
+msgid "No recopilamos intencionalmente datos de menores de 13 años conforme a COPPA. Para menores entre 13 y 17 años, recomendamos usar este servicio con supervisión de un tutor, docente o padre de familia."
+msgstr "We do not intentionally collect data from children under 13 years old in compliance with COPPA. For minors between 13 and 17 years old, we recommend using this service with supervision from a guardian, teacher, or parent."
+
+msgid "12. Cambios en esta Política"
+msgstr "12. Changes to this Policy"
+
+msgid "Podemos actualizar esta política ocasionalmente. Para cambios sustanciales, notificaremos mediante aviso destacado en el sitio web por 30 días. El uso continuado después de los cambios implica aceptación de la nueva política."
+msgstr "We may update this policy occasionally. For substantial changes, we will notify via prominent notice on the website for 30 days. Continued use after changes implies acceptance of the new policy."
+
+msgid "13. Contacto"
+msgstr "13. Contact"
+
+msgid "Si tienes preguntas sobre esta política de privacidad o el tratamiento de tus datos:"
+msgstr "If you have questions about this privacy policy or the processing of your data:"
+
+msgid "Email:"
+msgstr "Email:"
+
+msgid "Responsable de Protección de Datos (DPO):"
+msgstr "Data Protection Officer (DPO):"
+
+msgid "Declaración de Compromiso Ético"
+msgstr "Ethical Commitment Statement"
+
+msgid "Al usar Declarador.io, participas en un movimiento de transparencia académica que trasciende fronteras. Tu privacidad no es un precio a pagar por la tecnología; es un derecho fundamental que defendemos incondicionalmente."
+msgstr "By using Declarador.io, you participate in an academic transparency movement that transcends borders. Your privacy is not a price to pay for technology; it is a fundamental right that we unconditionally defend."
+
+msgid "\"La privacidad es un derecho, no un privilegio. La transparencia es un compromiso, no una opción.\""
+msgstr "\"Privacy is a right, not a privilege. Transparency is a commitment, not an option.\""
+
+msgid "Volver al Inicio"
+msgstr "Back to Home"
+
+# Step 4 - Save Declaration
+msgid "¿Deseas guardar esta declaración?"
+msgstr "Do you want to save this declaration?"
+
+msgid "Puedes guardar esta declaración en nuestra base de datos para verificación futura. Esto es opcional y permitirá que otros puedan validar tu declaración usando el hash o ID."
+msgstr "You can save this declaration in our database for future verification. This is optional and will allow others to validate your declaration using the hash or ID."
+
+msgid "Sí, guardar declaración"
+msgstr "Yes, save declaration"
+
+msgid "No, solo descargar"
+msgstr "No, just download"
+
+msgid "Declaración guardada exitosamente en la base de datos"
+msgstr "Declaration saved successfully in the database"
+
+
+msgid "¿Cambiaste de opinión? Haz clic aquí para guardar la declaración"
+msgstr "Changed your mind? Click here to save the declaration"
+
+msgid "Solo letras mayúsculas y números, entre 8 y 20 caracteres"
+msgstr "Only uppercase letters and numbers, between 8 and 20 characters"
+
+msgid "Hash: 16 caracteres (Ej: 1A2B3C4D5E6F7G8H) | ID: 8 caracteres (Ej: ABC12345)"
+msgstr "Hash: 16 characters (Ex: 1A2B3C4D5E6F7G8H) | ID: 8 characters (Ex: ABC12345)"
+
+# Signers Module
+msgid "Inicio"
+msgstr "Home"
+
+msgid "Inicio - usoeticoia.org"
+msgstr "Home - usoeticoia.org"
+
+msgid "¿Quién puede firmar?"
+msgstr "Who can sign?"
+
+msgid "Invitamos a firmar a toda persona autora generadora de conocimiento científico, académico, divulgativo y educativo."
+msgstr "We invite all authors and generators of scientific, academic, educational, and outreach knowledge to sign."
+
+msgid "Firmantes"
+msgstr "Signers"
+
+msgid "Firmar"
+msgstr "Sign"
+
+msgid "Firmar Compromiso"
+msgstr "Sign Commitment"
+
+msgid "Firmar Compromiso Ético de IA"
+msgstr "Sign AI Ethical Commitment"
+
+msgid "Firmantes del Compromiso Ético de IA"
+msgstr "AI Ethical Commitment Signers"
+
+msgid "Firmantes del Compromiso Ético"
+msgstr "Ethical Commitment Signers"
+
+msgid "Comunidad Comprometida"
+msgstr "Committed Community"
+
+msgid "Profesionales, investigadores y académicos comprometidos con el uso transparente y responsable de la inteligencia artificial."
+msgstr "Professionals, researchers, and academics committed to the transparent and responsible use of artificial intelligence."
+
+msgid "firmantes registrados"
+msgstr "registered signers"
+
+msgid "firmantes"
+msgstr "signers"
+
+msgid "¿Quieres unirte a la comunidad?"
+msgstr "Want to join the community?"
+
+msgid "Firma el compromiso y demuestra tu apoyo a prácticas éticas en el uso de inteligencia artificial."
+msgstr "Sign the commitment and demonstrate your support for ethical practices in the use of artificial intelligence."
+
+msgid "Firmar Compromiso"
+msgstr "Sign Commitment"
+
+msgid "Lista de Firmantes"
+msgstr "List of Signers"
+
+msgid "Ordenados por fecha de firma más reciente"
+msgstr "Sorted by most recent signature date"
+
+msgid "Verificado"
+msgstr "Verified"
+
+msgid "Disciplina"
+msgstr "Discipline"
+
+msgid "País"
+msgstr "Country"
+
+msgid "Ver declaración"
+msgstr "View statement"
+
+msgid "Verificar"
+msgstr "Verify"
+
+msgid "Aún no hay firmantes registrados"
+msgstr "No signers registered yet"
+
+msgid "¡Sé el primero en firmar!"
+msgstr "Be the first to sign!"
+
+msgid "Añadir mi firma"
+msgstr "Add my signature"
+
+msgid "Verificar Firmante"
+msgstr "Verify Signer"
+
+msgid "Firma Verificada"
+msgstr "Verified Signature"
+
+msgid "Esta persona ha firmado el compromiso ético de IA"
+msgstr "This person has signed the AI ethical commitment"
+
+msgid "Declaración personal"
+msgstr "Personal statement"
+
+msgid "Perfil"
+msgstr "Profile"
+
+msgid "Ver perfil"
+msgstr "View profile"
+
+msgid "Fecha de firma"
+msgstr "Signature date"
+
+msgid "Verificación Criptográfica"
+msgstr "Cryptographic Verification"
+
+msgid "Esta firma ha sido validada mediante hash SHA-256 y está vinculada al perfil ORCID del firmante."
+msgstr "This signature has been validated using SHA-256 hash and is linked to the signer's ORCID profile."
+
+msgid "Ver todos los firmantes"
+msgstr "View all signers"
+
+msgid "Firmar compromiso"
+msgstr "Sign commitment"
+
+msgid "Este badge puede ser compartido y verificado públicamente."
+msgstr "This badge can be shared and publicly verified."
+
+msgid "URL de verificación:"
+msgstr "Verification URL:"
+
+msgid "Cambiar idioma"
+msgstr "Change language"
+
+# Signer Registration Form - Step titles and navigation
+msgid "Tu identidad"
+msgstr "Your identity"
+
+msgid "Datos verificables para tu firma digital."
+msgstr "Verifiable data for your digital signature."
+
+msgid "Contexto profesional"
+msgstr "Professional context"
+
+msgid "¿Desde qué rol firmas este compromiso?"
+msgstr "From what role are you signing this commitment?"
+
+msgid "Declaración"
+msgstr "Statement"
+
+msgid "Una frase breve sobre tu motivación (Opcional)."
+msgstr "A brief phrase about your motivation (Optional)."
+
+msgid "Revisar y Firmar"
+msgstr "Review and Sign"
+
+msgid "Confirma que los datos son correctos."
+msgstr "Confirm that the data is correct."
+
+# Navigation buttons
+msgid "Anterior"
+msgstr "Previous"
+
+msgid "Continuar"
+msgstr "Continue"
+
+msgid "Firmar Ahora"
+msgstr "Sign Now"
+
+# Form field labels
+msgid "Institución / Organización"
+msgstr "Institution / Organization"
+
+msgid "Disciplina / Rol"
+msgstr "Discipline / Role"
+
+msgid "Nombre completo"
+msgstr "Full name"
+
+msgid "Correo electrónico"
+msgstr "Email"
+
+msgid "País"
+msgstr "Country"
+
+msgid "Enlace a perfil (Opcional)"
+msgstr "Profile link (Optional)"
+
+msgid "Mensaje personal"
+msgstr "Personal message"
+
+msgid "Redactar con IA"
+msgstr "Draft with AI"
+
+msgid "Selecciona..."
+msgstr "Select..."
+
+# Disciplines
+msgid "Académico"
+msgstr "Academic"
+
+msgid "Investigador"
+msgstr "Researcher"
+
+msgid "Técnico"
+msgstr "Technical"
+
+msgid "Gestor"
+msgstr "Manager"
+
+msgid "Estudiante"
+msgstr "Student"
+
+msgid "Otro"
+msgstr "Other"
+
+# Placeholders and helper text
+msgid "Ej. Dra. María García"
+msgstr "E.g. Dr. Mary Garcia"
+
+msgid "nombre@institucion.edu"
+msgstr "name@institution.edu"
+
+msgid "Privado. Solo para validación."
+msgstr "Private. For validation only."
+
+msgid "Obtener ORCID →"
+msgstr "Get ORCID →"
+
+msgid "Escribe el nombre de tu institución. ROR sugerirá opciones verificadas (opcional)."
+msgstr "Type your institution name. ROR will suggest verified options (optional)."
+
+msgid "Ej. Universidad Nacional, Google, NASA..."
+msgstr "E.g. National University, Google, NASA..."
+
+msgid "Escribe aquí tu compromiso..."
+msgstr "Write your commitment here..."
+
+msgid "Nombre"
+msgstr "Name"
+
+msgid "Afiliación"
+msgstr "Affiliation"
+
+msgid "Acepto publicar esta firma bajo licencia abierta CC0. Entiendo que se generará un hash inmutable."
+msgstr "I agree to publish this signature under CC0 open license. I understand that an immutable hash will be generated."
+
+# Registration page header
+msgid "Iniciativa Abierta"
+msgstr "Open Initiative"
+
+msgid "Uso Ético de la IA"
+msgstr "Ethical Use of AI"
+
+msgid "Únete a la comunidad de profesionales comprometidos con la transparencia y responsabilidad en inteligencia artificial."
+msgstr "Join the community of professionals committed to transparency and responsibility in artificial intelligence."
