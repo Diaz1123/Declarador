@@ -111,7 +111,28 @@ TRANSLATIONS = {
         'decl_not_specified': 'No especificado',
         'decl_not_described': 'No descrito',
         'decl_manual_selection': 'Selección manual directa',
-        
+        'decl_author': 'Autor',
+        'decl_author_email': 'Correo electrónico',
+
+        # No AI Declaration
+        'decl_title_no_ai': 'DECLARACIÓN DE NO USO DE INTELIGENCIA ARTIFICIAL GENERATIVA',
+        'decl_no_ai_statement': 'CERTIFICO QUE NO SE UTILIZÓ INTELIGENCIA ARTIFICIAL GENERATIVA',
+        'decl_no_ai_description': 'El autor declara que este trabajo académico fue realizado íntegramente sin el uso de herramientas de Inteligencia Artificial Generativa (IA). Todo el contenido, análisis, redacción y conclusiones son producto exclusivo del trabajo humano y de fuentes debidamente citadas.',
+
+        # Step 1 - No AI Option
+        'No utilicé Inteligencia Artificial': 'No utilicé Inteligencia Artificial',
+        'Marca esta opción si NO usaste ninguna herramienta de IA en tu trabajo. Esto generará una declaración certificando la ausencia de uso de IA.': 'Marca esta opción si NO usaste ninguna herramienta de IA en tu trabajo. Esto generará una declaración certificando la ausencia de uso de IA.',
+
+        # Step 4 - Save Modal
+        'Datos del Autor': 'Datos del Autor',
+        'Para guardar la declaración, necesitamos tus datos de contacto. Esta información solo se usará para identificar al autor de la declaración.': 'Para guardar la declaración, necesitamos tus datos de contacto. Esta información solo se usará para identificar al autor de la declaración.',
+        'Nombre completo': 'Nombre completo',
+        'Juan Pérez': 'Juan Pérez',
+        'Correo electrónico': 'Correo electrónico',
+        'correo@ejemplo.com': 'correo@ejemplo.com',
+        'Guardar declaración': 'Guardar declaración',
+        'Cancelar': 'Cancelar',
+
         # Preview Panel
         'preview_title': 'Vista Previa',
         'preview_description': 'Se actualiza automáticamente mientras completas el formulario',
@@ -242,7 +263,28 @@ TRANSLATIONS = {
         'decl_not_specified': 'Not specified',
         'decl_not_described': 'Not described',
         'decl_manual_selection': 'Direct manual selection',
-        
+        'decl_author': 'Author',
+        'decl_author_email': 'Email',
+
+        # No AI Declaration
+        'decl_title_no_ai': 'DECLARATION OF NON-USE OF GENERATIVE ARTIFICIAL INTELLIGENCE',
+        'decl_no_ai_statement': 'I CERTIFY THAT NO GENERATIVE ARTIFICIAL INTELLIGENCE WAS USED',
+        'decl_no_ai_description': 'The author declares that this academic work was completed entirely without the use of Generative Artificial Intelligence (AI) tools. All content, analysis, writing, and conclusions are the exclusive product of human work and properly cited sources.',
+
+        # Step 1 - No AI Option
+        'No utilicé Inteligencia Artificial': 'I did not use Artificial Intelligence',
+        'Marca esta opción si NO usaste ninguna herramienta de IA en tu trabajo. Esto generará una declaración certificando la ausencia de uso de IA.': 'Check this option if you did NOT use any AI tools in your work. This will generate a declaration certifying the absence of AI use.',
+
+        # Step 4 - Save Modal
+        'Datos del Autor': 'Author Information',
+        'Para guardar la declaración, necesitamos tus datos de contacto. Esta información solo se usará para identificar al autor de la declaración.': 'To save the declaration, we need your contact information. This information will only be used to identify the author of the declaration.',
+        'Nombre completo': 'Full name',
+        'Juan Pérez': 'John Doe',
+        'Correo electrónico': 'Email address',
+        'correo@ejemplo.com': 'email@example.com',
+        'Guardar declaración': 'Save declaration',
+        'Cancelar': 'Cancel',
+
         # Glossary Terms
         'Prompt': 'Prompt',
         'La instrucción o texto de entrada que se le da a la IA para generar una respuesta.': 'The instruction or input text given to the AI to generate a response.',
@@ -363,7 +405,28 @@ TRANSLATIONS = {
         'decl_not_specified': 'Não especificado',
         'decl_not_described': 'Não descrito',
         'decl_manual_selection': 'Seleção manual direta',
-        
+        'decl_author': 'Autor',
+        'decl_author_email': 'E-mail',
+
+        # No AI Declaration
+        'decl_title_no_ai': 'DECLARAÇÃO DE NÃO USO DE INTELIGÊNCIA ARTIFICIAL GENERATIVA',
+        'decl_no_ai_statement': 'CERTIFICO QUE NÃO FOI UTILIZADA INTELIGÊNCIA ARTIFICIAL GENERATIVA',
+        'decl_no_ai_description': 'O autor declara que este trabalho acadêmico foi realizado integralmente sem o uso de ferramentas de Inteligência Artificial Generativa (IA). Todo o conteúdo, análise, redação e conclusões são produto exclusivo do trabalho humano e de fontes devidamente citadas.',
+
+        # Step 1 - No AI Option
+        'No utilicé Inteligencia Artificial': 'Não utilizei Inteligência Artificial',
+        'Marca esta opción si NO usaste ninguna herramienta de IA en tu trabajo. Esto generará una declaración certificando la ausencia de uso de IA.': 'Marque esta opção se você NÃO usou nenhuma ferramenta de IA em seu trabalho. Isso gerará uma declaração certificando a ausência de uso de IA.',
+
+        # Step 4 - Save Modal
+        'Datos del Autor': 'Dados do Autor',
+        'Para guardar la declaración, necesitamos tus datos de contacto. Esta información solo se usará para identificar al autor de la declaración.': 'Para salvar a declaração, precisamos de suas informações de contato. Estas informações serão usadas apenas para identificar o autor da declaração.',
+        'Nombre completo': 'Nome completo',
+        'Juan Pérez': 'João Silva',
+        'Correo electrónico': 'E-mail',
+        'correo@ejemplo.com': 'email@exemplo.com',
+        'Guardar declaración': 'Salvar declaração',
+        'Cancelar': 'Cancelar',
+
         # Preview Panel
         'preview_title': 'Pré-visualização',
         'preview_description': 'Atualiza automaticamente enquanto você completa o formulário',
@@ -494,7 +557,28 @@ TRANSLATIONS = {
         'decl_not_specified': 'Non specificato',
         'decl_not_described': 'Non descritto',
         'decl_manual_selection': 'Selezione manuale diretta',
-        
+        'decl_author': 'Autore',
+        'decl_author_email': 'Email',
+
+        # No AI Declaration
+        'decl_title_no_ai': 'DICHIARAZIONE DI NON UTILIZZO DI INTELLIGENZA ARTIFICIALE GENERATIVA',
+        'decl_no_ai_statement': 'CERTIFICO CHE NON È STATA UTILIZZATA INTELLIGENZA ARTIFICIALE GENERATIVA',
+        'decl_no_ai_description': 'L\'autore dichiara che questo lavoro accademico è stato realizzato interamente senza l\'uso di strumenti di Intelligenza Artificiale Generativa (IA). Tutti i contenuti, analisi, redazione e conclusioni sono prodotto esclusivo del lavoro umano e di fonti debitamente citate.',
+
+        # Step 1 - No AI Option
+        'No utilicé Inteligencia Artificial': 'Non ho utilizzato Intelligenza Artificiale',
+        'Marca esta opción si NO usaste ninguna herramienta de IA en tu trabajo. Esto generará una declaración certificando la ausencia de uso de IA.': 'Seleziona questa opzione se NON hai utilizzato alcuno strumento di IA nel tuo lavoro. Questo genererà una dichiarazione che certifica l\'assenza di utilizzo di IA.',
+
+        # Step 4 - Save Modal
+        'Datos del Autor': 'Dati dell\'Autore',
+        'Para guardar la declaración, necesitamos tus datos de contacto. Esta información solo se usará para identificar al autor de la declaración.': 'Per salvare la dichiarazione, abbiamo bisogno delle tue informazioni di contatto. Queste informazioni verranno utilizzate solo per identificare l\'autore della dichiarazione.',
+        'Nombre completo': 'Nome completo',
+        'Juan Pérez': 'Mario Rossi',
+        'Correo electrónico': 'Indirizzo email',
+        'correo@ejemplo.com': 'email@esempio.com',
+        'Guardar declaración': 'Salva dichiarazione',
+        'Cancelar': 'Annulla',
+
         # Preview Panel
         'preview_title': 'Anteprima',
         'preview_description': 'Si aggiorna automaticamente mentre completi il modulo',

@@ -56,16 +56,42 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
-    // Guardar declaración en la base de datos
-    window.saveDeclaration = async function() {
-        const saveBtn = document.getElementById('saveBtn');
-        const saveBtnText = document.getElementById('saveBtnText');
-        const saveMessage = document.getElementById('saveMessage');
+    // Abrir modal para capturar datos
+    window.openSaveModal = function() {
+        const modal = document.getElementById('saveModal');
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Prevenir scroll
+    };
+
+    // Cerrar modal
+    window.closeSaveModal = function() {
+        const modal = document.getElementById('saveModal');
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto'; // Restaurar scroll
+    };
+
+    // Manejar envío del formulario
+    document.getElementById('saveForm')?.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const modalSaveBtn = document.getElementById('modalSaveBtn');
+        const modalSaveBtnText = document.getElementById('modalSaveBtnText');
+        const modalErrorMessage = document.getElementById('modalErrorMessage');
+        const authorName = document.getElementById('author_name').value.trim();
+        const authorEmail = document.getElementById('author_email').value.trim();
+
+        // Validar campos
+        if (!authorName || !authorEmail) {
+            modalErrorMessage.querySelector('p').innerText = 'Por favor completa todos los campos';
+            modalErrorMessage.classList.remove('hidden');
+            return;
+        }
 
         // Deshabilitar botón mientras se procesa
-        saveBtn.disabled = true;
-        saveBtnText.innerText = 'Guardando...';
-        saveBtn.classList.add('opacity-75', 'cursor-not-allowed');
+        modalSaveBtn.disabled = true;
+        modalSaveBtnText.innerText = 'Guardando...';
+        modalSaveBtn.classList.add('opacity-75', 'cursor-not-allowed');
+        modalErrorMessage.classList.add('hidden');
 
         try {
             // Obtener el idioma actual de la URL
@@ -82,7 +108,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     'Content-Type': 'application/json',
                     'X-CSRFToken': csrfToken
                 },
-                body: JSON.stringify({})
+                body: JSON.stringify({
+                    author_name: authorName,
+                    author_email: authorEmail
+                })
             });
 
             // Verificar si la respuesta es exitosa
@@ -95,37 +124,38 @@ document.addEventListener('DOMContentLoaded', function() {
             const data = await response.json();
 
             if (data.success) {
+                // Cerrar modal
+                closeSaveModal();
+
                 // Mostrar mensaje de éxito
+                const saveMessage = document.getElementById('saveMessage');
                 saveMessage.querySelector('p').innerText = '✓ ' + data.message;
                 saveMessage.classList.remove('hidden');
                 saveMessage.classList.add('border-emerald-300', 'bg-emerald-50');
 
-                // Cambiar el botón a estado de éxito
-                saveBtnText.innerText = '¡Guardado!';
-                saveBtn.classList.remove('bg-emerald-600', 'hover:bg-emerald-700');
-                saveBtn.classList.add('bg-emerald-700');
-
-                // Ocultar botón de "No guardar" después de guardar
-                setTimeout(() => {
-                    location.reload(); // Recargar para mostrar el estado guardado
-                }, 1500);
+                // Ocultar botón de guardar y mostrar mensaje de éxito
+                const saveSection = document.getElementById('saveDeclarationSection');
+                if (saveSection) {
+                    saveSection.style.transition = 'opacity 0.5s';
+                    saveSection.style.opacity = '0';
+                    setTimeout(() => {
+                        location.reload(); // Recargar para mostrar el estado guardado
+                    }, 500);
+                }
             } else {
                 throw new Error(data.error || 'Error al guardar');
             }
         } catch (error) {
             console.error('Error:', error);
-            saveMessage.querySelector('p').innerText = '✗ Error al guardar: ' + error.message;
-            saveMessage.classList.remove('hidden');
-            saveMessage.classList.add('border-red-300', 'bg-red-50');
-            saveMessage.querySelector('p').classList.add('text-red-700');
-            saveMessage.querySelector('p').classList.remove('text-emerald-700');
+            modalErrorMessage.querySelector('p').innerText = '✗ Error al guardar: ' + error.message;
+            modalErrorMessage.classList.remove('hidden');
 
             // Rehabilitar botón
-            saveBtn.disabled = false;
-            saveBtnText.innerText = 'Reintentar';
-            saveBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+            modalSaveBtn.disabled = false;
+            modalSaveBtnText.innerText = 'Reintentar';
+            modalSaveBtn.classList.remove('opacity-75', 'cursor-not-allowed');
         }
-    };
+    });
 
     // Saltar el guardado y solo descargar
     window.skipSave = function() {

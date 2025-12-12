@@ -127,24 +127,39 @@ def save_declaration(request):
                 'error': 'No hay una declaración generada para guardar'
             }, status=400)
 
+        # Obtener datos del autor desde el request
+        request_data = json_lib.loads(request.body)
+        author_name = request_data.get('author_name', '').strip()
+        author_email = request_data.get('author_email', '').strip()
+
+        # Validar que se hayan proporcionado nombre y email
+        if not author_name or not author_email:
+            return JsonResponse({
+                'success': False,
+                'error': 'Se requieren nombre y correo electrónico del autor'
+            }, status=400)
+
         # Crear y guardar la declaración
         declaration = Declaration(
+            author_name=author_name,
+            author_email=author_email,
+            ai_used=data.get('ai_used', True),
             selected_checklist_ids=data.get('selected_checklist_ids', []),
             usage_types=data.get('usage_types', []),
             custom_usage_type=data.get('custom_usage_type', ''),
-            ai_tool_name=data['ai_tool']['name'],
-            ai_tool_version=data['ai_tool']['version'],
-            ai_tool_provider=data['ai_tool']['provider'],
-            ai_tool_date_month=data['ai_tool']['date_month'],
-            ai_tool_date_year=data['ai_tool']['date_year'],
+            ai_tool_name=data.get('ai_tool', {}).get('name', ''),
+            ai_tool_version=data.get('ai_tool', {}).get('version', ''),
+            ai_tool_provider=data.get('ai_tool', {}).get('provider', ''),
+            ai_tool_date_month=data.get('ai_tool', {}).get('date_month', datetime.now().month),
+            ai_tool_date_year=data.get('ai_tool', {}).get('date_year', datetime.now().year),
             specific_purpose=data.get('specific_purpose', ''),
             prompts=data.get('prompts', []),
             content_use_modes=data.get('content_use_modes', []),
             custom_content_use_mode=data.get('custom_content_use_mode', ''),
             content_use_context=data.get('content_use_context', ''),
-            human_review_level=data['human_review']['level'],
-            reviewer_name=data['human_review']['reviewer_name'],
-            reviewer_role=data['human_review']['reviewer_role'],
+            human_review_level=data.get('human_review', {}).get('level', 0),
+            reviewer_name=data.get('human_review', {}).get('reviewer_name', ''),
+            reviewer_role=data.get('human_review', {}).get('reviewer_role', ''),
             license=data.get('license', 'None')
         )
 

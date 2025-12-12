@@ -1256,3 +1256,35 @@ msgstr "Ethical Use of AI"
 
 msgid "Únete a la comunidad de profesionales comprometidos con la transparencia y responsabilidad en inteligencia artificial."
 msgstr "Join the community of professionals committed to transparency and responsibility in artificial intelligence."
+
+# Step 1 - No AI Option
+msgid "No utilicé Inteligencia Artificial"
+msgstr "I did not use Artificial Intelligence"
+
+msgid "Marca esta opción si NO usaste ninguna herramienta de IA en tu trabajo. Esto generará una declaración certificando la ausencia de uso de IA."
+msgstr "Check this option if you did NOT use any AI tools in your work. This will generate a declaration certifying the absence of AI use."
+
+# Step 4 - Save Modal
+msgid "Datos del Autor"
+msgstr "Author Information"
+
+msgid "Para guardar la declaración, necesitamos tus datos de contacto. Esta información solo se usará para identificar al autor de la declaración."
+msgstr "To save the declaration, we need your contact information. This information will only be used to identify the author of the declaration."
+
+msgid "Nombre completo"
+msgstr "Full name"
+
+msgid "Juan Pérez"
+msgstr "John Doe"
+
+msgid "Correo electrónico"
+msgstr "Email address"
+
+msgid "correo@ejemplo.com"
+msgstr "email@example.com"
+
+msgid "Guardar declaración"
+msgstr "Save declaration"
+
+msgid "Cancelar"
+msgstr "Cancel"

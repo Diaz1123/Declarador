@@ -32,6 +32,7 @@ def get_session_data(request):
     if 'declaration_data' not in request.session or request.session['declaration_data'] is None:
         request.session['declaration_data'] = {
             'current_step': 0,
+            'ai_used': True,  # By default, assume AI was used
             'selected_checklist_ids': [],
             'usage_types': [],
             'custom_usage_type': '',
@@ -52,7 +53,9 @@ def get_session_data(request):
                 'reviewer_role': '',
                 'reviewer_name': ''
             },
-            'license': 'None'
+            'license': 'None',
+            'author_name': '',
+            'author_email': ''
         }
     return request.session['declaration_data']
 
@@ -119,7 +122,19 @@ def step1_identification(request):
                 # Marcar como verificado en la sesión
                 request.session['recaptcha_verified_step1'] = True
 
-        # Get selected checklist items
+        # Check if "No AI used" option was selected
+        no_ai_used = request.POST.get('no_ai_used') == 'true'
+        data['ai_used'] = not no_ai_used
+
+        if no_ai_used:
+            # If no AI was used, skip directly to step 4 with minimal data
+            data['selected_checklist_ids'] = []
+            data['usage_types'] = []
+            data['current_step'] = 3  # Go directly to output
+            save_session_data(request, data)
+            return redirect('step4')
+
+        # Get selected checklist items (only if AI was used)
         selected_ids = request.POST.getlist('checklist')
         data['selected_checklist_ids'] = selected_ids
 
@@ -140,6 +155,7 @@ def step1_identification(request):
         'steps_labels': get_translated_steps_labels(current_lang),
         'checklist': get_translated_checklist(current_lang),
         'selected_ids': data.get('selected_checklist_ids', []),
+        'no_ai_used': not data.get('ai_used', True),
         'glossary': get_translated_glossary(current_lang),
         'presets': PRESETS,
     }
@@ -299,22 +315,23 @@ def step4_output(request):
 
     # Create Declaration object (but don't save yet)
     declaration = Declaration(
+        ai_used=data.get('ai_used', True),
         selected_checklist_ids=data.get('selected_checklist_ids', []),
         usage_types=data.get('usage_types', []),
         custom_usage_type=data.get('custom_usage_type', ''),
-        ai_tool_name=data['ai_tool']['name'],
-        ai_tool_version=data['ai_tool']['version'],
-        ai_tool_provider=data['ai_tool']['provider'],
-        ai_tool_date_month=data['ai_tool']['date_month'],
-        ai_tool_date_year=data['ai_tool']['date_year'],
+        ai_tool_name=data.get('ai_tool', {}).get('name', ''),
+        ai_tool_version=data.get('ai_tool', {}).get('version', ''),
+        ai_tool_provider=data.get('ai_tool', {}).get('provider', ''),
+        ai_tool_date_month=data.get('ai_tool', {}).get('date_month', datetime.now().month),
+        ai_tool_date_year=data.get('ai_tool', {}).get('date_year', datetime.now().year),
         specific_purpose=data.get('specific_purpose', ''),
         prompts=data.get('prompts', []),
         content_use_modes=data.get('content_use_modes', []),
         custom_content_use_mode=data.get('custom_content_use_mode', ''),
         content_use_context=data.get('content_use_context', ''),
-        human_review_level=data['human_review']['level'],
-        reviewer_name=data['human_review']['reviewer_name'],
-        reviewer_role=data['human_review']['reviewer_role'],
+        human_review_level=data.get('human_review', {}).get('level', 0),
+        reviewer_name=data.get('human_review', {}).get('reviewer_name', ''),
+        reviewer_role=data.get('human_review', {}).get('reviewer_role', ''),
         license=data.get('license', 'None')
     )
 

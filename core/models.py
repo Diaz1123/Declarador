@@ -121,6 +121,13 @@ class Declaration(models.Model):
     declaration_id = models.CharField(max_length=20, unique=True, editable=False)
     validation_hash = models.CharField(max_length=64, blank=True)
 
+    # Author information (required when saving)
+    author_name = models.CharField(max_length=200, blank=True)
+    author_email = models.EmailField(blank=True)
+
+    # Declaration type: True if AI was used, False if no AI was used
+    ai_used = models.BooleanField(default=True)
+
     # Diagnostic/Traceability
     selected_checklist_ids = models.JSONField(default=list, blank=True)
 

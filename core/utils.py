@@ -66,7 +66,29 @@ def get_license_label(license_value, lang='es'):
 def generate_declaration_text(declaration, hash_value=None, lang='es'):
     """Generate human-readable declaration text"""
 
-    # Parse usage types
+    # Check if AI was used
+    if not declaration.ai_used:
+        # Generate declaration for NO AI usage
+        text = f"{get_translation('decl_title_no_ai', lang)}\n"
+        text += "═" * 65 + "\n\n"
+        text += f"{get_translation('decl_no_ai_statement', lang)}\n\n"
+        text += f"{get_translation('decl_no_ai_description', lang)}\n\n"
+
+        # Author information (if saved)
+        if hasattr(declaration, 'author_name') and declaration.author_name:
+            text += f"{get_translation('decl_author', lang)}: {declaration.author_name}\n"
+        if hasattr(declaration, 'author_email') and declaration.author_email:
+            text += f"{get_translation('decl_author_email', lang)}: {declaration.author_email}\n"
+
+        # Hash validation
+        if hash_value:
+            text += "\n" + "-" * 65 + "\n"
+            text += f"{get_translation('decl_id_registry', lang)}: {declaration.declaration_id}\n"
+            text += f"{get_translation('decl_hash_validation', lang)}: {hash_value}\n"
+
+        return text
+
+    # Parse usage types (for AI declarations)
     usage_labels = []
     for ut in declaration.usage_types:
         usage_labels.append(get_usage_label(ut, declaration.custom_usage_type, lang))
@@ -189,7 +211,25 @@ def generate_declaration_text(declaration, hash_value=None, lang='es'):
 def generate_declaration_json(declaration, hash_value=None, lang='es'):
     """Generate JSON declaration"""
 
-    # Parse usage types
+    # Check if AI was used
+    if not declaration.ai_used:
+        # Generate JSON for NO AI usage
+        payload = {
+            'declarationType': 'academic-no-ai-declaration',
+            'version': '4.0.0',
+            'generatedAt': declaration.created_at.isoformat() if hasattr(declaration.created_at, 'isoformat') else None,
+            'id': declaration.declaration_id,
+            'validationHash': hash_value or 'pending',
+            'aiUsed': False,
+            'statement': get_translation('decl_no_ai_statement', lang),
+            'author': {
+                'name': declaration.author_name if hasattr(declaration, 'author_name') else None,
+                'email': declaration.author_email if hasattr(declaration, 'author_email') else None
+            }
+        }
+        return json.dumps(payload, ensure_ascii=False, indent=2)
+
+    # Parse usage types (for AI declarations)
     usage_labels = []
     for ut in declaration.usage_types:
         usage_labels.append(get_usage_label(ut, declaration.custom_usage_type, lang))

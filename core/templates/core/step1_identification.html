@@ -51,7 +51,20 @@
                     </p>
                 </div>
 
-                <div class="space-y-3">
+                <!-- Opción: No usé IA -->
+                <div class="bg-blue-50 border-2 border-blue-200 rounded-xl p-5 mb-4">
+                    <label class="flex items-start gap-4 cursor-pointer">
+                        <input type="checkbox" name="no_ai_used" id="no-ai-checkbox" value="true" class="mt-1 w-5 h-5 text-amber-600 border-amber-300 rounded focus:ring-amber-500" {% if no_ai_used %}checked{% endif %}>
+                        <div class="flex-1">
+                            <span class="font-bold text-blue-900 text-lg">{% trans "No utilicé Inteligencia Artificial" %}</span>
+                            <p class="text-sm text-black-700 mt-1">
+                                {% trans "Marca esta opción si NO usaste ninguna herramienta de IA en tu trabajo. Esto generará una declaración certificando la ausencia de uso de IA." %}
+                            </p>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="space-y-3" id="checklist-container">
                     {% for item in checklist %}
                     <label class="checklist-item flex items-center gap-4 p-4 rounded-xl cursor-pointer border-2 transition-all duration-200
                         {% if item.id in selected_ids %}border-primary-500 bg-primary-50 ring-1 ring-primary-500 shadow-sm
@@ -156,6 +169,33 @@
         initPreviewListeners(1);
 
         // El grid siempre es de 1 columna, la vista previa aparece debajo
+
+        // Manejar la opción "No usé IA"
+        const noAiCheckbox = document.getElementById('no-ai-checkbox');
+        const checklistContainer = document.getElementById('checklist-container');
+        const checklistInputs = checklistContainer.querySelectorAll('input[type="checkbox"]');
+
+        function toggleChecklistAvailability() {
+            if (noAiCheckbox.checked) {
+                // Deshabilitar y desmarcar todos los checkboxes del checklist
+                checklistInputs.forEach(input => {
+                    input.checked = false;
+                    input.disabled = true;
+                });
+                checklistContainer.style.opacity = '0.4';
+                checklistContainer.style.pointerEvents = 'none';
+            } else {
+                // Habilitar checkboxes del checklist
+                checklistInputs.forEach(input => {
+                    input.disabled = false;
+                });
+                checklistContainer.style.opacity = '1';
+                checklistContainer.style.pointerEvents = 'auto';
+            }
+        }
+
+        noAiCheckbox.addEventListener('change', toggleChecklistAvailability);
+        toggleChecklistAvailability(); // Ejecutar al cargar la página
     });
 </script>
 {% endblock %}
