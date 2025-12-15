@@ -76,7 +76,6 @@ HUMAN_REVIEW_LEVELS = [
     {'level': 3, 'label': 'Nivel 3: Verificación Selectiva', 'description': 'Comprobación aleatoria (spot-checking) de datos clave o afirmaciones dudosas.'},
     {'level': 4, 'label': 'Nivel 4: Contrastación Documental', 'description': 'Verificación de citas, referencias y datos contra fuentes primarias fiables.'},
     {'level': 5, 'label': 'Nivel 5: Validación Experta', 'description': 'Revisión profunda por un experto en la materia para asegurar integridad lógica y metodológica.'},
-    {'level': 6, 'label': 'Nivel 6: Revisión Crítica y Ética', 'description': 'Análisis exhaustivo de sesgos, originalidad, ética y precisión técnica (Estándar "Gold").'}
 ]
 
 HELP_CHECKLIST = [
