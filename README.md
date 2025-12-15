@@ -426,6 +426,16 @@ Este proyecto es una migración del proyecto original usoeticoia.org (React + Ty
 
 Proyecto creado para promover la transparencia académica en el uso de Inteligencia Artificial Generativa.
 
+## Versionado
+
+**Versión del Software (Django)**: v4.0.0  
+**Versión del Schema JSON**: v1.0.0  
+**Versión del Whitepaper**: v1.0 (Preprint)
+
+Este proyecto mantiene tres sistemas de versionado independientes. Para detalles completos de compatibilidad y roadmap, consultar `docs/VERSIONADO_Y_COMPATIBILIDAD.md`.
+
+
+
 - Proyecto original: usoeticoia.org (React + TypeScript)
 - Migración a Django: Diciembre 2025
 - Estado actual: Producción ready
