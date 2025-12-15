@@ -2,6 +2,7 @@ from django.db import models
 import json
 import hashlib
 from datetime import datetime
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 class Signer(models.Model):
     """Modelo para almacenar firmantes del compromiso de uso ético de IA"""
@@ -145,7 +146,7 @@ class Declaration(models.Model):
     content_use_context = models.TextField(blank=True)
 
     # Human Review
-    human_review_level = models.IntegerField(default=0)
+    human_review_level = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(5)])
     reviewer_name = models.CharField(max_length=200, blank=True)
     reviewer_role = models.CharField(max_length=200, blank=True)
 
