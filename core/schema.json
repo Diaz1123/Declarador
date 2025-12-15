@@ -1,0 +1,175 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://declarador.io/schema/declaration/v1.0.0",
+  "title": "Declaration of AI Use in Academic Work",
+  "description": "JSON Schema for transparent declaration of AI tool usage in academic works",
+  "type": "object",
+  "required": ["declarationType", "version", "schemaVersion", "id"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema version identifier"
+    },
+    "declarationType": {
+      "type": "string",
+      "const": "academic-ai-transparency",
+      "description": "Fixed type identifier for this declaration format"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semantic version of JSON payload structure (e.g., 1.0.0)"
+    },
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semantic version of this schema specification"
+    },
+    "softwareVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Software release version (e.g., 4.0.0 for Django app)"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when declaration was generated"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 20,
+      "description": "Unique declaration identifier (alphanumeric)"
+    },
+    "validationHash": {
+      "type": "string",
+      "enum": ["pending"],
+      "minLength": 16,
+      "maxLength": 64,
+      "description": "SHA-256 hash for integrity verification. Can be 16 chars (truncated) or 64 chars (full). 'pending' if not yet computed"
+    },
+    "license": {
+      "type": ["string", "null"],
+      "enum": ["CC BY 4.0", "CC BY-SA 4.0", "CC BY-NC 4.0", "CC BY-ND 4.0", "CC0 1.0", "Copyright", null],
+      "description": "Content license designation"
+    },
+    "traceability": {
+      "type": "object",
+      "properties": {
+        "diagnosticIds": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "IDs from diagnostic checklist that triggered this declaration"
+        }
+      }
+    },
+    "usage": {
+      "type": "object",
+      "required": ["types"],
+      "properties": {
+        "types": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["draft", "coauthor", "writing-support", "ideation", "analysis", "coding", "translation", "review", "other"]
+          },
+          "minItems": 1,
+          "description": "Categories of AI usage"
+        },
+        "labels": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Human-readable labels for usage types (localized)"
+        },
+        "customDescription": {
+          "type": ["string", "null"],
+          "description": "Custom description if 'other' type is selected"
+        }
+      }
+    },
+    "tool": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "description": "Name of AI tool used (e.g., ChatGPT, Claude, Gemini)"
+        },
+        "version": {
+          "type": ["string", "null"],
+          "maxLength": 100,
+          "description": "Tool version if known (e.g., GPT-4, Claude 3 Sonnet)"
+        },
+        "provider": {
+          "type": ["string", "null"],
+          "maxLength": 200,
+          "description": "Provider/Company name (e.g., OpenAI, Anthropic, Google)"
+        },
+        "date": {
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[0-2])$",
+          "description": "Date of tool usage in YYYY-MM format"
+        }
+      }
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 500,
+      "description": "Specific purpose of AI usage in this work"
+    },
+    "prompts": {
+      "type": "array",
+      "items": {"type": "string"},
+      "maxItems": 10,
+      "description": "Prompts used (optional, sensitive data should be redacted)"
+    },
+    "integration": {
+      "type": "object",
+      "properties": {
+        "modes": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "How AI content was integrated into final work"
+        },
+        "context": {
+          "type": ["string", "null"],
+          "maxLength": 400,
+          "description": "Context of how content was integrated"
+        }
+      }
+    },
+    "humanReview": {
+      "type": "object",
+      "required": ["level"],
+      "properties": {
+        "level": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5,
+          "description": "Level of human review (0=none, 5=expert validation)"
+        },
+        "label": {
+          "type": ["string", "null"],
+          "description": "Human-readable label for review level"
+        },
+        "description": {
+          "type": ["string", "null"],
+          "description": "Description of review level"
+        },
+        "reviewerName": {
+          "type": ["string", "null"],
+          "maxLength": 200,
+          "description": "Name of reviewer (optional)"
+        },
+        "reviewerRole": {
+          "type": ["string", "null"],
+          "maxLength": 200,
+          "description": "Role of reviewer (e.g., author, advisor, peer)"
+        }
+      }
+    }
+  }
+}
